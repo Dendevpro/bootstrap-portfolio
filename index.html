@@ -5,12 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- bootstrap -->
-    <!-- CSS only -->
+    <!-- bootstrap CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -18,12 +17,16 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <!-- Added custom css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        crossorigin="anonymous"></script> -->
     <!-- google-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Added custom css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
     <title>MFacciolla Homepage</title>
 </head>
 
@@ -59,17 +62,23 @@
     <!-- Main Content -->
     <!-- Section 1 - About Me-->
     <div class="container">
-        <div class="jumbotron jumbotron-fluid" id="profile">
-            <h1 id="section-1">Hi, welcome to my portfolio</h1>
-            <h4>I'm an experienced Production Artist and Graphic Designer with 10+ years of work in the advertising
-                industry. My background includes agency and freelance graphic design with a keen eye for details and a
-                history of leading print, interactive and digital design projects to acclaimed completion. I'm
-                Proficient in Adobe Creative Cloud using Illustrator, Indesign and Photoshop as foundation for my
-                workflow. Currently I’m commited to a Full-Stack Web Development Bootcamp at UCSD and am looking forward
-                to apply the newly aquired skills to my work.
-            </h4>
-            <!-- <button class="btn btn-outline-light">Read more</button> -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron jumbotron-fluid" id="profile">
+                    <h1 class="category">Hi, welcome to my portfolio</h1>
+                    <h4>I'm an experienced Production Artist and Graphic Designer with 10+ years of work in the
+                        advertising industry. My background includes agency and freelance graphic design with a keen eye
+                        for details and a history of leading print, interactive and digital design projects to acclaimed
+                        completion. I'm Proficient in Adobe Creative Cloud using Illustrator, Indesign and Photoshop as
+                        the foundation for my workflow in a daily basis. Currently I’m commited to a Full-Stack Web
+                        Development Bootcamp at UCSD and am looking forward to apply the newly aquired skills to my
+                        work.
+                    </h4>
+                    <!-- <button class="btn btn-outline-light">Read more</button> -->
+                </div>
+            </div>
         </div>
+
 
     </div>
 
@@ -77,61 +86,49 @@
     <div class="container-fluid" id="skill-section">
         <div id="skills">
             <div class="container">
-                <div class="row no-gutters">
+                <div class="row">
                     <div class="col-lg-3 col-md-12">
-                        <h1 id="section-2">.skills</h1>
+                        <h1 class="category">.skills</h1>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <table class="table table-borderless">
                             <tr>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-adobe-ps.svg">
+                                    <img class="icon" src="assets/images/icons8-adobe-ps.svg">
                                     <p>Photoshop</p>
                                 </td>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-adobe-ai.svg">
+                                    <img class="icon" src="assets/images/icons8-adobe-ai.svg">
                                     <p>Illustrator</p>
                                 </td>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-adobe-in.svg">
+                                    <img class="icon" src="assets/images/icons8-adobe-in.svg">
                                     <p>Indesign</p>
                                 </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-lg-4">
-                        <table class="table table-borderless">
-                            <tr>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-adobe-fw.svg">
+                                    <img class="icon" src="assets/images/icons8-adobe-fw.svg">
                                     <p>Fireworks</p>
                                 </td>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-adobe-br.svg">
+                                    <img class="icon" src="assets/images/icons8-adobe-br.svg">
                                     <p>Bridge</p>
                                 </td>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-adobe-acr.svg">
+                                    <img class="icon" src="assets/images/icons8-adobe-acr.svg">
                                     <p>Acrobat</p>
                                 </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-lg-4">
-                        <table class="table table-borderless">
-                            <tr>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-html.svg">
+                                    <img class="icon" src="assets/images/icons8-html.svg">
                                     <p>HTML</p>
                                 </td>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-css3.svg">
+                                    <img class="icon" src="assets/images/icons8-css3.svg">
                                     <p>CSS</p>
                                 </td>
                                 <td>
-                                    <img class="icon" src="../../08/icons8-js.svg">
+                                    <img class="icon" src="assets/images/icons8-js.svg">
                                     <p>Javascript</p>
                                 </td>
                             </tr>
@@ -139,11 +136,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Slide Carousel need some tune up before making it available -->
+    <!-- Carousel need some tune up -->
     <!-- This will display my offline portfolio imagery -->
 
     <!-- <div class="container-fluid" id="carousel-div">
@@ -176,79 +172,77 @@
     </div> -->
 
     <!-- Section 3 - Education -->
-    <div class="container-fluid header-section" id="education">
+    <div class="container-fluid" id="education">
         <div class="container">
             <div class="row">
-                <h1 class="section-title">.education</h1>
-            </div>
-            <div class="row" id="edu-btn-row">
-                <div class="col-lg-6">
-                    <table class="table table-borderless" id="edu-table">
-                        <tr>
-                            <td>
-                                <button type="button" id="ucsd-btn" class="btn btn-lg btn-outline-danger">
-                                    UCSD Extension - San Diego, CA
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Full-Stack Web Development Bootcamp - <strong><em>In Progress</em></strong></h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" id="sduis-btn" class="btn btn-lg btn-outline-danger">
-                                    SDUIS - San Diego, CA
-                                </button>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <h5>Certificate in Marketing - <strong><em>2014</em></strong></h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" id="unifacs-btn" class="btn btn-lg btn-outline-danger">
-                                    Unifacs - Salvador, Brazil
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Bachelor Degree in Advertising - <strong><em>2008</em></strong></h5>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-lg-6">
-                    <img id="map" src="assets/images/world-map.svgz" alt="Map">
+                <div class="col-lg-12">
+                    <h1 class="category-light">.education</h1>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" id="ucsd-btn" class="btn btn-lg btn-outline-danger">
+                        UCSD Extension - San Diego, CA
+                    </button>
+                    <h5>Full-Stack Web Development Bootcamp - <strong><em>In Progress</em></strong></h5>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" id="sduis-btn" class="btn btn-lg btn-outline-danger">
+                        SDUIS - San Diego, CA
+                    </button>
+                    <h5>Certificate in Marketing - <strong><em>2014</em></strong></h5>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" id="unifacs-btn" class="btn btn-lg btn-outline-danger">
+                        Unifacs - Salvador, Brazil
+                    </button>
+                    <h5>Bachelor Degree in Advertising - <strong><em>2008</em></strong></h5>
+                </div>
+            </div>
+            <br>
         </div>
+        <br>
+    </div>
+    <!-- <div class="col-lg-6">
+                    <img id="map" src="assets/images/world-map.svgz" alt="Map">
+                </div> -->
+    </div>
     </div>
 
     <!-- FOOTER -->
-    <!-- <footer class="footer position-sticky">
+    <footer class="footer">
         <div class="container">
-            <div class="row" id="social-icon">
-                <div class="col-md-1">
-                    <a href="https://github.com/Dendevpro" target="_blank">
-                    </a>
-                    <i class="fab fa-github-square"></i>
-
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="category-light">.contact</h1>
                 </div>
-                <div class="col-md-3">
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <a href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
+                        <i class="fa-fw fa-2x fab fa-linkedin" style="color: #555"></i>
+                    </a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="https://github.com/dendevpro/" target="_blank">
+                        <i class="fa-fw fa-2x fab fa-github-square"></i>
+                    </a>
+                </div>
+                <div class="col-lg-1">
                     <a href="mailto:dendevpro@gmail.com" onclick="myfunc">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.917 16.083c-2.258 0-4.083-1.825-4.083-4.083s1.825-4.083 4.083-4.083c1.103 0 2.024.402 2.735 1.067l-1.107 1.068c-.304-.292-.834-.63-1.628-.63-1.394 0-2.531 1.155-2.531 2.579 0 1.424 1.138 2.579 2.531 2.579 1.616 0 2.224-1.162 2.316-1.762h-2.316v-1.4h3.855c.036.204.064.408.064.677.001 2.332-1.563 3.988-3.919 3.988zm9.917-3.5h-1.75v1.75h-1.167v-1.75h-1.75v-1.166h1.75v-1.75h1.167v1.75h1.75v1.166z" />
-                        </svg>
+                        <i class="fa-fw fa-2x fas fa-envelope-square"></i>
                     </a>
                 </div>
             </div>
-    </footer> -->
+            <br><br>
+        </div>
+    </footer>
 </body>
 
 </html>
