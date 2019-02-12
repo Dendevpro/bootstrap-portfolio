@@ -1,2 +1,4 @@
-# bootstrap-portfolio
-Applying Bootstrap to Basic-Portfolio
+# Portfolio
+# https://dendevpro.github.io/bootstrap-portfolio/
+
+Updated Website application to be used as a Resumé/Portfolio
