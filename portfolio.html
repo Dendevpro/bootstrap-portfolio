@@ -5,25 +5,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- bootstrap -->
-    <!-- CSS only -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- bootstrap CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <!-- Added custom css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                    crossorigin="anonymous"></script> -->
     <!-- google-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Added custom css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <title>MFacciolla Homepage</title>
 </head>
 
@@ -48,9 +51,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Projects</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -69,14 +72,13 @@
                         <div class="card-header">
                             <h2>FunHub - <em>Find fun near you!</em></h2>
                             <p class="app-info">This Event Finder web application helps users find events based on
-                                keyword input,
-                                location and category. The results displayed will allow the user to buy tickets through
-                                the vendor's website and to see a list of the nearest breweries within the event’s
-                                location.</p>
+                                keyword input, location and category. The results displayed will allow the user to buy
+                                tickets through the vendor's website and to see a list of the nearest breweries within
+                                the event’s location.</p>
                             <!-- </div> -->
                             <!-- <div class="card-body"> -->
                             <a href="https://hagharbi.github.io/project_one/" target="_blank">
-                                <img src="assets/images/app-img/FunHub-app.jpg" class="d-block w-100" alt="...">
+                                <img src="assets/images/app-img/FunHub-app.png" class="d-block w-100" alt="FunHub">
                             </a>
                         </div>
                     </div>
@@ -87,12 +89,15 @@
                     <div class="card">
                         <div class="card-header">
                             <h2>Train Sheduler</h2>
-                            <p>Description of the app...</p>
-                        </div>
-                        <div class="card-body">
+                            <p class="app-info">This web application allows users to create and store fictitious train
+                                schedules based on theis input and on the current time, which is displayed on the top of
+                                the page and updates every 60 seconds. It accepts parameters such as Train Name,
+                                Destination, First Train Time and Frequency. The information about the train will be
+                                displayed in a table and is stored in a database so it persists even after a page
+                                refresh.</p>
                             <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">
-                                <img src="assets/images/app-img/Train-Scheduler-app.jpg" class="d-block w-100"
-                                    alt="...">
+                                <img src="assets/images/app-img/Train-Scheduler-app.png" class="d-block w-100"
+                                    alt="Train-Scheduler">
                             </a>
                         </div>
                     </div>
@@ -103,17 +108,22 @@
                     <div class="card">
                         <div class="card-header">
                             <h2>Rise and Grind</h2>
-                            <p>Description of the app...</p>
-                        </div>
-                        <div class="card-body">
+                            <p>In this fun web application the user is able to generate animated GIFs on the click of a
+                                button. The app gives 10 buttons representing the steps of a daily grind. IF the user
+                                clicks on any of the default buttons it will generate 10 animated GIFs and its
+                                respective rating. The Gifs can be paused and become static if the user clicks on the
+                                image, and will return to the original state if clicks once again. Another feature the
+                                app offers is the possibility to create new buttons so the user can customize the ideal
+                                daily grind.
+                            </p>
                             <a href="https://dendevpro.github.io/GifTastic/" target="_blank">
-                                <img src="assets/images/app-img/Giftastic-app.jpg" class="d-block w-100" alt="...">
+                                <img src="assets/images/app-img/Giftastic-app.png" class="d-block w-100"
+                                    alt="Rise and Grind">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <br><br><br>
             <!-- <h1>offline</h1>
             <div class="row">
                 <div class="col-lg-6">
@@ -145,6 +155,40 @@
             </div> -->
         </div>
     </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="category-light">.contact</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <a href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
+                        <i class="fa-fw fa-2x fab fa-linkedin" style="color: #555"></i>
+                    </a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="https://github.com/dendevpro/" target="_blank">
+                        <i class="fa-fw fa-2x fab fa-github-square"></i>
+                    </a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="mailto:dendevpro@gmail.com" onclick="myfunc">
+                        <i class="fa-fw fa-2x fas fa-envelope-square"></i>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6>© 2019 Mauro Facciolla</h6>
+                </div>
+            </div>
+            <br>
+        </div>
+    </footer>
 </body>
 
 </html>
