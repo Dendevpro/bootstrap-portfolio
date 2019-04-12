@@ -9,16 +9,6 @@
     <!-- bootstrap CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- JS, Popper.js, and jQuery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-                    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-                    crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-                    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-                    crossorigin="anonymous"></script> -->
     <!-- google-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet">
@@ -27,7 +17,17 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Added custom css -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <title>MFacciolla Homepage</title>
+        <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                    crossorigin="anonymous"></script>
+    <title>Mauro Facciolla</title>
 </head>
 
 <body class="img-responsive" id="projects-img">
@@ -65,20 +65,17 @@
     <!-- Section 3 - Education -->
     <div class="container-fluid">
         <div class="container">
-            <h1 class="project-category">.online</h1>
+            <h1 class="project-category" id="online-section">.online</h1>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h2>FunHub - <em>Find fun near you!</em></h2>
-                            <p class="app-info">This Event Finder web application helps users find events based on
-                                keyword input, location and category. The results displayed will allow the user to buy
-                                tickets through the vendor's website and to see a list of the nearest breweries within
-                                the event’s location.</p>
-                            <!-- </div> -->
-                            <!-- <div class="card-body"> -->
-                            <a href="https://hagharbi.github.io/project_one/" target="_blank">
-                                <img src="assets/images/app-img/FunHub-app.png" class="d-block w-100" alt="FunHub">
+                            <h2>Bootcamper</h2>
+                            <p class="app-info">A centralized hub to help current bootcamp students connect with bootcamp graduates, instructors, and professionals to share issues, ideas and experiences.</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="https://limitless-springs-55622.herokuapp.com/" target="_blank">
+                                <img src="assets/images/app-img/Mockup-Bootcamper.png" class="d-block w-100" alt="Bootcamper">
                             </a>
                         </div>
                     </div>
@@ -96,7 +93,7 @@
                                 displayed in a table and is stored in a database so it persists even after a page
                                 refresh.</p>
                             <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">
-                                <img src="assets/images/app-img/Train-Scheduler-app.png" class="d-block w-100"
+                                <img src="assets/images/app-img/Mockup-Train.png" class="d-block w-100"
                                     alt="Train-Scheduler">
                             </a>
                         </div>
@@ -105,9 +102,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
+                    <div class="card" id="online-3">
                         <div class="card-header">
-                            <h2>Rise and Grind</h2>
+                            <h2>Friend Finder</h2>
                             <p>In this fun web application the user is able to generate animated GIFs on the click of a
                                 button. The app gives 10 buttons representing the steps of a daily grind. IF the user
                                 clicks on any of the default buttons it will generate 10 animated GIFs and its
@@ -116,9 +113,9 @@
                                 app offers is the possibility to create new buttons so the user can customize the ideal
                                 daily grind.
                             </p>
-                            <a href="https://dendevpro.github.io/GifTastic/" target="_blank">
-                                <img src="assets/images/app-img/Giftastic-app.png" class="d-block w-100"
-                                    alt="Rise and Grind">
+                            <a href="https://nameless-shelf-35941.herokuapp.com/" target="_blank">
+                                <img src="assets/images/app-img/Mockup-Friend.png" class="d-block w-100"
+                                    alt="Friend Finder">
                             </a>
                         </div>
                     </div>
@@ -153,6 +150,9 @@
                     </div>
                 </div>
             </div> -->
+            <a href="#online-section">
+                <button class="btn btn-outline-dark" id="scroll-top">^</button>
+            </a>
         </div>
     </div>
     <!-- FOOTER -->
@@ -164,17 +164,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-1">
+                <div class="col-md-1">
                     <a href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
                         <i class="fa-fw fa-2x fab fa-linkedin" style="color: #555"></i>
                     </a>
                 </div>
-                <div class="col-lg-1">
+                <div class="col-md-1">
                     <a href="https://github.com/dendevpro/" target="_blank">
                         <i class="fa-fw fa-2x fab fa-github-square"></i>
                     </a>
                 </div>
-                <div class="col-lg-1">
+                <div class="col-md-1">
                     <a href="mailto:dendevpro@gmail.com" onclick="myfunc">
                         <i class="fa-fw fa-2x fas fa-envelope-square"></i>
                     </a>

@@ -9,16 +9,6 @@
     <!-- bootstrap CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- JS, Popper.js, and jQuery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script> -->
     <!-- google-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet">
@@ -27,7 +17,17 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Added custom css -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <title>MFacciolla Homepage</title>
+        <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <title>Mauro Facciolla</title>
 </head>
 
 <body class="img-responsive">
@@ -61,9 +61,9 @@
 
     <!-- Main Content -->
     <!-- Section 1 - About Me-->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+    <!-- <div class="container"> -->
+        <div class="row" id="profile">
+            <div class="col-lg-7">
                 <div class="jumbotron jumbotron-fluid" id="profile">
                     <h1 class="category">Hi, welcome to my portfolio</h1>
                     <h4>I'm an experienced Production Artist and Graphic Designer with 10+ years of work in the
@@ -74,13 +74,13 @@
                         Development Bootcamp at UCSD and am looking forward to apply the newly aquired skills to my
                         work.
                     </h4>
-                    <!-- <button class="btn btn-outline-light">Read more</button> -->
+                    <a href="#skills">
+                        <button class="btn btn-outline-dark">Read more</button>
+                    </a>
                 </div>
             </div>
         </div>
-
-
-    </div>
+    <!-- </div> -->
 
     <!-- Section 2 - Skills -->
     <div class="container-fluid" id="skill-section">
@@ -182,7 +182,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <a href="https://extension.ucsd.edu/" target="_blank">
-                        <button type="button" id="ucsd-btn" class="btn btn-lg btn-warning">
+                        <button type="button" id="ucsd-btn" class="btn btn-lg btn-outline-warning">
                             UCSD Extension - San Diego, CA
                         </button>
                     </a>
@@ -193,7 +193,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <a href="https://sduis.edu/" target="_blank">
-                        <button type="button" id="sduis-btn" class="btn btn-lg btn-warning">
+                        <button type="button" id="sduis-btn" class="btn btn-lg btn-outline-warning">
                             SDUIS - San Diego, CA
                         </button>
                     </a>
@@ -204,7 +204,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <a href="https://www.unifacs.br/" target="_blank">
-                        <button type="button" id="unifacs-btn" class="btn btn-lg btn-warning">
+                        <button type="button" id="unifacs-btn" class="btn btn-lg btn-outline-warning">
                             Unifacs - Salvador, Brazil
                         </button>
                     </a>
@@ -215,11 +215,39 @@
         </div>
         <br>
     </div>
-    <!-- <div class="col-lg-6">
-                    <img id="map" src="assets/images/world-map.svgz" alt="Map">
-                </div> -->
-    </div>
-    </div>
+
+    <!-- Section 4 - Experience -->
+    <!-- <div class="container-fluid" id="experience">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="category-light" id="section-title">.experience</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="https://techaround.com" target="_blank">
+                    <h5>Techaround - CA</h5></a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="https://sduis.edu/" target="_blank">
+                    <h5>Creative Circle - CA</h5></a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="https://www.unifacs.br/" target="_blank">
+                    <h5>SLA Propaganda - BRAZIL</h5></a>
+                </div>
+            </div>
+            <br>
+        </div>
+        <br>
+    </div> -->
 
     <!-- FOOTER -->
     <footer class="footer">

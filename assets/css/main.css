@@ -5,6 +5,10 @@
     border-radius: 0 !important;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0 auto;
     padding: 0;
@@ -44,12 +48,13 @@ body {
 }
 
 #profile {
-    background: none;
+    margin-bottom: 11rem;
 }
 
 .jumbotron {
     padding: 0;
-    margin: 6rem auto;
+    margin: 12rem auto 6rem 12rem;
+    background: none;
 }
 
 h1 {
@@ -105,7 +110,7 @@ p {
     /* background: #999; */
     background-image: url("../images/edu-map-03.jpg");
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -114,12 +119,22 @@ p {
     color: #555;
 }
 
-.btn-lg {
+.btn-outline-warning {
     margin: 1rem auto;
+}
+
+#experience {
+    background: rgb(90, 90, 90);
+}
+
+#section-title {
+    color: rgb(141, 141, 141);
 }
 
 footer {
     background: #222;
+    clear: both;
+    overflow: hidden;
 }
 
 .fas,
@@ -131,26 +146,28 @@ footer {
 /* Projects Page */
 
 #projects-img {
-    background: url("../images/background-img-04.jpg");
+    background: white /*url("../images/background-img-04.jpg")*/;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.project-title {
-    color: white;
-    margin-top: 0;
-}
+
 
 .card {
     margin: 2rem 0;
-    background: none;
+    /* background: none; */
     border: none;
 }
 
 .app-info {
     margin-right: 4rem;
+}
+
+#scroll-top {
+    float: right;
+    margin-bottom: 2rem;
 }
 
 /* mediaquery fixed the table content from going out of the card bounds  on small devices*/
