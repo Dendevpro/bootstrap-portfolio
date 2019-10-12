@@ -7,119 +7,382 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- bootstrap CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- google-fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,900,900i"
-        rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- FONT-FAMILIES -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome My Kit-->
+    <script src="https://kit.fontawesome.com/5ef6349c09.js"></script>
     <!-- Added custom css -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-        <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-                    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-                    crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-                    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-                    crossorigin="anonymous"></script>
-    <title>Mauro Facciolla</title>
+    <title>MF-Portfolio</title>
 </head>
 
-<body class="img-responsive" id="projects-img">
+<body id="portfolioBG">
     <!-- Navbar -->
-    <!-- Fixed navbar -->
-    <div id="full-bar">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <span class="navbar-brand" href="#">
-                <a class="navbar-brand" id="logo" href="index.html">Mauro Facciolla</a>
-            </span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Projects</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li> -->
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="portfolioNav">
+        <a class="navbar-brand" href="index.html#wrapper">
+            <h4 style="color:#494949">
+                MAURO FACCIOLLA
+            </h4>
+        </a>
+        <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#uiDesign">
+                        UI DESIGN
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#webDev">
+                        WEB DEVELOPMENT
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#artDirection">
+                        ART DIRECTION
+                    </a>
+                </li>
+                <li class="nav-item" id="resumeIcon">
+                    <a href="./assets/docs/MauroFacc-Resume.pdf" target="_blank" data-toggle="tooltip"
+                        data-placement="bottom" title="Resumé">
+                        <img src="./assets/images/resumeIcon3.svg" style="height: 5vh"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Main Content -->
-    <!-- <div id="wrapper"> -->
+    <div class="container-fluid" id="content">
 
-    <!-- Section 3  -->
-    <div class="container-fluid">
+        <!-- UI DESIGN -->
+        <!-- SECTION TITLE  -->
+        <div id="uiDesign">
+            <h1 class="category">UI Design</h1>
+        </div>
         <div class="container">
-            <h1 class="project-category" id="online-section">.online</h1>
+
+            <!-- 1st Website -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Bootcamper</h2>
-                            <p class="app-info">A centralized hub to help current bootcamp students connect with bootcamp graduates, instructors, and professionals to share issues, ideas and experiences.</p>
-                        </div>
-                        <div class="card-body">
-                            <a href="https://limitless-springs-55622.herokuapp.com/" target="_blank">
-                                <img src="assets/images/app-img/Mockup-Bootcamper.png" class="d-block w-100" alt="Bootcamper">
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-12 work">
+                    <h5 class="text-center">
+                        TECHAROUND
+                        <p>
+                            <a href="https://www.techaround.com" target="_blank">techaround.com</a>
+                        </p>
+                    </h5>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://limitless-springs-55622.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Bootcamper.png" class="d-block w-100" alt="Bootcamper">
+                    </a>
                 </div>
             </div>
+
+            <!-- 2nd APP -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Train Sheduler</h2>
-                            <p class="app-info">This web application allows users to create and store fictitious train
-                                schedules based on theis input and on the current time, which is displayed on the top of
-                                the page and updates every 60 seconds. It accepts parameters such as Train Name,
-                                Destination, First Train Time and Frequency. The information about the train will be
-                                displayed in a table and is stored in a database so it persists even after a page
-                                refresh.</p>
-                        </div>
-                        <div class="card-body">
-                            <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">
-                                <img src="assets/images/app-img/Mockup-Train.png" class="d-block w-100"
-                                    alt="Train-Scheduler">
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-12 work">
+                    <h5 class="text-center">
+                        TRANSLINGUA-TRANSLATIONS
+                        <p>
+                            <a href="https://www.translingua-translations.com"
+                                target="_blank">translingua-translations.com</a>
+                        </p>
+                    </h5>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Train.png" class="d-block w-100" alt="Train-Scheduler">
+                    </a>
                 </div>
             </div>
+
+            <!-- 3rd APP -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="card" id="online-3">
-                        <div class="card-header">
-                            <h2>Friend Finder</h2>
-                            <p class="app-info">Friend finder is a full-stack compatibility-based app that takes in results from user's survey, then compare the answers with those from other users. The app displays the name and picture of the user with the best overall match.
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <a href="https://nameless-shelf-35941.herokuapp.com/" target="_blank">
-                                <img src="assets/images/app-img/Mockup-Friend.png" class="d-block w-100"
-                                    alt="Friend Finder">
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-12 work">
+                    <h5>
+                        WARRIOR FOUNDATION FREEDOM STATION
+                        <p>
+                            <a href="https://www.warriorfoundation.org" target="_blank">warriorfoundation.com</a>
+                        </p>
+                    </h5>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://nameless-shelf-35941.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Friend.png" class="d-block w-100" alt="Friend Finder">
+                    </a>
                 </div>
             </div>
-            <!-- <h1>offline</h1>
+
+            <!-- 4th APP -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5 id="school">
+                        KI'S SCHOOL LUNCHES
+                        <p>
+                            <!-- <a href="https://kis.naturallunches.com" target="_blank"> -->
+                            kis.naturallunches.com - <em>Under Development</em>
+                            <!-- </a> -->
+                        </p>
+                    </h5>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://nameless-shelf-35941.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Friend.png" class="d-block w-100" alt="Friend Finder">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WEB DEVELOPMENT -->
+        <!-- SECTION TITLE  -->
+        <div id="webDev">
+            <h1 class="category">Web Dev</h1>
+        </div>
+
+        <div class="container">
+
+            <!-- 1st APP -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5 class="text-center">
+                        BOOTCAMPER
+                        &nbsp
+                        <a class="infoToggler" data-toggle="collapse" href="#bootcamperInfo" aria-expanded="false"
+                            aria-controls="collapseInfo">
+                            <img src="./assets/images/infoIcon.svg" style="height: 3vh"></i>
+                        </a>
+                        <p>
+                            <a href="https://limitless-springs-55622.herokuapp.com/">LIVE DEMO</a>
+                        </p>
+                    </h5>
+                    <div class="collapse" id="bootcamperInfo">
+                        <div class="card">
+                            <h4>
+                                Summary
+                            </h4>
+                            <h6 class="appInfo">
+                                A centralized hub to help current bootcamp students connect with
+                                bootcamp graduates, instructors, and professionals to share issues, ideas and
+                                experiences.
+                            </h6>
+                            <br>
+                            <h4>
+                                Tools
+                            </h4>
+                            <h6 class="appTools">
+                                BCrypt | Bootstrap | Express - Handlebars | MySQL - Sequelize | Passport |
+                                Node.js
+                            </h6>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://limitless-springs-55622.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Bootcamper.png" class="d-block w-100" alt="Bootcamper">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2nd APP -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5>
+                        TRAIN SCHEDULER
+                        &nbsp
+                        <a class="infoToggler" data-toggle="collapse" href="#trainInfo" aria-expanded="false"
+                            aria-controls="collapseInfo">
+                            <img src="./assets/images/infoIcon.svg" style="height: 3vh"></i>
+                        </a>
+                        <p>
+                            <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">LIVE DEMO</a>
+                        </p>
+                    </h5>
+                    <div class="collapse" id="trainInfo">
+                        <div class="card">
+                            <h4>
+                                Summary
+                            </h4>
+                            <h6 class="appInfo">
+                                Train Schedule is a web application that incorporates Firebase to host a globally
+                                available set of data retrieved and manipulated using Moment.js. The app stores and
+                                updates information about various fictitious trains arrival time and remaining minutes
+                                to arrival.
+                            </h6>
+                            <br>
+                            <h4>
+                                Tools
+                            </h4>
+                            <h6 class="appTools">
+                                Bootstrap | JQuery | Moment.js | Firebase Database
+                            </h6>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Train.png" class="d-block w-100" alt="Train-Scheduler">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3rd APP -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5>
+                        FRIEND FINDER
+                        &nbsp
+                        <a class="infoToggler" data-toggle="collapse" href="#friendInfo" aria-expanded="false"
+                            aria-controls="collapseInfo">
+                            <img src="./assets/images/infoIcon.svg" style="height: 3vh"></i>
+                        </a>
+                        <p>
+                            <a href="https://nameless-shelf-35941.herokuapp.com" target="_blank">LIVE DEMO</a>
+                        </p>
+                    </h5>
+                    <div class="collapse" id="friendInfo">
+                        <div class="card">
+                            <h4>
+                                Summary
+                            </h4>
+                            <h6 class="appInfo">
+                                Friend Finder is a full-stack compatibility-based app that takes in
+                                results from user's survey, then compare the answers with ones stored on the database.
+                            </h6>
+                            <br>
+                            <h4>
+                                Tools
+                            </h4>
+                            <h6 class="appTools">
+                                Bootstrap | JQuery | Express.js | Body-Parser | Path | Node.js
+                            </h6>
+                            <!-- <img src="assets/images/bootcampTools.png" class="d-block w-100" alt="Bootcamper"> -->
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://nameless-shelf-35941.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Friend.png" class="d-block w-100" alt="Friend Finder">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ART DIRECTION -->
+        <!-- SECTION TITLE  -->
+        <div id="artDirection">
+            <h1 class="category">Art Direction</h1>
+        </div>
+        <div class="container">
+
+            <!-- 1st Website -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5 class="text-center">
+                        KI'S KITCHEN
+                        <p>
+                            <a href="http://www.kis-kitchen.com" target="_blank">kis-kitchen.com</a>
+                        </p>
+                    </h5>
+
+                    <div class="collapse">
+                        <div class="card">
+                            <h4>
+                                Summary
+                            </h4>
+                            <h6 class="appInfo">
+                            </h6>
+                            <br>
+                            <h4>
+                                Tools
+                            </h4>
+                            <h6 class="appTools">
+                            </h6>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://limitless-springs-55622.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Bootcamper.png" class="d-block w-100" alt="Bootcamper">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2nd APP -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5 class="text-center">
+                        BRAINCORP
+                        <p>
+                            <a href="https://www.braincorp.com/careers" target="_blank">braincorp.com/careers</a>
+                        </p>
+                    </h5>
+                    <div class="collapse">
+                        <div class="card">
+                            <h4>
+                                Summary
+                            </h4>
+                            <h5 class="appInfo">
+                            </h5>
+                            <br>
+                            <h4>
+                                Tools
+                            </h4>
+                            <h5 class="appTools">
+                            </h5>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://dendevpro.github.io/Train-Scheduler/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Train.png" class="d-block w-100" alt="Train-Scheduler">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3rd APP -->
+            <div class="row">
+                <div class="col-12 work">
+                    <h5>
+                        WARRIOR FOUNDATION FREEDOM STATION
+                        <p>
+                            <a href="">www.warriorfoundation.com</a>
+                        </p>
+                    </h5>
+
+                    <div class="collapse">
+                        <div class="card">
+                            <h4>
+                                Summary
+                            </h4>
+                            <h5 class="appInfo">
+                            </h5>
+                            <br>
+                            <h4>
+                                Tools
+                            </h4>
+                            <h5 class="appTools">
+                            </h5>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Mockup -->
+                    <a href="https://nameless-shelf-35941.herokuapp.com/" target="_blank">
+                        <img src="assets/images/app-img/Mockup-Friend.png" class="d-block w-100" alt="Friend Finder">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ART DIRECTION -->
+        <!-- <h1>offline</h1>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card">
@@ -148,45 +411,59 @@
                     </div>
                 </div>
             </div> -->
-            <a href="#online-section">
-                <button class="btn btn-outline-dark" id="scroll-top">^</button>
+
+        <!-- TAKE TO TOP BTN -->
+        <a class="socialIcon" onclick="topFunction()" id="toTopBtn" title="Go to top">
+            <i class="fas fa-arrow-circle-up fa-3x"></i>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="container-flex text-center" id="footer">
+        <div class="container">
+            <h1>Let's Create Together</h1>
+            <a>
+                <button class="btn btn-danger rounded-pill" style="margin-bottom: 8rem">Get in Touch</button>
             </a>
+            <!-- Grid row-->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-12">
+                    <div class="flex-center">
+                        <!-- Linkedin -->
+                        <a class="socialIcon" href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
+                            <i class="fab fa-linkedin-in fa-lg fa-2x"></i>
+                        </a>
+                        <!-- Github -->
+                        <a class="socialIcon" href="https://github.com/dendevpro/" target="_blank">
+                            <i class="fab fa-github fa-lg fa-2x"></i>
+                        </a>
+                        <!-- Email -->
+                        <a class="socialIcon" href="mailto:mauro.facciolla@gmail.com" onclick="myfunc">
+                            <i class="fas fa-envelope fa-lg fa-2x"></i>
+                        </a>
+                        <!-- Copyright -->
+                        <br><br>
+                        <p style="font-size: 0.9rem">
+                            © 2019 Copyright Mauro Facciolla
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="category-light">.contact</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1">
-                    <a href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
-                        <i class="fa-fw fa-2x fab fa-linkedin" style="color: #555"></i>
-                    </a>
-                </div>
-                <div class="col-md-1">
-                    <a href="https://github.com/dendevpro/" target="_blank">
-                        <i class="fa-fw fa-2x fab fa-github-square"></i>
-                    </a>
-                </div>
-                <div class="col-md-1">
-                    <a href="mailto:dendevpro@gmail.com" onclick="myfunc">
-                        <i class="fa-fw fa-2x fas fa-envelope-square"></i>
-                    </a>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h6>© 2019 Mauro Facciolla</h6>
-                </div>
-            </div>
-            <br>
-        </div>
-    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
