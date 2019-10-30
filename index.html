@@ -49,6 +49,61 @@
                     <button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#freeQuoteForm">
                         Get a Free Estimate
                     </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="freeQuoteForm" tabindex="-1" role="dialog"
+                        aria-labelledby="freeQuoteFormTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title" id="freeQuoteFormTitle">What kind of project?</h6>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio1" value="option1">
+                                                <label class="form-check-label" for="inlineRadio1">Graphic
+                                                    Design</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio2" value="option2">
+                                                <label class="form-check-label" for="inlineRadio2">Web
+                                                    Design</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="First name">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Last name">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="FormControlTextarea1"
+                                                placeholder="Please type your message here" rows="3"></textarea>
+                                        </div>
+                                    </form>
+                                    <button type="button" class="btn btn-danger ">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item" id="resumeIcon">
                     <a href="./assets/docs/MauroFacc-Resume.pdf" target="_blank" data-toggle="tooltip"
@@ -68,82 +123,16 @@
                     <!-- JUMBOTRON -->
                     <div class="jumbotron jumbotron-fluid text-center">
                         <!-- TEXT-BLOCK -->
-                        <div class="text-center">
-                            <h4 style="color: white">HI, I'M MAURO FACCIOLLA</h4>
-                            <br>
-                            <h1>Graphic Artist <br>
-                                & Web Developer
-                            </h1>
-
-                        </div>
+                        <h4 style="color: white">HI, I'M MAURO FACCIOLLA</h4>
+                        <br>
+                        <h1>Graphic Artist, <br>
+                            Creative Thinker & <br>
+                            Web Developer
+                        </h1>
                         <!-- BTNS -->
                         <div id="heroBtns">
-                            <!-- <a href="portfolio.html"> -->
                             <button class="btn btn-danger" onclick="window.location.href='portfolio.html'">Go to
                                 Porfolio</button>
-                            <!-- </a> -->
-                            <!-- Get Quote Button - trigger modal -->
-                            <!-- <button type="button" class="btn btn-light" data-toggle="modal"
-                                data-target="#freeQuoteForm">
-                                Get a Free Estimate
-                            </button> -->
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="freeQuoteForm" tabindex="-1" role="dialog"
-                                aria-labelledby="freeQuoteFormTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h6 class="modal-title" id="freeQuoteFormTitle">What kind of project?</h6>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                        <label class="form-check-label" for="inlineRadio1">Graphic
-                                                            Design</label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                        <label class="form-check-label" for="inlineRadio2">Web
-                                                            Design</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <form>
-                                                <div class="form-row">
-                                                    <div class="col">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="First name">
-                                                    </div>
-                                                    <div class="col">
-                                                        <input type="text" class="form-control" placeholder="Last name">
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <div class="form-row">
-                                                    <div class="col">
-                                                        <input type="text" class="form-control" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <div class="form-group">
-                                                    <textarea class="form-control" id="FormControlTextarea1"
-                                                        placeholder="Please type your message here" rows="3"></textarea>
-                                                </div>
-                                            </form>
-                                            <button type="button" class="btn btn-danger ">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,12 +152,12 @@
         <div class="container-flex text-center" id="services">
             <div class="container">
                 <h4 style="color: #494949">SERVICES</h4>
-                <h2>
-                    Creative solutions for print and web based in San Diego. <br>
-                    Art Direction, UI Design and Web Development
+                <h2 id="SEO">
+                    Creative solutions for print and web, based in San Diego.
+                    UI Design, Web Development and Art Direction
                     from concept to final product.
                 </h2>
-                <br><br>
+                <!-- <br> -->
                 <div class="row">
                     <!-- Grid column -->
                     <div class="col-lg-4 col-sm-12 col-12">
@@ -248,93 +237,134 @@
         </div>
 
         <!-- PRODUCTS -->
-        <div class="container-flex" id="products">
-            <div class="container">
-                <!-- UI DESIGN & WEB DEV-->
-                <div class="row" id="midRow">
-                    <div class="col-lg-5 col-md-12">
-                        <div id="prodInfo2">
-                            <h4>UI DESIGN &<br>WEB DEVELOPMENT</h4>
-                            <h3>Web Application custom design, prototyping and development from start to finish.</h3>
-                            <a href="#topRow">
-                                <i class="fas fa-1x fa-plus"></i>
-                            </a>
-                            <!-- <a>
-                                <button class="btn btn-danger ">Get a Free Estimate</button>
-                            </a> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div>
-                            <img src="./assets/images/productDesignImg2.png" alt="UI-Design" id="prod2Image">
-                        </div>
-                    </div>
+        <div class="container-flex text-center" id="products">
+            <!-- UI DESIGN & WEB DEV-->
+            <div class="row" id="topRow">
+                <div class="col-lg-8 col-md-12">
+                    <img src="./assets/images/uiWebImg.png" alt="UI/WebDesign" id="prod1Image">
                 </div>
-                <!-- ART DIRECTION -->
-                <div class="row" id="topRow">
-                    <div class="col-lg-6 col-md-12">
-                        <div>
-                            <img src="./assets/images/artDirectionImg.png" alt="Art-Direction" id="prod1Image">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div id="prodInfo">
-                            <h4>ART DIRECTION</h4>
-                            <h3>Create visual elements for websites and web apps, ad campaigns, branding, logos,
-                                web banners, social media, packaging.</h3>
-                            <a>
-                                <button class="btn btn-danger ">Go to Porfolio</button>
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-lg-3 col-md-12" id="prod1Info">
+                    <h4>UI DESIGN &<br>WEB DEVELOPMENT</h4>
+                    <h3>Web application custom design, prototyping and development from start to finish.</h3>
                 </div>
             </div>
-            <div class="container-flex" id="prodArtImage">
-                <!-- PRODUCTION ART -->
-                <div class="container text-center">
-                    <div class="row" id="bottomRow">
-                        <div class="col-12" id="prodInfo3">
-                            <div>
-                                <h4>PRODUCTION ART</h4>
-                                <h3>Ensure all creative deliverables are loyal to brand guidelines while considering
-                                    different platforms and the required specifications.</h3>
-                                <!-- <a>
-                                <button class="btn btn-danger ">Go to Porfolio</button>
-                            </a> -->
-                            </div>
+            <!-- ART DIRECTION -->
+            <div class="row" id="midRow">
+                <div class="col-lg-4 col-md-12" id="prod2Info">
+                    <h4>ART DIRECTION</h4>
+                    <h3>Create visual concepts for websites and apps, advertising, branding, logos,
+                        web banners, social media, packaging.</h3>
+                    <a>
+                        <button class="btn btn-danger ">Go to Porfolio</button>
+                    </a>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <img src="./assets/images/artDirectImg.png" alt="Art-Direction" id="prod2Image">
+                </div>
+            </div>
+            <!-- PRODUCTION ART -->
+            <div class="row" id="bottomRow">
+                <div class="col-lg-8 col-md-12">
+                    <img src="./assets/images/productionImg.png" alt="Production" id="prod3Image">
+                </div>
+                <div class="col-lg-3 col-md-12" id="prod3Info">
+                    <h4>PRODUCTION ART</h4>
+                    <h3>Ensure all creative deliverables are loyal to brand guidelines while considering
+                        different platforms and the required specifications.</h3>
+                </div>
+            </div>
+            <!-- SKILLS -->
+            <!-- <div class="row">
+                        <div class="col-lg-1 col-md-4 col-12">
+                            HTML5
+                            <img src="./assets/images/icons8-html.svg"></i>
                         </div>
-                        <!-- <div class="col-lg-6 col-md-12">
-                        <div>
-                            <img src="./assets/images/productArt2.png" alt="Art-Direction" id="prod3Image">
+                        <div class="col-lg-1 col-md-4 col-12">
+                            CSS3
+                            <img src="./assets/images/icons8-css3.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Javascript
+                            <img src="./assets/images/icons8-js.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Node.js
+                            <img src="./assets/images/icons8-js.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Mongo
+                            <img src="./assets/images/icons8-js.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            MySQL
+                            <img src="./assets/images/icons8-js.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            VSCode
+                            <img src="./assets/images/icons8-html.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            ADOBE XD
+                            <img src="./assets/images/icons8-html.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Photoshop
+                            <img src="./assets/images/icons8-adobe-ps.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Indesign
+                            <img src="./assets/images/icons8-adobe-in.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Illustrator
+                            <img src="./assets/images/icons8-adobe-ai.svg"></i>
+
+                        </div>
+                        <div class="col-lg-1 col-md-4 col-12">
+                            Microsoft Office
+                            <img src="./assets/images/icons8-html.svg"></i>
+
                         </div>
                     </div> -->
-                    </div>
-                </div>
-            </div>
+            <!-- </div> -->
         </div>
-
+        <br>br
         <!-- FEATURED WORK -->
         <div class="container-flex text-center" id="featWork">
             <div class="row" id="">
-                <div class="col-lg-4 col-md-6 col-12" style="background-color: blue">
-                    Translingua - UI Design
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Translingua - UI Design -->
+                    <img src="./assets/images/belgium.jpg" alt="#">
                 </div>
-                <div class="col-lg-4 col-md-6 col-12" style="background-color:coral ">
-                    Ki's Kitchen - Art Direction
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Ki's Kitchen - Art Direction -->
+                    <img src="./assets/images/belgium.jpg" alt="#">
                 </div>
-                <div class="col-lg-4 col-md-6 col-12" style="background-color:darkgreen">
-                    Techaround - UI Design
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Techaround - UI Design -->
+                    <img src="./assets/images/belgium.jpg" alt="#">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12" style="background-color:darkgrey">
-                    Belgium Delight - Logo Design
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Belgium Delight - Logo Design -->
+                    <img src="./assets/images/belgium.jpg" alt="#">
                 </div>
-                <div class="col-lg-4 col-md-6 col-12" style="background-color:darkorchid">
-                    Angus - Branding
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Bootcamper -->
+                    <img src="./assets/images/belgium.jpg" alt="#">
                 </div>
-                <div class="col-lg-4 col-md-6 col-12" style="background-color:deepskyblue">
-                    Bootcamper - Front-End Development
+                <div class="col-lg-4 col-md-6 col-12">
+                    <img src="./assets/images/angus.jpg" alt="#">
                 </div>
             </div>
         </div>
@@ -343,9 +373,11 @@
     <div class="container-flex text-center" id="footer">
         <div class="container">
             <h1>Got a design Project?</h1>
-            <a>
-                <button class="btn btn-danger " style="margin-bottom: 8rem">Get in Touch</button>
-            </a>
+            <!-- Get Quote Button - trigger modal -->
+            <button type="button" class="btn btn-danger" style="margin-bottom: 8rem" data-toggle="modal"
+                data-target="#freeQuoteForm">
+                Get in Touch
+            </button>
             <!-- Grid row-->
             <div class="row">
                 <!-- Grid column -->
