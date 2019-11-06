@@ -115,7 +115,8 @@ li {
     color: white;
     /* color: #494949; */
     font-size: 1.2rem;
-    /* padding: .5rem; */
+    padding: .5rem;
+    opacity: 0.6;
 }
 
 a{
@@ -256,13 +257,16 @@ a:hover{
 /* PORTFOLIO PAGE */
 
 #portfolioBG {
-    background-image: linear-gradient(to right, #000000 0%, #090909 50%,#000000 100%);
-    /* background-color: #000000; */
+    /* background-image: linear-gradient(to right, #000000 0%, #090909 50%,#000000 100%); */
+    background-color: #000000;
 }
 
 #portfolioNav {
     background-color: #000000;
     opacity: .8;
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
 }
 
 /* #content {
@@ -292,4 +296,56 @@ a:hover{
     position: fixed;
     bottom: 1px;
     right: 40px;
+}
+
+/* MEDIA QUERIES */
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .img-responsive {
+        background: url("../images/app-img/hero3Mob.jpg");
+        background-size: cover;
+        /* background-attachment: fixed; */
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .jumbotron {
+        margin: 8vh auto 2vh auto;
+        background: none;
+        padding: 0 !important;
+    }
+
+    #scroll2see {
+        position: relative;
+        top: -8vh;
+        color: white;
+    }
+
+    /* SERVICES */
+    #services {
+        padding: 8rem 0 4rem 0;
+    }
+
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    
+}
+
+/* // Ex tra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
 }

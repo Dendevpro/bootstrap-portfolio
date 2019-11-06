@@ -12,8 +12,8 @@ setTimeout(function () {
 
 // Function to fade in/out 'Navbar'
 $(window).scroll(function () {
-    $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 800);
-    $('#homeNav').show();
+    $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 800).show();
+    // $('#homeNav').show();
 });
 
 // PORTFOLIO PAGE
@@ -22,6 +22,7 @@ $(window).scroll(function () {
 var mybutton = document.getElementById("toTopBtn");
 // // When the user scrolls down 1080px from the top of the document, show "scroll-to-top" button
 window.onscroll = function () { scrollFunction() };
+
 function scrollFunction() {
     if (document.body.scrollTop > 1080 || document.documentElement.scrollTop > 1080) {
         mybutton.style.display = "block";
@@ -34,4 +35,20 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+// MEDIA QUERIES
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        // $('.btn-danger').addClass('btn-lg btn-block');
+        $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 200).show();
+    }
+    // else {
+    //     $('.btn-danger').keep();
+    // }
+}
+
+var x = window.matchMedia("(max-width: 575.98px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#58595B;}
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
 </style>
 <g id="surface1">
-	<path class="st0" d="M390,400l-140,40l-140-40L80,60h340C410,173.32,400,286.68,390,400z M398.16,80H101.84l26.88,304.53
-		L250,419.22l121.29-34.69L398.16,80z M168.01,280h40l0.98,25L250,318.98L291.02,305l2.97-45h-87.97l-2.03-40h92.03l2.97-40H161.02
-		l-3.01-40h183.01l-5,80l-7.03,115L250,361.02L171.02,335L168.01,280z"/>
+	<path class="st0" d="M390,400l-140,40l-140-40L80,60h340C410,173.3,400,286.7,390,400z M398.2,80H101.8l26.9,304.5L250,419.2
+		l121.3-34.7L398.2,80z M168,280h40l1,25l41,14l41-14l3-45h-88l-2-40h92l3-40H161l-3-40h183l-5,80l-7,115l-79,26l-79-26L168,280z"/>
 </g>
 </svg>
