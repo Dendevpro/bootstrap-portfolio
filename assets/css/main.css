@@ -317,9 +317,14 @@ a:hover{
         padding: 0 !important;
     }
 
+    .btn-danger {
+        background: none;
+        font-weight: 500;
+    }
+
     #scroll2see {
         position: relative;
-        top: -8vh;
+        top: -7vh;
         color: white;
     }
 
@@ -328,6 +333,22 @@ a:hover{
         padding: 8rem 0 4rem 0;
     }
 
+    #prod1Info {
+        position: relative;
+        top: -16rem;
+        left: 0;
+    }
+
+    #prod1Image {
+        position: relative;
+        top: 20rem;
+        left: 0;
+    }
+    
+    #prod2Image,
+    #prod3Image {
+        width: 100%;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */

@@ -40,8 +40,9 @@ function topFunction() {
 
 function myFunction(x) {
     if (x.matches) { // If media query matches
-        // $('.btn-danger').addClass('btn-lg btn-block');
-        $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 200).show();
+        $('.btn-danger').addClass('btn-lg btn-outline-danger btn-block');
+        $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 20).show();
+        $('#services').hide();
     }
     // else {
     //     $('.btn-danger').keep();
