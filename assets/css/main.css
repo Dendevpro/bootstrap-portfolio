@@ -175,7 +175,7 @@ a:hover{
 /* SERVICES */
 #services {
     /* background-color: white; */
-    padding: 14rem 0 4rem 0;
+    padding: 10rem 0 4rem 0;
 }
 
 #SEO {
@@ -197,13 +197,16 @@ a:hover{
 
 /* PRODUCTS */
 
-#topRow,
-#bottomRow {
+#topRow {
     padding: 12rem 0!important;
 }
 
 #midRow{
     padding: 3rem 0!important;
+}
+
+#bottomRow {
+    padding: 6rem 0 18rem 0!important;
 }
 
 #prod1Info,
@@ -311,15 +314,20 @@ a:hover{
         height: 100vh;
     }
 
+    h3 {
+        font-size: 2rem !important;
+
+    }
+
+    .navbar-brand {
+        color: #494949;
+        margin-left: 1rem;
+    }
+
     .jumbotron {
         margin: 8vh auto 2vh auto;
         background: none;
         padding: 0 !important;
-    }
-
-    .btn-danger {
-        background: none;
-        font-weight: 500;
     }
 
     #scroll2see {
@@ -333,21 +341,56 @@ a:hover{
         padding: 8rem 0 4rem 0;
     }
 
-    #prod1Info {
-        position: relative;
-        top: -16rem;
-        left: 0;
+    /* PRODUCTS */
+    #topRow {
+        padding: 12rem 0!important;
+    }
+    
+    #midRow{
+        padding: 3rem 0!important;
+    }
+    
+    #bottomRow {
+        padding: 6rem 0!important;
+        height: 600px;
     }
 
     #prod1Image {
         position: relative;
-        top: 20rem;
+        top: -6rem;
+        right: 0.8rem;
+    }
+
+    #prod1Info {
+        position: relative;
+        top: -4rem;
         left: 0;
     }
-    
-    #prod2Image,
+
+    #prod2Image {
+        position: relative;
+        top: -50rem;
+        right: 0.8rem;
+    }
+
+    #prod2Info {
+        position: relative;
+        top: -2rem;
+        left: 0;
+        padding: 2rem;
+    }
+
     #prod3Image {
-        width: 100%;
+        position: relative;
+        top: -20rem;
+        right: 0.8rem;
+    }
+
+    #prod3Info {
+        position: relative;
+        top: -20rem;
+        left: 0;
+        padding: 2rem;
     }
 }
 

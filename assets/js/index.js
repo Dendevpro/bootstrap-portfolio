@@ -12,7 +12,7 @@ setTimeout(function () {
 
 // Function to fade in/out 'Navbar'
 $(window).scroll(function () {
-    $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 800).show();
+    $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 600).show();
     // $('#homeNav').show();
 });
 
@@ -25,9 +25,9 @@ window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1080 || document.documentElement.scrollTop > 1080) {
-        mybutton.style.display = "block";
+        $(mybutton).show();
     } else {
-        mybutton.style.display = "none";
+        $(mybutton).hide();
     }
 }
 // When the user clicks on the button, scroll to the top of the document
@@ -40,16 +40,17 @@ function topFunction() {
 
 function myFunction(x) {
     if (x.matches) { // If media query matches
-        $('.btn-danger').addClass('btn-lg btn-outline-danger btn-block');
-        $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 20).show();
+        // $('.btn-danger').addClass('btn-lg btn-outline-danger btn-block');
+        // $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 20).show();
         $('#services').hide();
+        // $('#toTopBtn').hide();
     }
     // else {
     //     $('.btn-danger').keep();
     // }
 }
 
-var x = window.matchMedia("(max-width: 575.98px)")
+var x = window.matchMedia("(max-width: 575.98px)", "(max-height: 667px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
