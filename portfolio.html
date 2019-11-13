@@ -425,16 +425,106 @@
     <!-- </div> -->
 
     <!-- FOOTER -->
-    <div class="container-flex text-center" id="footer">
+    <div class="container-flex" id="footer">
         <div class="container">
-            <h1>Let's create together</h1>
-            <a>
-                <button class="btn btn-danger" style="margin-bottom: 8rem">Get in Touch</button>
-            </a>
-            <!-- Grid row-->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Got a design project? <a href="#contact-form" id="getInTouch">Get in Touch</a></h1>
+                    <!-- Get Quote Button - trigger modal -->
+                    <!-- <button type="button" class="btn btn-danger" style="margin-bottom: 8rem" data-toggle="modal"
+                            data-target="#freeQuoteForm">
+                            Get in Touch
+                        </button> -->
+                </div>
+            </div>
+            <br><br>
+
+            <!-- Contact Form Row  -->
+            <div class="row">
+                <div class="col-12">
+                    <!-- CARD  -->
+                    <div class="card" id="contact-form">
+                        <a href="#getInTouch">
+                            <img src="./assets/images/closeIcon.svg" alt="" id="closeFormIcon" style="height: 3vh">
+                        </a>
+                        <!-- FORM  -->
+                        <form method="post" action="contact.php" role="form">
+                            <!-- <div class="messages"></div> -->
+                            <div class="controls">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">First Name*</label>
+                                            <input id="form_name" type="text" name="name" class="form-control"
+                                                placeholder="" required="required" data-error="First Name is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Last Name*</label>
+                                            <input id="form_lastname" type="text" name="surname" class="form-control"
+                                                placeholder="" required="required" data-error="Last Name is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_email">Email*</label>
+                                            <input id="form_email" type="email" name="email" class="form-control"
+                                                placeholder="" required="required"
+                                                data-error="Valid email is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_need">Please specify your need*</label>
+                                            <select id="form_need" name="need" class="form-control" required="required"
+                                                data-error="Please specify your need.">
+                                                <option value=""></option>
+                                                <option value="Web Development">UI/Web Development</option>
+                                                <option value="Graphic Design">Graphic Art</option>
+                                                <!-- <option value="Other">Other</option> -->
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="form_message">Message*</label>
+                                            <textarea id="form_message" name="message" class="form-control"
+                                                placeholder="Please enter your message." rows="4" required="required"
+                                                data-error="Please, leave us a message."></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <p class="text-muted">
+                                            <strong>*</strong>Required Fields
+                                        </p>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <input type="submit" class="btn btn-danger" id="submit" value="Submit Message">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <!-- Social Media Row-->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-12">
+                <div class="col-12 text-center">
                     <div class="flex-center">
                         <!-- Linkedin -->
                         <a class="socialIcon" href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
@@ -448,10 +538,11 @@
                         <a class="socialIcon" href="mailto:mauro.facciolla@gmail.com" onclick="myfunc">
                             <i class="fas fa-envelope fa-lg fa-2x"></i>
                         </a>
+
                         <!-- Copyright -->
                         <br><br>
                         <p style="font-size: 0.9rem">
-                            © 2019 Copyright Mauro Facciolla
+                            © 2019 Copyright Mauro facciolla
                         </p>
                     </div>
                 </div>
