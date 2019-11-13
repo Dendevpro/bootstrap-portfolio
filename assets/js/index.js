@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('#homeNav').hide(); // Hide Nav when landing on page
     $('#scroll2see').hide(); // Hide element to fade it in later on...
     $('#toTopBtn').hide();
+    $('#contact-form').hide();
 });
 
 // ... timer to fade in 'scroll down call'
@@ -53,4 +54,14 @@ function myFunction(x) {
 var x = window.matchMedia("(max-width: 575.98px)", "(max-height: 667px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
+
+$("#getInTouch").on('click', function () {
+    // event.preventDefault();
+    $('#contact-form').show();
+});
+
+$("#closeFormIcon").on('click', function () {
+    event.preventDefault();
+    $('#contact-form').hide();
+});
 

@@ -246,6 +246,33 @@ a:hover{
     padding: 6rem 0 1rem 0 ;
 }
 
+/* FORM */
+
+#getInTouch {
+    color: #e23e4e;
+}
+
+#getInTouch:hover {
+    color: #b92836;
+}
+
+#closeFormIcon {
+    float: right;
+}
+
+#closeFormIcon:hover {
+    filter: drop-shadow(0 1px 1px rgba(0,0,0, 0.5));
+}
+
+label {
+    color: #e23e4e;
+}
+
+.text-muted {
+    font-size: .8rem;
+    padding: .4rem;
+}
+
 .socialIcon {
     color: white;
     opacity: .6;
@@ -292,6 +319,7 @@ a:hover{
 .card {
     background: none;
     padding: 2rem;
+    border: none;
 }
 
 #toTopBtn {
