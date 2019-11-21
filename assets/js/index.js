@@ -17,8 +17,19 @@ $(window).scroll(function () {
     // $('#homeNav').show();
 });
 
-// PORTFOLIO PAGE
+// FORM 
+$("#getInTouch").on('click', function () {
+    // event.preventDefault();
+    $('#contact-form').show();
+});
 
+$("#closeFormIcon", "#submit").on('click', function () {
+    event.preventDefault();
+    $('#contact-form').hide();
+});
+
+
+// PORTFOLIO PAGE
 //Get the button:
 var mybutton = document.getElementById("toTopBtn");
 // // When the user scrolls down 1080px from the top of the document, show "scroll-to-top" button
@@ -38,7 +49,6 @@ function topFunction() {
 }
 
 // MEDIA QUERIES
-
 function myFunction(x) {
     if (x.matches) { // If media query matches
         // $('.btn-danger').addClass('btn-lg btn-outline-danger btn-block');
@@ -54,14 +64,4 @@ function myFunction(x) {
 var x = window.matchMedia("(max-width: 575.98px)", "(max-height: 667px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
-
-$("#getInTouch").on('click', function () {
-    // event.preventDefault();
-    $('#contact-form').show();
-});
-
-$("#closeFormIcon").on('click', function () {
-    event.preventDefault();
-    $('#contact-form').hide();
-});
 
