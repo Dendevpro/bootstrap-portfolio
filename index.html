@@ -362,7 +362,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1>Got a design project? <a href="#contact-form" id="getInTouch"><u>Get in Touch</u></a></h1>
+                    <h1>Need design help? <a href="#contact-form" id="getInTouch"><u>Get in Touch</u></a></h1>
                     <!-- Get Quote Button - trigger modal -->
                     <!-- <button type="button" class="btn btn-danger" style="margin-bottom: 8rem" data-toggle="modal"
                         data-target="#freeQuoteForm">
@@ -386,23 +386,22 @@
                             <div class="controls">
                                 <div class="row">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>First Name*</label>
+                                            <label>Full Name*</label>
                                             <input id="name" type="text" name="name" class="form-control"
                                                 required="required">
-
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Last Name*</label>
                                             <input id="lastname" type="text" name="lastname" class="form-control"
                                                 required="required">
 
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -414,9 +413,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Phone*</label>
-                                            <input id="phone" type="text" name="phone" class="form-control"
-                                                required="required">
+                                            <label>Phone</label>
+                                            <input id="phone" type="text" name="phone" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -489,8 +487,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
         integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-    <!-- <script src="./assets/js/index.js"></script> -->
+    <script src="./assets/js/index.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
     <script src="./assets/js/contact-form.js"></script>
 
 </body>

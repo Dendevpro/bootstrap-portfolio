@@ -19,12 +19,14 @@ $(window).scroll(function () {
 
 // FORM 
 $("#getInTouch").on('click', function () {
-    // event.preventDefault();
     $('#contact-form').show();
 });
 
-$("#closeFormIcon", "#submit").on('click', function () {
-    event.preventDefault();
+$("#closeFormIcon").on('click', function () {
+    $('#contact-form').hide();
+});
+
+$("#submit").on('click', function () {
     $('#contact-form').hide();
 });
 
@@ -64,4 +66,3 @@ function myFunction(x) {
 var x = window.matchMedia("(max-width: 575.98px)", "(max-height: 667px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
-

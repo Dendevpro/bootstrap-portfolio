@@ -265,10 +265,11 @@ a:hover{
 }
 
 label {
-    color: #e23e4e;
+    color: #494949;
 }
 
 .text-muted {
+    color: #494949;
     font-size: .8rem;
     padding: .4rem;
 }

@@ -1,17 +1,17 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBOUugCqkNnpQi-M_567i7uNNftERn7rKQ",
-    authDomain: "contact-form-2a5f4.firebaseapp.com",
-    databaseURL: "https://contact-form-2a5f4.firebaseio.com",
-    projectId: "contact-form-2a5f4",
-    storageBucket: "contact-form-2a5f4.appspot.com",
-    messagingSenderId: "419350100146",
-    appId: "1:419350100146:web:3d9a3bc2b98d4dcddcf1ab",
-    measurementId: "G-NXLYDDWT3W"
+    apiKey: "AIzaSyBtEDv6QP1JKPEFp-YDxfP7-E6Qj8a88dc",
+    authDomain: "contact-form-e58fd.firebaseapp.com",
+    databaseURL: "https://contact-form-e58fd.firebaseio.com",
+    projectId: "contact-form-e58fd",
+    storageBucket: "contact-form-e58fd.appspot.com",
+    messagingSenderId: "323329266222",
+    appId: "1:323329266222:web:309fc8517686909d8845bf",
+    measurementId: "G-X7GRHQP9JR"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
+firebase.analytics();
 
 // Reference Messages Collection
 var messagesRef = firebase.database().ref('messages');
@@ -25,14 +25,13 @@ function submitForm(e) {
 
     // GET Values
     var name = getInputVal('name');
-    var lastname = getInputVal('lastname');
     var email = getInputVal('email');
     var phone = getInputVal('phone');
     var message = getInputVal('message');
 
+    console.log(name);
     // Save message  
-    saveMessage(name, lastname, email, phone, message);
-
+    saveMessage(name, email, phone, message);
 }
 
 // Function to get form values
@@ -41,11 +40,10 @@ function getInputVal(id) {
 }
 
 // Function to save message to Firebase DB
-function saveMessage(name, lastname, email, phone, message) {
+function saveMessage(name, email, phone, message) {
     var newMessageRef = messagesRef.push();
     newMessageRef.set({
         name: name,
-        lastname: lastname,
         email: email,
         phone: phone,
         message: message
