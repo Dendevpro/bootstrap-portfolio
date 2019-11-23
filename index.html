@@ -381,60 +381,52 @@
                             <img src="./assets/images/closeIcon.svg" alt="" id="closeFormIcon" style="height: 3vh">
                         </a>
                         <!-- FORM  -->
-                        <form method="post" action="contact.php" role="form">
+                        <form id="contactForm">
                             <!-- <div class="messages"></div> -->
                             <div class="controls">
                                 <div class="row">
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_name">First Name*</label>
-                                            <input id="form_name" type="text" name="name" class="form-control"
-                                                placeholder="" required="required" data-error="First Name is required.">
-                                            <div class="help-block with-errors"></div>
+                                            <label>First Name*</label>
+                                            <input id="name" type="text" name="name" class="form-control"
+                                                required="required">
+
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_lastname">Last Name*</label>
-                                            <input id="form_lastname" type="text" name="surname" class="form-control"
-                                                placeholder="" required="required" data-error="Last Name is required.">
-                                            <div class="help-block with-errors"></div>
+                                            <label>Last Name*</label>
+                                            <input id="lastname" type="text" name="lastname" class="form-control"
+                                                required="required">
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_email">Email*</label>
-                                            <input id="form_email" type="email" name="email" class="form-control"
-                                                placeholder="" required="required"
-                                                data-error="Valid email is required.">
-                                            <div class="help-block with-errors"></div>
+                                            <label>Email*</label>
+                                            <input id="email" type="email" name="email" class="form-control"
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_need">Please specify your need*</label>
-                                            <select id="form_need" name="need" class="form-control" required="required"
-                                                data-error="Please specify your need.">
-                                                <option value=""></option>
-                                                <option value="Web Development">UI/Web Development</option>
-                                                <option value="Graphic Design">Graphic Art</option>
-                                                <!-- <option value="Other">Other</option> -->
-                                            </select>
-                                            <div class="help-block with-errors"></div>
+                                            <label>Phone*</label>
+                                            <input id="phone" type="text" name="phone" class="form-control"
+                                                required="required">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="form_message">Message*</label>
-                                            <textarea id="form_message" name="message" class="form-control"
-                                                placeholder="Please enter your message." rows="4" required="required"
-                                                data-error="Please, leave us a message."></textarea>
-                                            <div class="help-block with-errors"></div>
+                                            <label>Message*</label>
+                                            <textarea id="message" name="message" class="form-control"
+                                                placeholder="Please enter your message." rows="4" required="required">
+                                            </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -475,7 +467,7 @@
                         <!-- Copyright -->
                         <br><br>
                         <p style="font-size: 0.9rem">
-                            © 2019 Copyright Mauro facciolla
+                            © 2019 Copyright Mauro Facciolla
                         </p>
                     </div>
                 </div>
@@ -497,7 +489,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
         integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 
-    <script src="./assets/js/index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <!-- <script src="./assets/js/index.js"></script> -->
+    <script src="./assets/js/contact-form.js"></script>
+
 </body>
 
 </html>
