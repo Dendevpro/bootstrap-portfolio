@@ -370,7 +370,16 @@
                     </button> -->
                 </div>
             </div>
-            <br><br>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="alert">
+                        <h3>
+                            Thanks for reaching out! I'll get back to you shortly.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Contact Form Row  -->
             <div class="row">
@@ -389,8 +398,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Full Name*</label>
-                                            <input id="name" type="text" name="name" class="form-control"
-                                                required="required">
+                                            <input id="name" type="text" name="name" class="form-control" required>
                                         </div>
                                     </div>
 
@@ -407,8 +415,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Email*</label>
-                                            <input id="email" type="email" name="email" class="form-control"
-                                                required="required">
+                                            <input id="email" type="email" name="email" class="form-control" required=>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -423,7 +430,7 @@
                                         <div class="form-group">
                                             <label>Message*</label>
                                             <textarea id="message" name="message" class="form-control"
-                                                placeholder="Please enter your message." rows="4" required="required">
+                                                placeholder="Please enter your message." rows="4" required>
                                             </textarea>
                                         </div>
                                     </div>
@@ -435,7 +442,8 @@
                                         </p>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <input type="submit" class="btn btn-danger" id="submit" value="Submit Message">
+                                        <input type="submit" class="btn btn-danger" id="submit" value="Submit Message"
+                                            data-target="#alert">
                                     </div>
                                 </div>
                             </div>
@@ -458,10 +466,9 @@
                             <i class="fab fa-github fa-lg fa-2x"></i>
                         </a>
                         <!-- Email -->
-                        <a class="socialIcon" href="mailto:mauro.facciolla@gmail.com" onclick="myfunc">
+                        <a class="socialIcon" href="mailto:mauro.facciolla@gmail.com">
                             <i class="fas fa-envelope fa-lg fa-2x"></i>
                         </a>
-
                         <!-- Copyright -->
                         <br><br>
                         <p style="font-size: 0.9rem">

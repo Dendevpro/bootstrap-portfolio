@@ -29,9 +29,20 @@ function submitForm(e) {
     var phone = getInputVal('phone');
     var message = getInputVal('message');
 
-    console.log(name);
     // Save message  
     saveMessage(name, email, phone, message);
+
+    // Show Alert 
+    document.querySelector('.alert').style.display = 'block';
+
+    // Hide alert after 3 secs
+    setTimeout(function () {
+        document.querySelector('.alert').style.display = 'none';
+    }, 5000);
+
+    // Clear Form 
+    document.getElementById('contactForm').reset();
+    $('#contact-form').hide();
 }
 
 // Function to get form values

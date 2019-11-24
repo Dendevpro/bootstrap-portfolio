@@ -1,3 +1,8 @@
+// TODOs
+// Set timeout for alert modal
+// Clean up form functions
+// Make form submit button disable if any required input empty
+
 // HOMEPAGE
 $(document).ready(function () {
     $('#homeNav').hide(); // Hide Nav when landing on page
@@ -25,11 +30,6 @@ $("#getInTouch").on('click', function () {
 $("#closeFormIcon").on('click', function () {
     $('#contact-form').hide();
 });
-
-$("#submit").on('click', function () {
-    $('#contact-form').hide();
-});
-
 
 // PORTFOLIO PAGE
 //Get the button:
