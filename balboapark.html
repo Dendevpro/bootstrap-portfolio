@@ -16,21 +16,20 @@
     <script src="https://kit.fontawesome.com/5ef6349c09.js"></script>
     <!-- Added custom css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Mauro Facciolla Designer</title>
+    <title>MF - Food Truck Fridays</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151934494-1">
     </script>
-    <script>
+    <!-- <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-151934494-1');  
-    </script>
+    </script> -->
 </head>
 
 <body>
-
     <nav class="navbar">
         <div class="navbar-brand">
             <ul class="navbar-nav mr-auto">
@@ -41,114 +40,38 @@
                         <img id="hamburger" src="/assets/images/hamburger.svg" alt="menu">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#branding">
-                            <h6>
-                                WORK
-                            </h6>
-                        </a>
-                        <a class="dropdown-item" href="#contact">
-                            <h6>
-                                CONTACT
-                            </h6>
-                        </a>
+                        <a class="dropdown-item" href="index.html">HOME</a>
+                        <a class="dropdown-item" href="index.html#contact">CONTACT</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <div class="landing">
-        <div id="hero">
-            <div class="jumbotron">
-                <!-- HERO H1 -->
-                <h4>Hello, I'm Mauro Facciolla</h4>
-                <br>
-                <h1>Graphic Designer<br>
-                    Production Artist<br>
-                    & Web Developer
-                </h1>
-                <br>
-                <!-- ON/OFF Switch changes hero background -->
-                <div id="CTA">
-                    <div>
-                        <h5 id="switchMeOn">TURN ME ON!</h5>
-                    </div>
-                    <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-                            checked>
-                        <label class="onoffswitch-label" for="myonoffswitch">
-                            <span class="onoffswitch-inner"></span>
-                            <span class="onoffswitch-switch"></span>
-                        </label>
-                    </div>
-                </div>
-                <!-- <div>
-                    <p id="switchMeOn">Switch me on!</p>
-                </div> -->
-            </div>
+    <div class="project-hero" id="ftf-hero"></div>
+    <div class="row container project-details">
+        <div class="col-2">
+            <h6>CLIENT</h6>
+            <p>Balboa Park Conservancy</p>
+            <h6>PROJECT</h6>
+            <p>Production Art</p>
+        </div>
+        <div class="col-10">
+            <h6>DETAILS</h6>
+            <p>Food Truck Fridays is a program of the Balboa Park Conservancy in partnership with the City of San
+                Diego Parks and Recreation Department and is a key placemaking initiative for the Conservancy and
+                city. The mission was to adapt the artwork to new formats and
+                finish all created files, making sure every asset followed brand
+                guidelines and supplier specifications.</p>
         </div>
     </div>
-
-    <!-- Main Content -->
+    <img src="./assets/images/ftfridays/foodTruck1.jpg" alt="Closer-Look" class="assets">
+    <img src="./assets/images/ftfridays/foodTruck2.jpg" alt="Digital" class="assets">
+    <img src="./assets/images/ftfridays/foodTruck3.jpg" alt="Poster" class="assets">
+    <img src="./assets/images/ftfridays/foodTruck4.jpg" alt="Bus-Stop" class="assets">
+    <img src="./assets/images/ftfridays/foodTruck5.jpg" alt="Flyer" class="assets">
     <div id="wrapper">
         <div class="mainContent">
-
-            <!-- Ki's Kitchen Coffee  -->
-            <section id="branding">
-                <div class="container projectInfo">
-                    <div>
-                        <h5>BRANDING</h5>
-                        <h2>KI'S KITCHEN <br> COLD BREW COFFEE</h2>
-                        <a class="btn btn-warning btn-lg" href="/kiskitchen.html" role="button" aria-pressed="true">
-                            View Project
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#production">
-                            <i class="fas fa-arrow-circle-right fa-4x"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Food Truck Fridays -->
-            <section id="production">
-                <div class="container projectInfo">
-                    <div>
-                        <h5>PRODUCTION ART</h5>
-                        <h2>BALBOA PARK <br> CONSERVANCY</h2>
-                        <a class="btn btn-warning btn-lg" href="/balboapark.html" role="button" aria-pressed="true">
-                            View Project
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#logo">
-                            <i class="fas fa-arrow-circle-right fa-4x"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Angus -->
-            <section id="logo">
-                <div class="container projectInfo">
-                    <div>
-                        <h5>LOGO DESIGN & BRANDING</h5>
-                        <h2>ANGUS <br> CARNES NOBRES</h2>
-                        <a class="btn btn-warning btn-lg" href="/portfolio.html" role="button" aria-pressed="true">
-                            View Project
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#contacting">
-                            <i class="fas fa-arrow-circle-right fa-4x"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- INFO  -->
             <section id="contacting">
                 <div class="container projectInfo">
                     <!-- TABS -->
@@ -205,7 +128,7 @@
                                                     <label>Message*</label>
                                                     <textarea id="message" name="message" class="form-control"
                                                         placeholder="Please enter your message." rows="4" required>
-                                                            </textarea>
+                                                    </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -262,9 +185,9 @@
                         </a>
                         <br><br>
                         <!-- <a class="socialIcon"
-                            href="https://www.google.com/maps/place/San+Diego,+CA/@32.7293432,-117.1859162,13z/data=!4m13!1m7!3m6!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!2sSan+Diego,+CA!3b1!8m2!3d32.715738!4d-117.1610838!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">
-                            San Diego, CA
-                        </a> -->
+                    href="https://www.google.com/maps/place/San+Diego,+CA/@32.7293432,-117.1859162,13z/data=!4m13!1m7!3m6!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!2sSan+Diego,+CA!3b1!8m2!3d32.715738!4d-117.1610838!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">
+                    San Diego, CA
+                </a> -->
                         <a class="socialIcon">
                             San Diego, CA
                         </a>
@@ -273,19 +196,10 @@
                     </div>
                 </div>
             </section>
-
-            <!-- <section id="about">
-                <div class="container projectInfo">
-                    <h3>ABOUT</h3>
-                    <div class="row">
-                        <div class="col-12">
-
-                        </div>
-                    </div>
-                </div>
-            </section> -->
         </div>
     </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -302,16 +216,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
         integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
-
     <!-- Custom JS  -->
-    <script src="./assets/js/contact-form.js"></script>
-
     <script src="./assets/js/index.js"></script>
-
 </body>
-
-</html>

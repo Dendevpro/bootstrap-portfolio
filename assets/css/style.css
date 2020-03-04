@@ -1,0 +1,420 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background: none !important;
+    position: fixed;
+    z-index: 9999;
+    /* width: 80px; */
+    /* height: 100vh; */
+    /* background: rgba(255, 255, 255, 0.2); */
+    /* left: 0; */
+    /* border-right: 1px solid #f0f0f0; */
+}   
+
+#hamburger {
+    width: 30px;
+    opacity: 0.5;
+}
+
+#hamburger:hover {
+    width: 32px;
+    opacity: .7;
+}
+
+.dropdown-menu, .dropdown-item {
+    background: none !important;
+    border: none;
+    padding: .2rem 0 !important;
+}
+
+.dropdown-toggle::after {
+    border: none;
+}
+
+.row {
+    padding: 0;
+    margin:0;
+}
+
+h1 {
+    font-size: 4.5rem !important;
+    font-weight: 500;
+    color: #000;
+    /* display: none; */
+}
+
+h2 {
+    font-size: 3rem !important;
+    font-weight: 500;
+    /* text-shadow: 1px 1px 5px rgb(0, 0, 0, 0.25); */
+    color: white;
+}
+
+h3 {
+    color: #606060;
+}
+
+h4 {
+    color: #000;
+}
+
+h5 {
+    font-weight: 300;
+    color: white;
+    /* text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.25); */
+}
+
+h6 {
+    font-weight: 600;
+    color: #606060;
+    margin: 0;
+}
+
+p {
+    font-weight: 500;
+
+}
+
+a, i {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.landing {
+    background-color: black;
+    height: 100vh;
+}
+
+#hero {
+    background-image: url("../images/bulbs.svg");
+    /* background-color: #101010; */
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-right: 10vw;
+    /* width: 90%; */
+    height: 80vh;
+}
+
+.jumbotron {
+    padding-top: 25vh;
+    padding-left: 17vw;
+    background: none;
+}
+
+/* CTA  */
+.col-1 {
+    margin: 1rem;
+}
+
+/* SWITCH BUTTON */
+.onoffswitch {
+    position: relative; 
+    /* top: 1vh; */
+    width: 120px;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 2px solid #101010; 
+    border-radius: 5px;
+}
+.onoffswitch-inner {
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
+    transition: margin 0.1s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; 
+    float: left; 
+    width: 50%; 
+    height: 30px; 
+    padding: 0; 
+    line-height: 30px;
+    font-size: 14px; 
+    color: white; 
+    font-weight: 500;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "OFF";
+    padding-left: 10px;
+    background-color: #ffff00;
+    color: #101010;
+}
+.onoffswitch-inner:after {
+    content: "ON";
+    padding-right: 10px;
+    background-color: #101010;
+    color: #ffff00;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 18px;
+    margin: 6px;
+    background: #FFFFFF;
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
+    right: 90px;
+    border: 2px solid #101010; 
+    border-radius: 3px;
+    /* box-shadow: 1px 1px 5px rgb(255, 255, 0); */
+    transition: all 0.1s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+#switchMeOn {
+    color: yellow;
+    opacity: .5;
+}
+
+/* scrollDown */
+#scrollDown {
+    position: relative; 
+    /* top: 16vh; */
+    width: 85px;
+    /* position: relative; 
+    top: 25vh; */
+    /* margin: 0 auto; */
+}
+
+/* PROJECTS */
+.mainContent {
+	scroll-snap-type: x mandatory;	
+	display: flex;
+	-webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    /* background-image: linear-gradient(to right, #000000 0%, #090909 50%,#000000 100%); */
+}
+
+section {
+    /* border-right: 50px solid rgb(255, 255, 0, 0.2); */
+	min-width: 100vw;
+	height: 100vh;
+    scroll-snap-align: start;
+}
+
+.projectInfo {
+    margin-top: 10vh;
+}
+
+.text-muted {
+    font-size: 14px;
+}
+
+.btn-warning {
+    background-color: #ffff00!important;
+    border: none;
+    position: relative;
+    top: 6vh;
+    /* border-radius: 50px; */
+    font-weight: 500;
+}
+.btn-warning:hover {
+    background-color: #101010!important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    border: #ffff00;
+    color: #ffff00;
+}
+
+.fa-arrow-circle-right {
+    position: relative;
+    top: 56vh;
+    /* left: 80rem; */
+    color: white;
+    opacity: 0.3;
+}
+.fa-arrow-circle-right:hover {
+    /* color: #101010; */
+    opacity: 0.6;
+}
+
+#branding {
+    background: linear-gradient(to right, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%), url("../images/coverCoffee3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* .product {
+    width: 100vw;
+} */
+
+#logo {
+    background: url("../images/coverAngus.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#production {
+    background: linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), url("../images/coverFoodTruck.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#contacting {
+    background: url("../images/plug.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #f0f0f0;
+    height: 100vh;
+    margin-right: 0;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #ffff00!important;
+    color: #101010;
+    border: none;
+    font-weight: 500;
+    width: 20%;
+}
+.btn-secondary:hover {
+    background-color: #101010!important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    border: #ffff00;
+    color: #ffff00;
+}
+
+.card {
+    padding: 30px;
+    background-color: rgb(255, 255, 255, 0.5);
+    margin-top: 2rem;
+    min-width: 220px;
+}
+
+.socialIcon {
+    color: #101010;
+    margin: 1rem .5rem;
+    opacity: .5;
+}
+
+.socialIcon:hover {
+    color: #101010;
+    margin: 1rem .5rem;
+    opacity: 1;
+    text-decoration: none!important;
+}
+
+.footer {
+    position: relative;
+    top: 10vh;
+}
+
+/* PROJECTS */
+
+.section-title {
+    position: relative;
+    top: 7vh;
+}
+
+.assets {
+    width: 100%;
+    margin-right: 0;
+}
+
+.project-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+}
+
+/* KIS KITCHEN */
+#kis-hero {
+    background-image: url("../images/kis/coffeeHero2.jpg");
+}
+
+.project-details {
+    /* height: 30vh; */
+    margin: 0 auto;
+    background-color: white;
+    padding: 8vh 0;
+}
+
+#kis-concept {
+    background-image: url("../images/kis/coffee1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#kis-type {
+    background-image: url("../images/kis/coffee2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#kis-products {
+    background-image: url("../images/Kis-Coffee.gif");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* BPC Food Truck */
+#ftf-hero {
+    background-image: url("../images/ftfridays/ftfHero.jpg");
+}
+
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}
