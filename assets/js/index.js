@@ -1,6 +1,14 @@
 
 // HOMEPAGE
 $(document).ready(function () {
+    $("#main").hide();
+    $("#goBack").hide();
+    setTimeout(function () {
+        $("#main").show();
+        $("#goBack").show();
+        // $('#CTA').append(scroll);
+        // $('#hero').css('background-image', 'url(' + bgImg[2] + ')'); // change BG
+    }, 6000)
 });
 
 // Array of Background images
@@ -28,10 +36,6 @@ var scroll =
     "</a>";
 // "</div>";
 
-// $(function () {
-//     $('#hero').css('background-image', 'url(' + bgImg[bgCount] + ')'); //allows a variable for changing background img based in an array, change number in [] to change background...
-// });
-
 // Switch BG when Clicking on switch button 
 $(switchBtn).on('click', function () {
     bgCount++;
@@ -39,20 +43,57 @@ $(switchBtn).on('click', function () {
     $('#switchMeOn').css('color', 'white');
     $('#hero').css('background-image', 'url(' + bgImg[bgCount] + ')'); //change image
     $('.landing').css('background-color', bgColor[bgCount]); // change background color
-    $(switchBtn).prop("disabled", true); // disable switch button 
+    $(this).prop("disabled", true); // disable switch button 
+
     // A TIMER to display 'scroll' CTA
     setTimeout(function () {
-        // $('#CTA').append(scroll);
-        // $('#hero').css('background-image', 'url(' + bgImg[2] + ')'); // change BG
+        $('#CTA').append(scroll);
     }, 4000)
 });
 
 // Function to fade in/out 'Navbar'
 $(window).scroll(function () {
-    // $('#homeNav').toggleClass('scrolled', $(this).scrollTop() > 600).show();
-    // $('#homeNav').show();
     $("#scrollDown").css("opacity", 0.5);
 });
+
+function goBack() {
+    window.history.back();
+}
+
+function openNav() {
+    $("#mySidenav").css('width', "200px");
+}
+
+function closeNav() {
+    $("#mySidenav").css('width', "0px");
+}
+
+function services() {
+    $("#contact-tab").removeClass('active')
+    $("#contact").removeClass('active');
+    $("#about-tab").removeClass(' active')
+    $("#about").removeClass(' show active');
+    $("#services-tab").addClass(' active')
+    $("#services").addClass(' show active');
+}
+
+function about() {
+    $("#contact-tab").removeClass('active')
+    $("#contact").removeClass('active');
+    $("#services-tab").removeClass(' active')
+    $("#services").removeClass(' show active');
+    $("#about-tab").addClass(' active')
+    $("#about").addClass(' show active');
+}
+
+function contact() {
+    $("#about-tab").removeClass('active')
+    $("#about").removeClass('active');
+    $("#services-tab").removeClass(' active')
+    $("#services").removeClass(' show active');
+    $("#contact-tab").addClass(' active')
+    $("#contact").addClass(' show active');
+}
 
 // Function to change the projects cover background on the slideshow
 // const init = function () {

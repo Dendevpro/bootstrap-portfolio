@@ -7,37 +7,99 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
+}
+
+body {
+    transition: background-color .5s;
 }
 
 .navbar {
     background: none !important;
     position: fixed;
     z-index: 9999;
-    /* width: 80px; */
-    /* height: 100vh; */
-    /* background: rgba(255, 255, 255, 0.2); */
-    /* left: 0; */
-    /* border-right: 1px solid #f0f0f0; */
 }   
 
+/* ============ SIDENAV ============ */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #090909;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+  
+.sidenav a {
+    padding: 0px 0px 0px 20px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #3a3a3a;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+#main {
+    position: fixed;
+    transition: margin-left .5s;
+    padding: 10px;
+    background: none;
+}
+
 #hamburger {
-    width: 30px;
+    width: 48px;
     opacity: 0.5;
+    -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
+    filter: drop-shadow( 1px 1px 1px #000 );
+}
+
+#goBack {
+    position: fixed;
+    top: 5vh;
+    transition: margin-left .5s;
+    padding: 10px;
+    width: 64px;
+    opacity: 0.5;
+    -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
+    filter: drop-shadow( 1px 1px 1px #000 );
 }
 
 #hamburger:hover {
-    width: 32px;
-    opacity: .7;
+    opacity: 1;
+}
+/* ================================== */
+
+section {
+    scroll-snap-align: start;
+    /* -webkit-scroll-snap-destination: 50% 50%; */
 }
 
-.dropdown-menu, .dropdown-item {
-    background: none !important;
-    border: none;
-    padding: .2rem 0 !important;
-}
-
-.dropdown-toggle::after {
-    border: none;
+.assets {
+    width: 100%;
+    /* margin-right: 0; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
 }
 
 .row {
@@ -55,12 +117,11 @@ h1 {
 h2 {
     font-size: 3rem !important;
     font-weight: 500;
-    /* text-shadow: 1px 1px 5px rgb(0, 0, 0, 0.25); */
     color: white;
 }
 
 h3 {
-    color: #606060;
+    color: #ffffff;
 }
 
 h4 {
@@ -68,9 +129,8 @@ h4 {
 }
 
 h5 {
-    font-weight: 300;
-    color: white;
-    /* text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.25); */
+    font-weight: 400;
+    color: rgb(127, 127, 127);
 }
 
 h6 {
@@ -81,7 +141,8 @@ h6 {
 
 p {
     font-weight: 500;
-
+    margin: 0;
+    padding: 4px 0 12px 0;
 }
 
 a, i {
@@ -96,14 +157,10 @@ a, i {
 
 #hero {
     background-image: url("../images/bulbs.svg");
-    /* background-color: #101010; */
-    /* background-size: cover; */
-    /* background-attachment: fixed; */
     background-position: right;
     background-repeat: no-repeat;
     margin-right: 10vw;
-    /* width: 90%; */
-    height: 80vh;
+    height: 70vh;
 }
 
 .jumbotron {
@@ -208,23 +265,17 @@ a, i {
 
 /* PROJECTS */
 .mainContent {
-	scroll-snap-type: x mandatory;	
-	display: flex;
 	-webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-    /* background-image: linear-gradient(to right, #000000 0%, #090909 50%,#000000 100%); */
-}
-
-section {
-    /* border-right: 50px solid rgb(255, 255, 0, 0.2); */
-	min-width: 100vw;
-	height: 100vh;
-    scroll-snap-align: start;
 }
 
 .projectInfo {
-    margin-top: 10vh;
+    position: relative;
+    top: 16vh;
 }
+
+.bioInfo {
+    position: relative;
+    top: 12vh;}
 
 .text-muted {
     font-size: 14px;
@@ -245,35 +296,19 @@ section {
     color: #ffff00;
 }
 
-.fa-arrow-circle-right {
-    position: relative;
-    top: 56vh;
-    /* left: 80rem; */
-    color: white;
-    opacity: 0.3;
-}
-.fa-arrow-circle-right:hover {
-    /* color: #101010; */
-    opacity: 0.6;
-}
-
 #branding {
     background: linear-gradient(to right, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%), url("../images/coverCoffee3.jpg");
-    background-size: cover;
     background-attachment: fixed;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
 }
 
-/* .product {
-    width: 100vw;
-} */
-
-#logo {
-    background: url("../images/coverAngus.jpg");
-    background-size: cover;
+#uiUx {
+    background: url("../images/coverSilver.jpg");
     background-attachment: fixed;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -281,8 +316,8 @@ section {
 
 #production {
     background: linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), url("../images/coverFoodTruck.jpg");
-    background-size: cover;
     background-attachment: fixed;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -303,7 +338,7 @@ section {
     color: #101010;
     border: none;
     font-weight: 500;
-    width: 20%;
+    /* width: 20%; */
 }
 .btn-secondary:hover {
     background-color: #101010!important;
@@ -334,53 +369,78 @@ section {
 
 .footer {
     position: relative;
-    top: 10vh;
+    top: 20vh;
 }
 
-/* PROJECTS */
+/* PROJECTS GENERAL */
 
 .section-title {
     position: relative;
     top: 7vh;
+    color: #101010;
 }
 
-.assets {
-    width: 100%;
-    margin-right: 0;
+.section-content {
+    position: relative;
+    top: 35vh;
+}
+
+.column {
+    padding: 40px;
 }
 
 .project-hero {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 70vh;
 }
 
-/* KIS KITCHEN */
-#kis-hero {
-    background-image: url("../images/kis/coffeeHero2.jpg");
+.nextProject {
+    background-color: #000000;
+    /* padding: 0 18rem; */
 }
 
+.nextProject h3 {
+    position: relative;
+    top: 24vh;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.nextProject a {
+    opacity: 0.4;
+    transition: transform .2s;
+    width: 90%;
+}
+
+.nextProject a:hover {
+    opacity: 0.9;
+    transform: scale(1.5);
+}
+
+/* KIS KITCHEN */
+
 .project-details {
-    /* height: 30vh; */
+    height: 30vh;
     margin: 0 auto;
     background-color: white;
     padding: 8vh 0;
 }
 
 #kis-concept {
-    background-image: url("../images/kis/coffee1.jpg");
+    background-image: url("../images/kis/trianglesBg.jpg");
     background-size: cover;
+    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
 }
 
 #kis-type {
-    background-image: url("../images/kis/coffee2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #ffcb05;
+    height: 100vh;
+}
+
+#kis-color {
     height: 100vh;
 }
 
@@ -394,10 +454,6 @@ section {
 }
 
 /* BPC Food Truck */
-#ftf-hero {
-    background-image: url("../images/ftfridays/ftfHero.jpg");
-}
-
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

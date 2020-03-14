@@ -29,40 +29,49 @@
     </script>
 </head>
 
-<body>
+<body id="home">
 
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <!-- <i class="fas fa-bars fa-2x"></i> -->
-                        <img id="hamburger" src="/assets/images/hamburger.svg" alt="menu">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#branding">
-                            <h6>
-                                WORK
-                            </h6>
-                        </a>
-                        <a class="dropdown-item" href="#contact">
-                            <h6>
-                                CONTACT
-                            </h6>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">
+            <p>
+                Home
+            </p>
+        </a>
+        <a href="#branding">
+            <p>
+                Work
+            </p>
+        </a>
+        <a href="#myTabContent" onclick="services()">
+            <p>
+                Services
+            </p>
+        </a>
+        <a href="#myTabContent" onclick="about()">
+            <p>
+                About
+            </p>
+        </a>
+        <a href="#myTabContent" onclick="contact()">
+            <p>
+                Contact
+            </p>
+        </a>
+    </div>
+
+    <div id="main" style="background: none;">
+        <a onclick="openNav()">
+            <img id="hamburger" src="/assets/images/hamburger.svg" alt="menu">
+        </a>
+    </div>
 
     <!-- HERO -->
-    <div class="landing">
+    <section class="landing">
         <div id="hero">
             <div class="jumbotron">
                 <!-- HERO H1 -->
-                <h4>Hello, I'm Mauro Facciolla</h4>
+                <h4>Hello, I'm Mauro Facciolla!</h4>
                 <br>
                 <h1>Graphic Designer<br>
                     Production Artist<br>
@@ -88,7 +97,7 @@
                 </div> -->
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Main Content -->
     <div id="wrapper">
@@ -99,14 +108,23 @@
                 <div class="container projectInfo">
                     <div>
                         <h5>BRANDING</h5>
-                        <h2>KI'S KITCHEN <br> COLD BREW COFFEE</h2>
+                        <h2>Ki's Kitchen</h2>
+                        <h3>COLD BREW COFFEE</h3>
                         <a class="btn btn-warning btn-lg" href="/kiskitchen.html" role="button" aria-pressed="true">
                             View Project
                         </a>
                     </div>
+                </div>
+            </section>
+
+            <!-- Silvernest -->
+            <section id="uiUx">
+                <div class="container projectInfo">
                     <div>
-                        <a href="#production">
-                            <i class="fas fa-arrow-circle-right fa-4x"></i>
+                        <h5 style="color:rgb(255, 255, 255)">UI/UX DESIGN</h5>
+                        <h2>Silvernest, Inc.</h2>
+                        <a class="btn btn-warning btn-lg" href="silvernest.html" role="button" aria-pressed="true">
+                            View Project
                         </a>
                     </div>
                 </div>
@@ -116,33 +134,11 @@
             <section id="production">
                 <div class="container projectInfo">
                     <div>
-                        <h5>PRODUCTION ART</h5>
-                        <h2>BALBOA PARK <br> CONSERVANCY</h2>
+                        <h5 style="color:rgb(215, 215, 215)">PRODUCTION ART</h5>
+                        <h2>Balboa Park Conservancy</h2>
+                        <h3>FOOD TRUCK FRIDAYS 2019</h3>
                         <a class="btn btn-warning btn-lg" href="/balboapark.html" role="button" aria-pressed="true">
                             View Project
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#logo">
-                            <i class="fas fa-arrow-circle-right fa-4x"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Angus -->
-            <section id="logo">
-                <div class="container projectInfo">
-                    <div>
-                        <h5>LOGO DESIGN & BRANDING</h5>
-                        <h2>ANGUS <br> CARNES NOBRES</h2>
-                        <a class="btn btn-warning btn-lg" href="/portfolio.html" role="button" aria-pressed="true">
-                            View Project
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#contacting">
-                            <i class="fas fa-arrow-circle-right fa-4x"></i>
                         </a>
                     </div>
                 </div>
@@ -150,23 +146,28 @@
 
             <!-- INFO  -->
             <section id="contacting">
-                <div class="container projectInfo">
+                <div class="container bioInfo">
                     <!-- TABS -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                                aria-controls="contact" aria-selected="true">
-                                <h3>CONTACT</h3>
+                            <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" role="tab"
+                                aria-controls="services" aria-selected="false">
+                                <h5>SERVICES</h5>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#about" role="tab"
+                            <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab"
                                 aria-controls="about" aria-selected="false">
-                                <h3>ABOUT</h3>
+                                <h5>ABOUT</h5>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                aria-controls="contact" aria-selected="true">
+                                <h5>CONTACT</h5>
                             </a>
                         </li>
                     </ul>
-
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="contact" role="tabpanel"
                             aria-labelledby="contact-tab">
@@ -203,9 +204,8 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label>Message*</label>
-                                                    <textarea id="message" name="message" class="form-control"
-                                                        placeholder="Please enter your message." rows="4" required>
-                                                            </textarea>
+                                                    <textarea id="message" name="message" class="form-control" rows="4"
+                                                        required></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -215,6 +215,7 @@
                                                     <strong>*</strong>Required Fields
                                                 </p>
                                             </div>
+                                            <br>
                                             <div class="col-12">
                                                 <input type="submit" class="btn btn-secondary btn-lg" id="submit"
                                                     value="SUBMIT" data-target="#alert">
@@ -226,8 +227,8 @@
                             <!-- </div> -->
                             <!-- </div> -->
                         </div>
-                        <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="card" id="about">
+                        <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                            <div class="card" id="aboutMe">
                                 <div>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -239,6 +240,21 @@
                                                 data-toggle="tooltip" data-placement="bottom" title="Resumé">
                                                 ABOUT
                                             </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                            <div class="card" id="servicesList">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            BRANDING
                                         </div>
                                     </div>
                                 </div>
@@ -268,22 +284,10 @@
                         <a class="socialIcon">
                             San Diego, CA
                         </a>
-                        <br><br>
                         <p>© 2020 Copyright Mauro Facciolla</p>
                     </div>
                 </div>
             </section>
-
-            <!-- <section id="about">
-                <div class="container projectInfo">
-                    <h3>ABOUT</h3>
-                    <div class="row">
-                        <div class="col-12">
-
-                        </div>
-                    </div>
-                </div>
-            </section> -->
         </div>
     </div>
 

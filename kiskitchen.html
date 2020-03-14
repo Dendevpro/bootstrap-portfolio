@@ -30,25 +30,51 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <!-- <i class="fas fa-bars fa-2x"></i> -->
-                        <img id="hamburger" src="/assets/images/hamburger.svg" alt="menu">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.html">HOME</a>
-                        <a class="dropdown-item" href="#contacting">CONTACT</a>
-                    </div>
-                </li>
-            </ul>
+    <!-- NAVBAR -->
+    <!-- SIDENAV  -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html#home">
+            <p>
+                Home
+            </p>
+        </a>
+        <a href="#branding">
+            <p>
+                Work
+            </p>
+        </a>
+        <a href="#myTabContent" onclick="services()">
+            <p>
+                Services
+            </p>
+        </a>
+        <a href="#myTabContent" onclick="about()">
+            <p>
+                About
+            </p>
+        </a>
+        <a href="#myTabContent" onclick="contact()">
+            <p>
+                Contact
+            </p>
+        </a>
+    </div>
+    <!-- HAMBURGER -->
+    <div id="main">
+        <a onclick="openNav()">
+            <img id="hamburger" src="/assets/images/hamburger.svg" alt="menu">
+        </a>
+    </div>
+    <!-- HERO  -->
+    <div>
+        <img src="./assets/images/kis/coffeeHero2.jpg" alt="Cold_Brew_Coffees" class="assets">
+        <div id="goBack">
+            <a href="#" onclick="goBack()">
+                <img src="/assets/images/return.svg" alt="return">
+            </a>
         </div>
-    </nav>
-
-    <div class="project-hero" id="kis-hero"></div>
+    </div>
     <div class="row container project-details">
         <div class="col-2">
             <h6>CLIENT</h6>
@@ -63,151 +89,245 @@
                 Cold Brew Coffee drinks.</p>
         </div>
     </div>
-    <div id="kis-concept">
+    <div class="assets" id="kis-concept">
         <div class="container">
-            <h3 class="section-title">CONCEPT</h3>
+            <h2 class="section-title">CONCEPT</h2>
+            <br><br><br><br>
+            <div class="row">
+                <div class="col-12">
+                    <img src="./assets/images/kis/concept.svg" class="assets" alt="kis-concept">
+                </div>
+            </div>
         </div>
     </div>
-    <div id="kis-type">
+    <div class="assets" id="kis-type">
         <div class="container">
-            <h3 class="section-title">TYPOGRAPHY</h3>
+            <h2 class="section-title">TYPOGRAPHY</h2>
+            <br>
+            <div class="row section-content">
+                <div class="col-sm-12 col-lg-4 column">
+                    <img src="./assets/images/kis/typo-01.svg" alt="type-1">
+                </div>
+                <div class="col-sm-12 col-lg-4 column">
+                    <img src="./assets/images/kis/typo-02.svg" alt="type-2">
+                </div>
+                <div class="col-sm-12 col-lg-4 column">
+                    <img src="./assets/images/kis/typo-03.svg" alt="type-3">
+                </div>
+            </div>
         </div>
     </div>
-    <img src="./assets/images/kis/coffee3.jpg" alt="kis-colors" class="assets">
-    <img src="./assets/images/kis/coffee4.jpg" alt="kis-coffee" class="assets">
-    <img src="./assets/images/kis/coffee5.jpg" alt="kis-latte" class="assets">
-    <img src="./assets/images/kis/coffee6.jpg" alt="kis-hazel" class="assets">
-    <img src="./assets/images/kis/coffee7.jpg" alt="kis-caramel" class="assets">
-    <div id="kis-products">
-        <!-- <img src="./assets/images/Kis-Coffee.gif" alt="kis-products" class="assets"> -->
+    <div class="assets" id="kis-color">
+        <div class="container">
+            <h2 class="section-title">SIGNATURE COLOR</h2>
+            <br>
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>
+                            Background Pallete
+                        </h5>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div style="background-color: #8b2935; height: 5vh; width: 12vw;"></div>
+                        <div style="background-color: #641620; height: 5vh; width: 12vw;"></div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div style="background-color: #00b087; height: 5vh; width: 12vw;"></div>
+                        <div style="background-color: #00785b; height: 5vh; width: 12vw;"></div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div style="background-color: #cf5a22; height: 5vh; width: 12vw;"></div>
+                        <div style="background-color: #943407; height: 5vh; width: 12vw;"></div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div style="background-color: #0089cf; height: 5vh; width: 12vw;"></div>
+                        <div style="background-color: #005690; height: 5vh; width: 12vw;"></div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="row">
+                    <div class="col-12">
+                        <h5>
+                            Type Pallete
+                        </h5>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-3">
+                        <div
+                            style="background-color: white; height: 5vh; width: 12vw; border-top: 1px solid #dfdfdf; border-right: 1px solid #dfdfdf; border-left: 1px solid #dfdfdf;">
+                        </div>
+                        <div style="background-color: #ffcb05; height: 5vh; width: 12vw;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <img src="./assets/images/kis/coffee4.jpg" alt="kis-coffee" class="assets">
+    </div>
+    <div>
+        <img src="./assets/images/kis/coffee5.jpg" alt="kis-latte" class="assets">
+    </div>
+    <div>
+        <img src="./assets/images/kis/coffee6.jpg" alt="kis-hazel" class="assets">
+    </div>
+    <div>
+        <img src="./assets/images/kis/coffee7.jpg" alt="kis-caramel" class="assets">
+    </div>
+    <div id="kis-products"></div>
+    <div class="nextProject text-center">
+        <h3>NEXT PROJECT</h3>
+        <a href="silvernest.html">
+            <img src="./assets/images/silvernest/nextSilver.jpg" alt="Sivernest" class="assets">
+        </a>
     </div>
     <!-- INFO  -->
-    <div id="wrapper">
-        <div class="mainContent">
-            <section id="contacting">
-                <div class="container projectInfo">
-                    <!-- TABS -->
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                                aria-controls="contact" aria-selected="true">
-                                <h3>CONTACT</h3>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#about" role="tab"
-                                aria-controls="about" aria-selected="false">
-                                <h3>ABOUT</h3>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="contact" role="tabpanel"
-                            aria-labelledby="contact-tab">
-                            <!-- <div class="row"> -->
-                            <!-- <div class="col-12"> -->
-                            <div class="card" id="contact-form">
-                                <form id="contactForm">
-                                    <div class="controls">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Full Name*</label>
-                                                    <input id="name" type="text" name="name" class="form-control"
-                                                        required>
-                                                </div>
-                                            </div>
+    <div id="contacting">
+        <div class="container bioInfo">
+            <!-- TABS -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" role="tab"
+                        aria-controls="services" aria-selected="false">
+                        <h5>SERVICES</h5>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about"
+                        aria-selected="false">
+                        <h5>ABOUT</h5>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="true">
+                        <h5>CONTACT</h5>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <!-- <div class="row"> -->
+                    <!-- <div class="col-12"> -->
+                    <div class="card" id="contact-form">
+                        <form id="contactForm">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Full Name*</label>
+                                            <input id="name" type="text" name="name" class="form-control" required>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Email*</label>
-                                                    <input id="email" type="email" name="email" class="form-control"
-                                                        required=>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Phone</label>
-                                                    <input id="phone" type="text" name="phone" class="form-control">
-                                                </div>
-                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Email*</label>
+                                            <input id="email" type="email" name="email" class="form-control" required=>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label>Message*</label>
-                                                    <textarea id="message" name="message" class="form-control"
-                                                        placeholder="Please enter your message." rows="4" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input id="phone" type="text" name="phone" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Message*</label>
+                                            <textarea id="message" name="message" class="form-control"
+                                                placeholder="Please enter your message." rows="4" required>
                                                     </textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row text-center">
-                                            <div class="col-12">
-                                                <p class="text-muted">
-                                                    <strong>*</strong>Required Fields
-                                                </p>
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="submit" class="btn btn-secondary btn-lg" id="submit"
-                                                    value="SUBMIT" data-target="#alert">
-                                            </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <p class="text-muted">
+                                            <strong>*</strong>Required Fields
+                                        </p>
+                                    </div>
+                                    <br>
+                                    <div class="col-12">
+                                        <input type="submit" class="btn btn-secondary btn-lg" id="submit" value="SUBMIT"
+                                            data-target="#alert">
+                                    </div>
+                                </div>
                             </div>
-                            <!-- </div> -->
-                            <!-- </div> -->
-                        </div>
-                        <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="card" id="about">
-                                <div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a class="nav-link" href="./assets/docs/CV_MFacciolla.pdf" target="_blank"
-                                                data-toggle="tooltip" data-placement="bottom" title="Resumé">
-                                                ABOUT
-                                            </a>
-                                        </div>
-                                    </div>
+                        </form>
+                    </div>
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+                <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                    <div class="card" id="aboutMe">
+                        <div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a class="nav-link" href="./assets/docs/CV_MFacciolla.pdf" target="_blank"
+                                        data-toggle="tooltip" data-placement="bottom" title="Resumé">
+                                        ABOUT
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- -- -->
                 </div>
-                <!-- FOOTER  -->
-                <div class="footer fixed">
-                    <!-- <div class="col-12 text-center"> -->
-                    <div class="flex-center text-center">
-                        <a class="socialIcon" href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
-                            <i class="fab fa-linkedin-in fa-lg fa-2x"></i>
-                        </a>
-                        <a class="socialIcon" href="https://github.com/dendevpro/" target="_blank">
-                            <i class="fab fa-github fa-lg fa-2x"></i>
-                        </a>
-                        <a class="socialIcon" href="mailto:info@maurofacciolla.com?subject=Let's Work Together">
-                            <i class="fa fa-envelope fa-lg fa-2x"></i>
-                        </a>
-                        <br><br>
-                        <!-- <a class="socialIcon"
+                <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                    <div class="card" id="servicesList">
+                        <div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    BRANDING
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- -- -->
+        </div>
+        <!-- FOOTER  -->
+        <div class="footer fixed">
+            <!-- <div class="col-12 text-center"> -->
+            <div class="flex-center text-center">
+                <a class="socialIcon" href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
+                    <i class="fab fa-linkedin-in fa-lg fa-2x"></i>
+                </a>
+                <a class="socialIcon" href="https://github.com/dendevpro/" target="_blank">
+                    <i class="fab fa-github fa-lg fa-2x"></i>
+                </a>
+                <a class="socialIcon" href="mailto:info@maurofacciolla.com?subject=Let's Work Together">
+                    <i class="fa fa-envelope fa-lg fa-2x"></i>
+                </a>
+                <br><br>
+                <!-- <a class="socialIcon"
                     href="https://www.google.com/maps/place/San+Diego,+CA/@32.7293432,-117.1859162,13z/data=!4m13!1m7!3m6!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!2sSan+Diego,+CA!3b1!8m2!3d32.715738!4d-117.1610838!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">
                     San Diego, CA
                 </a> -->
-                        <a class="socialIcon">
-                            San Diego, CA
-                        </a>
-                        <br><br>
-                        <p>© 2020 Copyright Mauro Facciolla</p>
-                    </div>
-                </div>
-            </section>
+                <a class="socialIcon">
+                    San Diego, CA
+                </a>
+                <!-- <br><br> -->
+                <p>© 2020 Copyright Mauro Facciolla</p>
+            </div>
         </div>
     </div>
 
