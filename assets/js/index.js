@@ -1,6 +1,8 @@
 
 // HOMEPAGE
 $(document).ready(function () {
+    $(switchBtn).prop("checked", true); // disable switch button 
+
     $("#main").hide();
     $("#goBack").hide();
     setTimeout(function () {
@@ -47,7 +49,7 @@ $(switchBtn).on('click', function () {
 
     // A TIMER to display 'scroll' CTA
     setTimeout(function () {
-        $('#CTA').append(scroll);
+        $('.landing').append(scroll);
     }, 4000)
 });
 

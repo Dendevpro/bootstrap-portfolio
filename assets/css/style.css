@@ -16,11 +16,11 @@ body {
     transition: background-color .5s;
 }
 
-.navbar {
+/* .navbar {
     background: none !important;
     position: fixed;
     z-index: 9999;
-}   
+}    */
 
 /* ============ SIDENAV ============ */
 
@@ -66,7 +66,7 @@ body {
 }
 
 #hamburger {
-    width: 48px;
+    width: 60px;
     opacity: 0.5;
     -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
     filter: drop-shadow( 1px 1px 1px #000 );
@@ -74,10 +74,10 @@ body {
 
 #goBack {
     position: fixed;
-    top: 5vh;
+    top: 6vh;
     transition: margin-left .5s;
     padding: 10px;
-    width: 64px;
+    width: 78px;
     opacity: 0.5;
     -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
     filter: drop-shadow( 1px 1px 1px #000 );
@@ -95,7 +95,7 @@ section {
 
 .assets {
     width: 100%;
-    /* margin-right: 0; */
+    /* margin: 0 !important; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -116,7 +116,9 @@ h1 {
 
 h2 {
     font-size: 3rem !important;
+    margin: 2rem 0;
     font-weight: 500;
+    line-height: 1;
     color: white;
 }
 
@@ -193,13 +195,13 @@ a, i {
     overflow: hidden; 
     cursor: pointer;
     border: 2px solid #101010; 
-    border-radius: 5px;
+    border-radius: 50px;
 }
 .onoffswitch-inner {
     display: block; 
     width: 200%; 
     margin-left: -100%;
-    transition: margin 0.1s ease-in 0s;
+    transition: margin 0.2s ease-in 0s;
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
     display: block; 
@@ -235,32 +237,44 @@ a, i {
     position: absolute; 
     top: 0; 
     bottom: 0;
-    right: 90px;
+    right: 86px;
     border: 2px solid #101010; 
-    border-radius: 3px;
+    border-radius: 50px;
     /* box-shadow: 1px 1px 5px rgb(255, 255, 0); */
-    transition: all 0.1s ease-in 0s; 
+    transition: all 0.2s ease-in 0s; 
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
     margin-left: 0;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+    right: 4px; 
 }
 
 #switchMeOn {
     color: yellow;
-    opacity: .5;
+    margin-bottom: 0.8rem;
+    /* opacity: .5; */
 }
 
-/* scrollDown */
 #scrollDown {
     position: relative; 
-    /* top: 16vh; */
-    width: 85px;
-    /* position: relative; 
-    top: 25vh; */
-    /* margin: 0 auto; */
+    top: 16vh;
+    margin: 0 auto;
+    width: 5em;
+    height: auto;
+    border-radius: 50%;
+    /* fill: #45abff; */
+    /* background:rgb(215, 128, 128); */
+    transition: background 0.5s, transform 0.5s ease-out, fill 0.5s;
+}
+
+#scrollDown:hover {
+    /* fill: #0e1a25; */
+    /* background:#fbfbfb; */
+    transform: scale(1.2);
+    /* -ms-transform: rotate(360deg);
+    transform: rotate(360deg); */
+    transition: background 0.5s, transform 0.5s ease-out, fill 0.5s;
 }
 
 /* PROJECTS */
@@ -282,18 +296,34 @@ a, i {
 }
 
 .btn-warning {
-    background-color: #ffff00!important;
+    background-color: rgba(255, 255, 255, 0.1)!important;
+    /* background: none; */
     border: none;
     position: relative;
     top: 6vh;
-    /* border-radius: 50px; */
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
     font-weight: 500;
 }
 .btn-warning:hover {
-    background-color: #101010!important;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-    border: #ffff00;
+    background-color: rgba(0, 0, 0, 0.1)!important;
+    transition: all 0.1s ease-in 0s; 
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: none;
     color: #ffff00;
+}
+.btn-warning:active {
+    background-color: rgba(255, 255, 255, 0.1)!important;
+    border: none;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+} 
+.btn-warning:focus {
+    transition: all 0.1s ease-in 0s; 
+    background-color: rgba(255, 255, 255, 0.1)!important;
+    border: none;
+    color: white;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 #branding {
@@ -315,7 +345,7 @@ a, i {
 }
 
 #production {
-    background: linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), url("../images/coverFoodTruck.jpg");
+    background: url("../images/coverFoodTruck.jpg"); /* linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -324,7 +354,7 @@ a, i {
 }
 
 #contacting {
-    background: url("../images/plug.svg");
+    /* background: url("../images/plug.svg"); */
     background-repeat: no-repeat;
     background-position: right;
     background-color: #f0f0f0;
@@ -334,17 +364,24 @@ a, i {
 }
 
 .btn-secondary {
+    /* background-color: #ffff00!important; */
     background-color: #ffff00!important;
     color: #101010;
     border: none;
+    border-radius: 50px;
     font-weight: 500;
-    /* width: 20%; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .btn-secondary:hover {
-    background-color: #101010!important;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-    border: #ffff00;
-    color: #ffff00;
+    background: none;
+    background-color: rgb(255, 255, 255, 0.5)!important;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* border: #ffff00; */
+    color: #4d4d4d;
+}
+
+.btn-light {
+    box-shadow: 0px 0px 4px  rgba(0, 0, 0, 0.3);
 }
 
 .card {
@@ -395,7 +432,7 @@ a, i {
 
 .nextProject {
     background-color: #000000;
-    /* padding: 0 18rem; */
+    /* padding: 8rem 0; */
 }
 
 .nextProject h3 {
@@ -413,17 +450,18 @@ a, i {
 }
 
 .nextProject a:hover {
-    opacity: 0.9;
+    opacity: 0.8;
     transform: scale(1.5);
 }
 
 /* KIS KITCHEN */
 
 .project-details {
-    height: 30vh;
+    /* height: 30vh; */
+    width: 60%;
     margin: 0 auto;
     background-color: white;
-    padding: 8vh 0;
+    padding: 6vh 0;
 }
 
 #kis-concept {
@@ -455,19 +493,208 @@ a, i {
 
 /* BPC Food Truck */
 
+.container-flex {
+    padding: 2rem 4rem;
+}
+
+#tft-merchandise {
+    background-image: url("../images/ftfridays/foodTruck6.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin-top: 1rem;
+}
+
+
+@media (max-height: 667px){
+    #scrollDown {
+        display: none;
+    }
+}
+
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
+    section {
+        scroll-snap-align: none;
+        /* -webkit-scroll-snap-destination: 50% 50%; */
+    }
+    #hero {
+        background-image: url("../images/bulbs.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        height: 50vh;
+    }
+
+    .jumbotron {
+        position: relative;
+        top: 54vh;
+        padding: 0!important;
+        text-align: center;
+        margin: 0!important;
+    }
+
+    h1 {
+        font-size: 2.4rem !important;
+        font-weight: 500;
+        color: #000;
+        /* display: none; */
+    }
+
+    h4 {
+        font-size: 1.4rem !important;
+    }
+
+    .onoffswitch {
+        margin: 0 auto; 
+        width: 40vw;
+    }
+
+    .onoffswitch-switch {
+        right: 116px;
+    }
+
+    .onoffswitch-inner:before {
+        content: "OFF";
+        padding-right: 120px;
+        background-color: #ffff00;
+        color: #101010;
+    }
+
+    #scrollDown {
+        position: relative; 
+        top: 40vh;
+        margin: 0 auto;
+        width: 4em;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .projectInfo {
+        margin-left: 1rem;
+        /* position: relative; 
+        top: 50vh; */
+    }
 }
 
-/* // Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
 
+    section {
+        /* scroll-snap-align: none; */
+        /* -webkit-scroll-snap-destination: 50% 50%; */
+    }
+
+    #hero {
+        background-image: url("../images/bulbs.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        height: 50vh;
+    }
+
+    .jumbotron {
+        position: relative;
+        top: 54vh;
+        padding: 0!important;
+        text-align: center;
+        margin: 0!important;
+    }
+
+    h1 {
+        font-size: 2.4rem !important;
+        font-weight: 500;
+        color: #000;
+        /* display: none; */
+    }
+
+    h4 {
+        font-size: 1.4rem !important;
+    }
+
+    .onoffswitch {
+        margin: 0 auto; 
+        width: 40vw;
+    }
+
+    .onoffswitch-switch {
+        right: 116px;
+    }
+
+    .onoffswitch-inner:before {
+        content: "OFF";
+        padding-right: 120px;
+        background-color: #ffff00;
+        color: #101010;
+    }
+
+    #scrollDown {
+        position: relative; 
+        top: 40vh;
+        margin: 0 auto;
+        width: 4em;
+        height: auto;
+        border-radius: 50%;
+    }
 }
 
 /* // Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
+@media  (min-width: 768px) and (max-width: 991.98px) {
+    #hero {
+        background-image: url("../images/bulbs.svg");
+        background-position: right;
+        background-repeat: no-repeat;
+        margin-right: 4rem;
+        height: 95vh;
+    }
 
+    .jumbotron {
+        position: relative;
+        padding: 3.8rem 0 0 6rem!important;
+    }
+
+    h1 {
+        font-size: 2.4rem !important;
+        font-weight: 500;
+        color: #000;
+        /* display: none; */
+    }
+
+    h4 {
+        font-size: 1.4rem !important;
+    }
+
+    .onoffswitch {
+        /* margin: 0 auto;  */
+        /* width: 40vw; */
+    }
+
+    .onoffswitch-switch {
+        right: 86px;
+    }
+
+    .onoffswitch-inner:before {
+        content: "OFF";
+        padding-right: 40px;
+        background-color: #ffff00;
+        color: #101010;
+    }
+
+    #scrollDown {
+        position: relative; 
+        top: 40vh;
+        margin: 0 auto;
+        width: 4em;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .projectInfo {
+        margin-left: 5rem;
+    }
 }
 
 /* // Large devices (desktops, less than 1200px) */
