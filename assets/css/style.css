@@ -406,6 +406,7 @@ a, i {
 
 .footer {
     position: relative;
+    background-color: #f0f0f0;
     top: 20vh;
 }
 
@@ -583,10 +584,10 @@ a, i {
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
 
-    section {
-        /* scroll-snap-align: none; */
-        /* -webkit-scroll-snap-destination: 50% 50%; */
-    }
+    /* section {
+        scroll-snap-align: none;
+        -webkit-scroll-snap-destination: 50% 50%;
+    } */
 
     #hero {
         background-image: url("../images/bulbs.svg");
@@ -667,10 +668,10 @@ a, i {
         font-size: 1.4rem !important;
     }
 
-    .onoffswitch {
-        /* margin: 0 auto;  */
-        /* width: 40vw; */
-    }
+    /* .onoffswitch {
+        margin: 0 auto; 
+        width: 40vw;
+    } */
 
     .onoffswitch-switch {
         right: 86px;
