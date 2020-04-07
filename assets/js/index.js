@@ -79,14 +79,14 @@ function services() {
     $("#services").addClass(' show active');
 }
 
-function about() {
-    $("#contact-tab").removeClass('active')
-    $("#contact").removeClass('active');
-    $("#services-tab").removeClass(' active')
-    $("#services").removeClass(' show active');
-    $("#about-tab").addClass(' active')
-    $("#about").addClass(' show active');
-}
+// function about() {
+//     $("#contact-tab").removeClass('active')
+//     $("#contact").removeClass('active');
+//     $("#services-tab").removeClass(' active')
+//     $("#services").removeClass(' show active');
+//     $("#about-tab").addClass(' active')
+//     $("#about").addClass(' show active');
+// }
 
 function contact() {
     $("#about-tab").removeClass('active')

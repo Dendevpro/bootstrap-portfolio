@@ -198,12 +198,12 @@
                         <h5>SERVICES</h5>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about"
-                        aria-selected="false">
-                        <h5>ABOUT</h5>
-                    </a>
-                </li>
+                <!-- <li class="nav-item">
+                        <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab"
+                            aria-controls="about" aria-selected="false">
+                            <h5>ABOUT</h5>
+                        </a>
+                    </li> -->
                 <li class="nav-item">
                     <a class="nav-link  active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
                         aria-controls="contact" aria-selected="true">
@@ -211,7 +211,10 @@
                     </a>
                 </li>
             </ul>
+
+
             <div class="tab-content" id="myTabContent">
+                <!-- CONTACT  -->
                 <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <!-- <div class="row"> -->
                     <!-- <div class="col-12"> -->
@@ -244,9 +247,8 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label>Message*</label>
-                                            <textarea id="message" name="message" class="form-control"
-                                                placeholder="Please enter your message." rows="4" required>
-                                                    </textarea>
+                                            <textarea id="message" name="message" class="form-control" rows="4"
+                                                required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -268,86 +270,194 @@
                     <!-- </div> -->
                     <!-- </div> -->
                 </div>
-                <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <div class="card" id="aboutMe">
-                        <div>
+
+                <!-- ABOUT  -->
+                <!-- <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <div class="card" id="aboutMe">
                             <div class="row">
                                 <div class="col-md-12">
+                                    ABOUT ME
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12">
-                                    <a class="nav-link" href="./assets/docs/CV_MFacciolla.pdf" target="_blank"
+                                <div class="col-md-12">
+                                    <a class="socialIcon" href="./assets/docs/CV_MFacciolla.pdf" target="_blank"
                                         data-toggle="tooltip" data-placement="bottom" title="Resumé">
-                                        ABOUT
+                                        LINK TO RESUME
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+
+                <!-- SERVICES  -->
                 <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
                     <div class="card" id="servicesList">
-                        <div>
+                        <div id="services">
+                            <!-- <h4 id="SEO">
+                                    Creative solutions for print and web, based in San Diego.
+                                    UI Design, Web Development and Art Direction
+                                    from concept to completion.
+                                </h4> -->
+                            <!-- <br> -->
                             <div class="row">
-                                <div class="col-md-12">
+                                <!-- Grid column -->
+                                <div class="col-12 col-lg-3">
+                                    <div class="card-header">
+                                        <!-- <img src="./assets/images/artDirectionIcon.svg" class="icon"></i> -->
+                                        <br>
+                                        <h4>ART<br>DIRECTION</h4><br>
+                                        <dl>
+                                            <dd>
+                                                Branding
+                                            </dd>
+                                            <dd>
+                                                Visual Identity
+                                            </dd>
+                                            <dd>
+                                                Ad Campaign
+                                            </dd>
+                                            <dd>
+                                                Logo Design
+                                            </dd>
+                                            <dd>
+                                                Icon Customization
+                                            </dd>
+                                            <dd>
+                                                Social Media
+                                            </dd>
+                                        </dl>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    BRANDING
+                                <div class="col-12 col-lg-3">
+                                    <div class="card-header">
+                                        <!-- <img src="./assets/images/artDirectionIcon.svg" class="icon"></i> -->
+                                        <br>
+                                        <h4>PRODUCTION<br>ART</h4><br>
+                                        <dl>
+                                            <dd>
+                                                Image Manipulation
+                                            </dd>
+                                            <dd>
+                                                Color Correction
+                                            </dd>
+                                            <dd>
+                                                Packaging
+                                            </dd>
+                                            <dd>
+                                                Large Format
+                                            </dd>
+                                            <dd>
+                                                Preflight
+                                            </dd>
+                                            <dd>
+                                                Prepress
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <div class="card-header">
+                                        <!-- <img src="./assets/images/uiDesignIcon.svg" class="icon"></i> -->
+                                        <br>
+                                        <h4>UI/UX<br>DESIGN</h4><br>
+                                        <dl>
+                                            <dd>
+                                                Wireframe
+                                            </dd>
+                                            <dd>
+                                                Mockup
+                                            </dd>
+                                            <dd>
+                                                Responsive Layout
+                                            </dd>
+                                            <dd>
+                                                Clickable Prototype
+                                            </dd>
+                                            <dd>
+                                                Asset Management
+                                            </dd>
+                                            <dd>
+                                                Usability
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <div class="card-header">
+                                        <!-- <img src="./assets/images/webDevIcon2.svg" class="icon"></i> -->
+                                        <br>
+                                        <h4>WEB <br> DEVELOPMENT</h4><br>
+                                        <dl>
+                                            <dd>
+                                                Front-End
+                                            </dd>
+                                            <dd>
+                                                Landing Page
+                                            </dd>
+                                            <dd>
+                                                Website
+                                            </dd>
+                                            <dd>
+                                                Application
+                                            </dd>
+                                            <dd>
+                                                Database
+                                            </dd>
+                                            <dd>
+                                                Server
+                                            </dd>
+                                        </dl>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- -- -->
-        </div>
-        <!-- FOOTER  -->
-        <div class="footer fixed">
-            <!-- <div class="col-12 text-center"> -->
-            <div class="flex-center text-center">
-                <a class="socialIcon" href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
-                    <i class="fab fa-linkedin-in fa-lg fa-2x"></i>
-                </a>
-                <a class="socialIcon" href="https://github.com/dendevpro/" target="_blank">
-                    <i class="fab fa-github fa-lg fa-2x"></i>
-                </a>
-                <a class="socialIcon" href="mailto:info@maurofacciolla.com?subject=Let's Work Together">
-                    <i class="fa fa-envelope fa-lg fa-2x"></i>
-                </a>
-                <br><br>
-                <!-- <a class="socialIcon"
-                    href="https://www.google.com/maps/place/San+Diego,+CA/@32.7293432,-117.1859162,13z/data=!4m13!1m7!3m6!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!2sSan+Diego,+CA!3b1!8m2!3d32.715738!4d-117.1610838!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">
-                    San Diego, CA
-                </a> -->
-                <a class="socialIcon">
-                    San Diego, CA
-                </a>
-                <!-- <br><br> -->
-                <p>© 2020 Copyright Mauro Facciolla</p>
+            <!-- FOOTER  -->
+            <div class="footer fixed">
+                <!-- <div class="col-12 text-center"> -->
+                <div class="flex-center text-center">
+                    <a class="socialIcon" href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank">
+                        <i class="fab fa-linkedin-in fa-lg fa-2x"></i>
+                    </a>
+                    <a class="socialIcon" href="https://github.com/dendevpro/" target="_blank">
+                        <i class="fab fa-github fa-lg fa-2x"></i>
+                    </a>
+                    <a class="socialIcon" href="mailto:info@maurofacciolla.com?subject=Let's Work Together">
+                        <i class="fa fa-envelope fa-lg fa-2x"></i>
+                    </a>
+                    <br><br>
+                    <!-- <a class="socialIcon"
+                        href="https://www.google.com/maps/place/San+Diego,+CA/@32.7293432,-117.1859162,13z/data=!4m13!1m7!3m6!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!2sSan+Diego,+CA!3b1!8m2!3d32.715738!4d-117.1610838!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">
+                        San Diego, CA
+                    </a> -->
+                    <a class="socialIcon">
+                        San Diego, CA
+                    </a>
+                    <p>© 2020 Copyright Mauro Facciolla</p>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
-        integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
+            integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 
-    <!-- Custom JS  -->
-    <script src="./assets/js/index.js"></script>
+        <!-- Custom JS  -->
+        <script src="./assets/js/index.js"></script>
 </body>

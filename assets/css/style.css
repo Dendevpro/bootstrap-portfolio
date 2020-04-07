@@ -404,10 +404,19 @@ a, i {
     text-decoration: none!important;
 }
 
+.card-header {
+    background: none;
+    /* border: 1px solid #101010; */
+}
+
+.icon {
+    width: 96px;
+}
+
 .footer {
     position: relative;
     background-color: #f0f0f0;
-    top: 20vh;
+    top: 10vh;
 }
 
 /* PROJECTS GENERAL */
