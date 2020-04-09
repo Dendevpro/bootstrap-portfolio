@@ -410,7 +410,8 @@ a, i {
 }
 
 .icon {
-    width: 96px;
+    height: 60px;
+    margin-bottom: 1rem;
 }
 
 .footer {
