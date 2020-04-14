@@ -13,6 +13,7 @@ html {
 }
 
 body {
+    /* background-color: #f0f0f0; */
     transition: background-color .5s;
 }
 
@@ -39,7 +40,7 @@ body {
   
 .sidenav a {
     padding: 0px 0px 0px 20px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 1.5rem;
     color: #3a3a3a;
     display: block;
@@ -116,7 +117,7 @@ h1 {
 
 h2 {
     font-size: 3rem !important;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
     font-weight: 500;
     line-height: 1;
     color: white;
@@ -148,7 +149,7 @@ p {
 }
 
 a, i {
-    text-decoration: none;
+    text-decoration: none !important;
     color: rgba(0, 0, 0, 0.4);
 }
 
@@ -345,7 +346,8 @@ a, i {
 }
 
 #production {
-    background: url("../images/coverFoodTruck.jpg"); /* linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), */
+    background: linear-gradient(to right, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruck.jpg");
+    /* background: url("../images/coverFoodTruck.jpg"); linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -465,6 +467,18 @@ a, i {
     transform: scale(1.5);
 }
 
+.liveDemo {
+    position: relative;
+    top: 8vh;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 66px;
+    color: #fd4f00;
+    text-decoration: none !important;
+}
+
 /* KIS KITCHEN */
 
 .project-details {
@@ -496,7 +510,7 @@ a, i {
 #kis-products {
     background-image: url("../images/Kis-Coffee.gif");
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -518,12 +532,20 @@ a, i {
     margin-top: 1rem;
 }
 
-
-@media (max-height: 667px){
+/* @media (max-height: 667px){
     #scrollDown {
         display: none;
     }
-}
+
+    h2 {
+        font-size: 2.8rem !important;
+    }
+
+    .projectInfo {
+        margin-left: 0;
+    }
+} */
+
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -536,7 +558,7 @@ a, i {
         background-image: url("../images/bulbs.svg");
         background-position: center;
         background-repeat: no-repeat;
-        margin: 0;
+        margin-right: 0;
         height: 50vh;
     }
 
@@ -545,7 +567,6 @@ a, i {
         top: 54vh;
         padding: 0!important;
         text-align: center;
-        margin: 0!important;
     }
 
     h1 {
@@ -555,49 +576,41 @@ a, i {
         /* display: none; */
     }
 
+    h2 {
+        margin: 1rem 0;
+
+    }
+
     h4 {
         font-size: 1.4rem !important;
     }
 
     .onoffswitch {
-        margin: 0 auto; 
-        width: 40vw;
-    }
-
-    .onoffswitch-switch {
-        right: 116px;
-    }
-
-    .onoffswitch-inner:before {
-        content: "OFF";
-        padding-right: 120px;
-        background-color: #ffff00;
-        color: #101010;
-    }
-
-    #scrollDown {
-        position: relative; 
-        top: 40vh;
         margin: 0 auto;
-        width: 4em;
-        height: auto;
-        border-radius: 50%;
     }
 
     .projectInfo {
-        margin-left: 1rem;
-        /* position: relative; 
-        top: 50vh; */
+        margin-left: 0;
+    }
+
+    #contacting {
+        /* background: url("../images/plug.svg"); */
+        /* background-repeat: no-repeat; */
+        /* background-position: right; */
+        background-color: #f0f0f0;
+        /* height: 100vh; */
+        margin-right: 0;
+        border: none;
     }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
 
-    /* section {
+    section {
         scroll-snap-align: none;
         -webkit-scroll-snap-destination: 50% 50%;
-    } */
+    }
 
     #hero {
         background-image: url("../images/bulbs.svg");
@@ -612,7 +625,7 @@ a, i {
         top: 54vh;
         padding: 0!important;
         text-align: center;
-        margin: 0!important;
+        margin: 0 auto!important;
     }
 
     h1 {
@@ -628,10 +641,10 @@ a, i {
 
     .onoffswitch {
         margin: 0 auto; 
-        width: 40vw;
+        /* width: 40vw; */
     }
 
-    .onoffswitch-switch {
+    /* .onoffswitch-switch {
         right: 116px;
     }
 
@@ -640,7 +653,7 @@ a, i {
         padding-right: 120px;
         background-color: #ffff00;
         color: #101010;
-    }
+    } */
 
     #scrollDown {
         position: relative; 
@@ -683,7 +696,7 @@ a, i {
         width: 40vw;
     } */
 
-    .onoffswitch-switch {
+    /* .onoffswitch-switch {
         right: 86px;
     }
 
@@ -701,7 +714,7 @@ a, i {
         width: 4em;
         height: auto;
         border-radius: 50%;
-    }
+    } */
 
     .projectInfo {
         margin-left: 5rem;
@@ -710,5 +723,12 @@ a, i {
 
 /* // Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
+    section {
+        scroll-snap-align: none;
+        /* -webkit-scroll-snap-destination: 50% 50%; */
+    }
 
+    h4 {
+        font-size: 1.2rem !important;
+    }
 }
