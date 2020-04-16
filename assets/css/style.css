@@ -255,6 +255,9 @@ a, i {
     color: yellow;
     margin-bottom: 0.8rem;
     /* opacity: .5; */
+    text-align: center;
+    width: 120px;
+    font-weight: 300;
 }
 
 #scrollDown {
@@ -285,7 +288,7 @@ a, i {
 
 .projectInfo {
     position: relative;
-    top: 16vh;
+    top: 20vh;
 }
 
 .bioInfo {
@@ -346,7 +349,7 @@ a, i {
 }
 
 #production {
-    background: linear-gradient(to right, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruck.jpg");
+    background: linear-gradient(to right, rgba(23, 44, 58, 0.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruck.jpg");
     /* background: url("../images/coverFoodTruck.jpg"); linear-gradient(to right, rgba(26, 56, 14, 0.8) 0%, rgba(0,0,0,0) 40%), */
     background-attachment: fixed;
     background-size: cover;
@@ -356,13 +359,16 @@ a, i {
 }
 
 #contacting {
-    /* background: url("../images/plug.svg"); */
-    background-repeat: no-repeat;
-    background-position: right;
-    background-color: #f0f0f0;
     height: 100vh;
-    margin-right: 0;
-    border: none;
+    background-size: cover;
+}
+
+input,
+textarea,
+.card-header {
+    box-shadow: 0px 0px 10px #d7d7d7;
+    border: none !important;
+    background: none;
 }
 
 .btn-secondary {
@@ -389,8 +395,9 @@ a, i {
 .card {
     padding: 30px;
     background-color: rgb(255, 255, 255, 0.5);
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     min-width: 220px;
+    border-top: none;
 }
 
 .socialIcon {
@@ -406,11 +413,6 @@ a, i {
     text-decoration: none!important;
 }
 
-.card-header {
-    background: none;
-    /* border: 1px solid #101010; */
-}
-
 .icon {
     height: 60px;
     margin-bottom: 1rem;
@@ -418,7 +420,7 @@ a, i {
 
 .footer {
     position: relative;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     top: 10vh;
 }
 
