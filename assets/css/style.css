@@ -138,7 +138,7 @@ h5 {
 
 h6 {
     font-weight: 600;
-    color: #606060;
+    color: #aaaaaa;
     margin: 0;
 }
 
@@ -366,14 +366,14 @@ a, i {
     height: 100vh;
 }
 
-#identity {
+/* #identity {
     background: url("../images/coverAngus.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-}
+} */
 
 #contacting {
     height: 100vh;
@@ -573,19 +573,28 @@ textarea,
         scroll-snap-align: none;
         /* -webkit-scroll-snap-destination: 50% 50%; */
     }
+
     #hero {
         background-image: url("../images/bulbs.svg");
         background-position: center;
         background-repeat: no-repeat;
         margin-right: 0;
-        height: 50vh;
+        height: 55vh;
     }
 
     .jumbotron {
         position: relative;
-        top: 54vh;
+        top: 60vh;
         padding: 0!important;
         text-align: center;
+    }
+
+    #switchMeOn {
+        width: auto;
+    }
+
+    #scrollDown {
+        display: none;
     }
 
     h1 {
@@ -597,7 +606,6 @@ textarea,
 
     h2 {
         margin: 1rem 0;
-
     }
 
     h4 {
@@ -609,17 +617,108 @@ textarea,
     }
 
     .projectInfo {
-        margin-left: 0;
+        margin-left: 0px;
+        text-align: center;
     }
 
-    #contacting {
-        /* background: url("../images/plug.svg"); */
-        /* background-repeat: no-repeat; */
-        /* background-position: right; */
-        background-color: #f0f0f0;
-        /* height: 100vh; */
-        margin-right: 0;
-        border: none;
+    #branding {
+        background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverCoffeeMob.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    
+    #uiUx {
+        background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%), url("../images/coverSilverMob.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    
+    #production {
+        background: linear-gradient(to bottom, rgba(0,0,0,.6) 50%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruckMob.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    
+    #webDev {
+        background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverBootcamperMob.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    
+    /* #identity {
+        background: linear-gradient(to bottom, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%), url("../images/coverAngusMob.jpg");
+                background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    } */
+
+    /* PROJECTS  */
+    .container-flex {
+        padding: 1rem;
+    }
+
+    .project-details {
+        width: 90vw;
+        /* text-align: center; */
+    }
+
+    .project-details h6 {
+        color: rgb(143, 143, 143);
+    }
+
+    .liveDemo {
+        position: relative;
+        top: 1vh;
+        font-size: 32px;
+    }
+
+    .nextProject h3 {
+        position: relative;
+        top: 4vh;
+    }
+
+    /* CONTACTING */
+    .card {
+        padding: 10px 5px;
+        min-width: 220px;
+    }
+
+    .card-header {
+        margin: 1rem auto;
+    }
+
+    dd {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .text-muted{
+        padding: 0;
+    }
+
+    .btn-secondary {
+        width: 50vw;
+        margin-bottom: 1rem;
+    }
+
+    .footer {
+        position: relative;
+        /* background-color: #f0f0f0; */
+        top: 4vh;
     }
 }
 
@@ -627,7 +726,7 @@ textarea,
 @media (min-width: 576px) and (max-width: 767.98px) {
 
     section {
-        scroll-snap-align: none;
+        /* scroll-snap-align: none; */
         -webkit-scroll-snap-destination: 50% 50%;
     }
 
@@ -741,13 +840,13 @@ textarea,
 }
 
 /* // Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
+/* @media (max-width: 1199.98px) {
     section {
         scroll-snap-align: none;
-        /* -webkit-scroll-snap-destination: 50% 50%; */
+        -webkit-scroll-snap-destination: 50% 50%;
     }
 
     h4 {
         font-size: 1.2rem !important;
     }
-}
+} */

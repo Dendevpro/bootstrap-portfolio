@@ -76,13 +76,13 @@
         </div>
     </div>
     <div class="row container project-details">
-        <div class="col-3">
+        <div class="col-lg-3 col-sm-12">
             <h6>CLIENT</h6>
             <p>Silvernest, Inc.</p>
             <h6>PROJECT</h6>
             <p>UI/UX Design</p>
         </div>
-        <div class="col-9">
+        <div class="col-lg-9 col-sm-12">
             <h6>DETAILS</h6>
             <p>Silvernest is a homesharing site for older adults to find a compatible matched roommate and a place to
                 live. The idea was to design a UI/UX for the Rental/Lease Agreement Form at
@@ -138,11 +138,11 @@
     <div id="contacting">
         <div class="container bioInfo">
             <!-- TABS -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" role="tab"
                         aria-controls="services" aria-selected="false">
-                        <h5>SERVICES</h5>
+                        <h4>SERVICES</h4>
                     </a>
                 </li>
                 <!-- <li class="nav-item">
@@ -154,7 +154,7 @@
                 <li class="nav-item">
                     <a class="nav-link  active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
                         aria-controls="contact" aria-selected="true">
-                        <h5>CONTACT</h5>
+                        <h4>CONTACT</h4>
                     </a>
                 </li>
             </ul>
@@ -207,7 +207,7 @@
                                     </div>
                                     <br>
                                     <div class="col-12">
-                                        <input type="submit" class="btn btn-secondary btn-lg" id="submit" value="SUBMIT"
+                                        <input type="submit" class="btn btn-secondary" id="submit" value="SUBMIT"
                                             data-target="#alert">
                                     </div>
                                 </div>
@@ -238,21 +238,22 @@
                     </div> -->
 
                 <!-- SERVICES  -->
-                <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                <div class="tab-pane fade text-center" id="services" role="tabpanel" aria-labelledby="services-tab">
                     <div class="card" id="servicesList">
                         <div id="services">
                             <!-- <h4 id="SEO">
-                                Creative solutions for print and web, based in San Diego.
-                                UI Design, Web Development and Art Direction
-                                from concept to completion.
-                            </h4> -->
+                                    Creative solutions for print and web, based in San Diego.
+                                    UI Design, Web Development and Art Direction
+                                    from concept to completion.
+                                </h4> -->
                             <!-- <br> -->
                             <div class="row">
                                 <!-- Grid column -->
                                 <div class="col-12 col-md-6 col-lg-3">
                                     <div class="card-header">
+                                        <br>
                                         <img src="./assets/images/pencil.svg" class="icon"></i>
-                                        <h4>ART<br>DIRECTION</h4><br>
+                                        <h5>ART<br>DIRECTION</h5><br>
                                         <dl>
                                             <dd>
                                                 Branding
@@ -277,8 +278,9 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3">
                                     <div class="card-header">
+                                        <br>
                                         <img src="./assets/images/sketch.svg" class="icon"></i>
-                                        <h4>PRODUCTION<br>ART</h4><br>
+                                        <h5>PRODUCTION<br>ART</h5><br>
                                         <dl>
                                             <dd>
                                                 Image Manipulation
@@ -303,8 +305,9 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3">
                                     <div class="card-header">
+                                        <br>
                                         <img src="./assets/images/platform.svg" class="icon"></i>
-                                        <h4>UI/UX<br>DESIGN</h4><br>
+                                        <h5>UI/UX<br>DESIGN</h5><br>
                                         <dl>
                                             <dd>
                                                 Wireframe
@@ -329,9 +332,9 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3">
                                     <div class="card-header">
+                                        <br>
                                         <img src="./assets/images/web-development.svg" class="icon"></i>
-
-                                        <h4>WEB <br> DEVELOPMENT</h4><br>
+                                        <h5>WEB <br> DEVELOPMENT</h5><br>
                                         <dl>
                                             <dd>
                                                 Front-End
@@ -384,24 +387,33 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
+        integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
-            integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
 
-        <!-- Custom JS  -->
-        <script src="./assets/js/index.js"></script>
+    <!-- Custom JS  -->
+    <script src="./assets/js/contact-form.js"></script>
+
+    <script src="./assets/js/index.js"></script>
+
 </body>
+
+</html>
