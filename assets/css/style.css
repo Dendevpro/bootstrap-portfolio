@@ -32,7 +32,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(9, 9, 9, 1);
+    background-color: #090909;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -67,7 +67,7 @@ body {
 }
 
 #hamburger {
-    width: 50px;
+    width: 60px;
     opacity: 0.5;
     -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
     filter: drop-shadow( 1px 1px 1px #000 );
@@ -551,6 +551,10 @@ textarea,
     margin-top: 1rem;
 }
 
+
+/* ===================================== */
+/* ===-===-=== MEDIA QUERIES ===-===-=== */
+
 @media (max-height: 667px){
     /* #scrollDown {
         display: none;
@@ -563,161 +567,6 @@ textarea,
     .projectInfo {
         margin-left: 0;
     } */
-    section {
-        scroll-snap-align: none;
-        /* -webkit-scroll-snap-destination: 50% 50%; */
-    }
-
-    #hero {
-        background-image: url("../images/bulbs.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-right: 0;
-        height: 55vh;
-    }
-
-    .jumbotron {
-        position: relative;
-        top: 60vh;
-        padding: 0!important;
-        text-align: center;
-    }
-
-    #switchMeOn {
-        width: auto;
-    }
-
-    .onoffswitch-inner:before {
-        text-align: left;
-    }
-
-    #scrollDown {
-        display: none;
-    }
-
-    h1 {
-        font-size: 2.4rem !important;
-        font-weight: 500;
-        color: #000;
-        /* display: none; */
-    }
-
-    h2 {
-        margin: 1rem 0;
-    }
-
-    h4 {
-        font-size: 1.4rem !important;
-    }
-
-    .onoffswitch {
-        margin: 0 auto;
-    }
-
-    .projectInfo {
-        margin-left: 0px;
-        text-align: center;
-    }
-
-    #branding {
-        background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverCoffeeMob.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
-    
-    #uiUx {
-        background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%), url("../images/coverSilverMob.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
-    
-    #production {
-        background: linear-gradient(to bottom, rgba(0,0,0,.6) 50%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruckMob.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
-    
-    #webDev {
-        background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverBootcamperMob.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
-    
-    /* #identity {
-        background: linear-gradient(to bottom, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%), url("../images/coverAngusMob.jpg");
-                background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-    } */
-
-    /* PROJECTS  */
-    .container-flex {
-        padding: 1rem;
-    }
-
-    .project-details {
-        width: 90vw;
-        /* text-align: center; */
-    }
-
-    .project-details h6 {
-        color: rgb(143, 143, 143);
-    }
-
-    .liveDemo {
-        position: relative;
-        top: 1vh;
-        font-size: 32px;
-    }
-
-    .nextProject h3 {
-        position: relative;
-        top: 4vh;
-    }
-
-    /* CONTACTING */
-    .card {
-        padding: 10px 5px;
-        min-width: 220px;
-    }
-
-    .card-header {
-        margin: 1rem auto;
-    }
-
-    dd {
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-
-    .text-muted{
-        padding: 0;
-    }
-
-    .btn-secondary {
-        width: 50vw;
-        margin-bottom: 1rem;
-    }
-
-    .footer {
-        position: relative;
-        /* background-color: #f0f0f0; */
-        top: 4vh;
-    }
 }
 
 
@@ -734,12 +583,12 @@ textarea,
         background-position: center;
         background-repeat: no-repeat;
         margin-right: 0;
-        height: 55vh;
+        height: 47vh;
     }
 
     .jumbotron {
         position: relative;
-        top: 60vh;
+        top: 52vh;
         padding: 0!important;
         text-align: center;
     }
@@ -781,8 +630,9 @@ textarea,
     }
 
     #branding {
+        /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverCoffeeMob.jpg");
-        background-attachment: fixed;
+        /* background-attachment: fixed; */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -790,8 +640,9 @@ textarea,
     }
     
     #uiUx {
+        /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%), url("../images/coverSilverMob.jpg");
-        background-attachment: fixed;
+        /* background-attachment: fixed; */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -799,8 +650,9 @@ textarea,
     }
     
     #production {
+        /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.6) 50%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruckMob.jpg");
-        background-attachment: fixed;
+        /* background-attachment: fixed; */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -808,8 +660,9 @@ textarea,
     }
     
     #webDev {
+        /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverBootcamperMob.jpg");
-        background-attachment: fixed;
+        /* background-attachment: fixed; */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
