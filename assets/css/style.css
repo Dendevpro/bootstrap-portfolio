@@ -580,7 +580,6 @@ textarea,
 
     .landing {
     height: 120vh;
-
     }
 
     #hero {
@@ -623,6 +622,7 @@ textarea,
 
     h4 {
         font-size: 1.4rem !important;
+        margin-bottom: 0.6rem;
     }
 
     .onoffswitch {
