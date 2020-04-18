@@ -578,6 +578,11 @@ textarea,
         /* -webkit-scroll-snap-destination: 50% 50%; */
     }
 
+    .landing {
+    height: 120vh;
+
+    }
+
     #hero {
         background-image: url("../images/bulbs.svg");
         background-position: center;
@@ -632,41 +637,37 @@ textarea,
     #branding {
         /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverCoffeeMob.jpg");
-        /* background-attachment: fixed; */
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        height: 120vh;
     }
     
     #uiUx {
         /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%), url("../images/coverSilverMob.jpg");
-        /* background-attachment: fixed; */
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        height: 120vh;
     }
     
     #production {
         /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.6) 50%, rgba(0,0,0,0) 100%), url("../images/coverFoodTruckMob.jpg");
-        /* background-attachment: fixed; */
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        height: 120vh;
     }
     
     #webDev {
         /* background: linear-gradient(to bottom, rgb(70, 0, 0) 20%, rgb(26, 0, 0) 100%); */
         background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%), url("../images/coverBootcamperMob.jpg");
-        /* background-attachment: fixed; */
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        height: 120vh;
     }
     
     /* #identity {
