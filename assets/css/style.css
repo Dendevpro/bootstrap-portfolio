@@ -32,7 +32,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #090909;
+    background-color: rgb(9, 9, 9, 1);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -67,7 +67,7 @@ body {
 }
 
 #hamburger {
-    width: 60px;
+    width: 50px;
     opacity: 0.5;
     -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
     filter: drop-shadow( 1px 1px 1px #000 );
@@ -211,7 +211,7 @@ a, i {
     height: 30px; 
     padding: 0; 
     line-height: 30px;
-    font-size: 14px; 
+    font-size: 1rem; 
     color: white; 
     font-weight: 500;
     box-sizing: border-box;
@@ -593,6 +593,10 @@ textarea,
         width: auto;
     }
 
+    .onoffswitch-inner:before {
+        text-align: left;
+    }
+
     #scrollDown {
         display: none;
     }
@@ -790,16 +794,29 @@ textarea,
         background-position: right;
         background-repeat: no-repeat;
         margin-right: 4rem;
-        height: 95vh;
+        height: 50vh;
     }
 
     .jumbotron {
         position: relative;
-        padding: 3.8rem 0 0 6rem!important;
+        top: 30vh;
+        /* padding: 3.8rem 0 0 6rem!important; */
+    }
+    
+    #scrollDown {
+        position: relative; 
+        top: 40vh;
+        margin: 0 auto;
+        width: 4em;
+        /* height: auto;
+        border-radius: 50%; */
+    }
+    .projectInfo {
+        padding-left: 5rem;
     }
 
     h1 {
-        font-size: 2.4rem !important;
+        font-size: 3.4rem !important;
         font-weight: 500;
         color: #000;
         /* display: none; */
@@ -833,10 +850,6 @@ textarea,
         height: auto;
         border-radius: 50%;
     } */
-
-    .projectInfo {
-        margin-left: 5rem;
-    }
 }
 
 /* // Large devices (desktops, less than 1200px) */

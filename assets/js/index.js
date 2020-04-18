@@ -25,7 +25,7 @@ var bgColor = ['black', 'white'];
 
 var bgCount = 0;
 var switchBtn = '#myonoffswitch';
-var myNavBar = "<nav class='navbar navbar-expand-lg fixed-top navbar-dark' style='position: fixed'>" + "<a class='navbar-brand' href='index.html#wrapper'>" + 'HOME' + "</a>" + "</nav>";
+// var myNavBar = "<nav class='navbar navbar-expand-lg fixed-top navbar-dark' style='position: fixed'>" + "<a class='navbar-brand' href='index.html#wrapper'>" + 'HOME' + "</a>" + "</nav>";
 var scroll =
     // "<div class='col-3'>" +
     "<a href='#wrapper'>" +
@@ -63,7 +63,7 @@ function goBack() {
 }
 
 function openNav() {
-    $("#mySidenav").css('width', "200px");
+    $("#mySidenav").css('width', "160px");
 }
 
 function closeNav() {
