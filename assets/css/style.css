@@ -180,7 +180,7 @@ a, i {
 /* SWITCH BUTTON */
 .onoffswitch {
     position: relative; 
-    /* top: 1vh; */
+    /* bottom: 3vh; */
     width: 120px;
     -webkit-user-select:none; 
     -moz-user-select:none; 
@@ -441,6 +441,12 @@ textarea,
     top: 10vh;
 }
 
+#copy {
+    font-size: .8rem;
+    color: #101010;
+    opacity: .3;
+}
+
 /* PROJECTS GENERAL */
 
 .section-title {
@@ -579,7 +585,7 @@ textarea,
     }
 
     .landing {
-    height: 120vh;
+    height: 110vh;
     }
 
     #hero {
@@ -597,9 +603,19 @@ textarea,
         text-align: center;
     }
 
+    #CTA {
+        position: relative;
+        bottom: 3vh;
+    }
+
     #switchMeOn {
         width: auto;
     }
+
+    /* .onoffswitch {
+        position: relative; 
+        bottom: 3vh;
+    } */
 
     .onoffswitch-inner:before {
         text-align: left;
