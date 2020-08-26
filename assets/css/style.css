@@ -9,7 +9,8 @@ html {
     scroll-behavior: smooth;
     scroll-snap-type: mandatory;
 	scroll-snap-points-y: repeat(100vh);
-	scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
+    font-size:100%;
 }
 
 body {
@@ -80,6 +81,7 @@ body {
     padding: 10px;
     width: 78px;
     opacity: 0.5;
+    z-index: 1000;
     -webkit-filter: drop-shadow( 1px 1px 1px #000 ); 
     filter: drop-shadow( 1px 1px 1px #000 );
 }
@@ -164,6 +166,7 @@ a, i {
     background-repeat: no-repeat;
     margin-right: 10vw;
     height: 70vh;
+    /* transform: perspective(200px) rotateY(5deg); */
 }
 
 .jumbotron {
