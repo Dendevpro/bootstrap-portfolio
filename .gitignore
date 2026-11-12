@@ -1,0 +1,7 @@
+# Only the website is published. Working files stay on this Mac.
+_source/
+_backups/
+.claude/
+.impeccable.md
+skills-lock.json
+.DS_Store

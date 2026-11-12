@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Mauro Facciolla — Designer based in San Diego. Available for UI/UX, design systems, and brand projects." />
+  <title>Contact — Mauro Facciolla</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/figures/contact-hero.webp" type="image/webp" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root { color-scheme: dark; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'DM Mono', monospace;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── Cursor ── */
+    .cursor {
+      position: fixed;
+      width: 12px; height: 12px;
+      background: #ffffff;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor.hover { width: 36px; height: 36px; }
+
+    /* ── Noise grain ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.11'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(var(--ink-rgb),0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(var(--paper-rgb),0.07);
+    }
+
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--paper);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.5);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--paper); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--paper); }
+    .nav-links a.active::after { width: 100%; }
+
+    .has-dropdown { position: relative; }
+    .dropdown {
+      position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      min-width: 240px; background: rgba(var(--ink-rgb),0.97);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(var(--paper-rgb),0.1);
+      list-style: none; padding: 0.75rem 0 0.5rem; z-index: 200;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    }
+    .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown a {
+      display: block; padding: 0.6rem 1.25rem;
+      font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300;
+      color: rgba(var(--paper-rgb),0.45); letter-spacing: 0.06em; text-transform: none;
+      text-decoration: none; white-space: nowrap;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown a::after { display: none; }
+    .dropdown a:hover { color: var(--paper); background: rgba(var(--paper-rgb),0.04); }
+    .dropdown li + li { border-top: 1px solid rgba(var(--paper-rgb),0.05); }
+    .dropdown li:first-child a { color: rgba(var(--paper-rgb),0.6); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .dropdown li.sub a { padding-left: 2.25rem; }
+
+    /* ── PAGE HERO ── */
+    #contact-hero {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10rem 200px 5rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E") repeat,
+        var(--ink);
+    }
+
+    #contact-hero::before {
+      content: 'hello';
+      position: absolute;
+      right: -1rem;
+      bottom: -4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 22rem;
+      font-weight: 700;
+      color: rgba(var(--paper-rgb),0.03);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .contact-hero-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.35);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards 0.1s;
+    }
+    .contact-hero-back:hover { color: var(--paper); }
+
+    .contact-hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.2s;
+    }
+
+    .contact-hero-title {
+      font-family: 'DM Mono', monospace;
+      font-style: italic;
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      font-weight: 400;
+      color: var(--paper);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.35s;
+    }
+
+    .contact-hero-title em { color: var(--accent); font-style: italic; }
+
+    .contact-hero-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.45);
+      line-height: 1.7;
+      max-width: 48ch;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards 0.5s;
+    }
+
+    .contact-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.65s;
+    }
+
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4caf77;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .status-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: rgba(76,175,119,0.3);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);   opacity: 1;   }
+      50%       { transform: scale(1.6); opacity: 0;   }
+    }
+
+    /* ── DIVIDER ── */
+    .contact-divider {
+      height: 1px;
+      background: linear-gradient(to right, rgba(var(--paper-rgb),0.12), transparent);
+      margin: 0 200px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── CONTACT BODY ── */
+    #contact-body {
+      padding: 5rem 200px 7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .contact-info-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.3);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-direct-email {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      color: var(--paper);
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(var(--paper-rgb),0.25);
+      padding-bottom: 0.2rem;
+      display: inline-block;
+      margin-bottom: 3rem;
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .contact-direct-email:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+
+    .contact-meta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-meta-item {}
+
+    .contact-meta-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.65);
+      line-height: 1.6;
+    }
+
+    .contact-social-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      padding-top: 2rem;
+      border-top: 1px dashed rgba(var(--paper-rgb),0.1);
+    }
+
+    .contact-social-item a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.45);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.2s;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px dashed rgba(var(--paper-rgb),0.06);
+    }
+    .contact-social-item:last-child a { border-bottom: none; padding-bottom: 0; }
+    .contact-social-item a:hover { color: var(--paper); }
+
+    /* ── FORM ── */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(var(--paper-rgb),0.45);
+    }
+
+    .form-optional {
+      color: rgba(var(--paper-rgb),0.25);
+      font-size: 0.62rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      background: rgba(var(--paper-rgb),0.04);
+      border: 1px solid rgba(var(--paper-rgb),0.14);
+      border-radius: 2px;
+      color: var(--paper);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 300;
+      padding: 0.8rem 1rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: rgba(var(--paper-rgb),0.2); }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      background: rgba(var(--accent-rgb),0.06);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 150px;
+      line-height: 1.65;
+    }
+
+    .form-select-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-select {
+      background: rgba(var(--paper-rgb),0.04);
+      border: 1px solid rgba(var(--paper-rgb),0.14);
+      border-radius: 2px;
+      color: rgba(var(--paper-rgb),0.65);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 300;
+      padding: 0.8rem 1rem;
+      width: 100%;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7f72' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .form-select:focus { border-color: var(--accent); }
+    .form-select option { background: rgba(var(--paper-rgb), 0.06); color: var(--paper); }
+
+    .form-submit {
+      align-self: flex-start;
+      margin-top: 0.5rem;
+      padding: 0.85rem 2.25rem;
+      background: var(--paper);
+      color: var(--ink);
+      border: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .form-submit::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(var(--paper-rgb),0.4);
+      transform: translate(4px, 4px);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.25s;
+      pointer-events: none;
+    }
+
+    .form-submit:hover { background: var(--accent); color: var(--paper); }
+    .form-submit:hover::after { transform: translate(6px, 6px); border-color: rgba(var(--accent-rgb),0.45); }
+    .form-submit:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .form-submit:disabled { opacity: 0.6; cursor: default; }
+    .form-submit:disabled::after { display: none; }
+
+    .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+    .form-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.65);
+      min-height: 1.2em;
+    }
+
+    /* ── BOOKING LINK ── */
+    .contact-book { margin-bottom: 3rem; }
+
+    .contact-book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.2rem;
+      padding: 0.8rem 1.4rem;
+      border: 1.5px solid rgba(var(--paper-rgb),0.4);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-decoration: none;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    .contact-book-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+    .contact-book-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(var(--paper-rgb),0.08);
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: rgba(var(--paper-rgb),0.25);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #contact-hero { padding: 9rem 1.5rem 4rem; }
+      .contact-divider { margin: 0 1.5rem; }
+      #contact-body { padding: 4rem 1.5rem 5rem; }
+      .contact-body-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-select-row { grid-template-columns: 1fr; }
+      nav { padding: 1.2rem 1.5rem; }
+      footer { padding: 1.2rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .contact-hero-back, .contact-hero-tag, .contact-hero-title,
+      .contact-hero-sub, .contact-status { opacity: 1; animation: none; }
+    }
+  
+    /* ═══ Colour schemes (see _scripts/build_site_switch.py) ═══ */
+    /* v2: forest + guava. Dark-role ground everywhere; the old paper sections alternate two forests */
+    html[data-theme="v2"] { --ink: #06110C; --ink-rgb: 6, 17, 12; --paper: #F1EEE8; --paper-rgb: 241, 238, 232; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #F1EEE8; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #F2948D; }
+    html[data-theme="v2"] :is(:not(*)) { --ink: #F1EEE8; --ink-rgb: 241, 238, 232; --paper: #06110C; --paper-rgb: 6, 17, 12; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #10241A; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #F2948D; }
+    html[data-theme="v2"] .portrait-card { background: #10241A; }
+    html[data-theme="v2"] :is(.project-cta, #work-cta) { background: #EC6A62; }
+    html[data-theme="v2"] :is(.project-cta-title, #work-cta h2, #work-cta p) { color: #06110C; }
+    html[data-theme="v2"] :is(.project-cta-art, .work-cta-art) { display: none; }
+    html[data-theme="v2"] .form-submit:hover { color: #06110C; }
+    html[data-theme="v2"] nav:not(.scrolled) { background: linear-gradient(180deg, rgba(6, 17, 12, 0.85), transparent); }
+
+    /* v1: yellow hero, light sections alternate yellow and charcoal, charcoal in between */
+    html[data-theme="v1"] { color-scheme: light; --ink: #151515; --ink-rgb: 21, 21, 21; --paper: #F5F3EA; --paper-rgb: 245, 243, 234; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #F5F3EA; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #C9A4FF; }
+    html[data-theme="v1"] #contact-hero { --ink: #FFF21A; --ink-rgb: 255, 242, 26; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #6E35CF; --accent-rgb: 110, 53, 207; --warm: #151515; --muted: rgba(21, 21, 21, 0.7); --accent-soft: #6E35CF; }
+    html[data-theme="v1"] :is(.project-cta, #work-cta) { background: linear-gradient(135deg, #b884ff 0%, #A668FF 50%, #8c4ef2 100%); }
+    html[data-theme="v1"] :is(.project-cta-art, .work-cta-art) { opacity: 0.55; }
+    html[data-theme="v1"] :is(.project-cta-title, #work-cta h2, #work-cta p) { color: #151515; }
+    html[data-theme="v1"] #contact .section-title { color: #FFF21A; }
+    html[data-theme="v1"] .form-submit { background: #FFF21A; color: #151515; }
+    html[data-theme="v1"] .form-submit:hover { background: #A668FF; color: #151515; }
+    html[data-theme="v1"] nav:not(.scrolled) .nav-logo, html[data-theme="v1"] nav:not(.scrolled) .nav-links a { color: #151515; }
+    html[data-theme="v1"] nav:not(.scrolled) .nav-links a:not(.active) { color: rgba(21, 21, 21, 0.62); }
+    html[data-theme="v1"] nav:not(.scrolled) .nav-links a::after { background: #151515; }
+    html[data-theme="v1"] nav.scrolled .nav-links a.active::after { background: #FFF21A; }
+
+    body { background: var(--ink); }
+    html[data-theme="v2"] { --shade-rgb: 6, 17, 12; }
+    html[data-theme="v1"] { --shade-rgb: 21, 21, 21; }
+    /* one dark nav bar on every page once scrolled (work.html's own turned light) */
+    nav.scrolled { background: rgba(var(--shade-rgb), 0.94); }
+    nav.scrolled .nav-logo { color: var(--paper); }
+    nav.scrolled .nav-links a { color: rgba(var(--paper-rgb), 0.55); }
+    nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: var(--paper); }
+    html[data-theme="v2"] .related-work .work-card-content { --paper: #F1EEE8; --paper-rgb: 241, 238, 232; }
+    html[data-theme="v1"] .related-work .work-card-content { --paper: #F5F3EA; --paper-rgb: 245, 243, 234; --accent: #A668FF; }
+    :is(:not(*)) { color: var(--ink); }   /* headings without their own colour inherit the section's text */
+
+    /* hero, in the homepage's type: a big upright DM Mono title, and a word outlined huge
+       behind it, the full height of the hero */
+    #contact-hero { position: relative; isolation: isolate; }   /* the word sits above the hero ground, below its text */
+    #contact-hero::before {
+      position: absolute; right: auto; left: 0; top: 0; bottom: 0; transform: none; margin: 0;
+      display: flex; align-items: center; z-index: -1; pointer-events: none;
+      font-family: 'DM Mono', monospace; font-style: normal; font-weight: 500; text-transform: uppercase; white-space: nowrap;
+      font-size: 62vh; line-height: 1; letter-spacing: -0.06em; opacity: 1;
+      color: transparent; -webkit-text-stroke: clamp(1.5px, 0.18vw, 2.5px) rgba(var(--accent-rgb), 0.42);
+      translate: 38vw 0;
+    }
+    .contact-hero-title {
+      font-style: normal; font-weight: 500; letter-spacing: -0.045em; line-height: 0.96;
+      font-size: clamp(3rem, 8vw, 7.5rem); text-wrap: balance;
+    }
+    .contact-hero-title em { font-style: italic; }
+    @media (max-width: 900px) {
+      #contact-hero::before { font-size: 46vh; translate: 30vw 0; }
+    }
+    #contact-hero::before { content: 'Hello'; }
+    
+    .word-cross { position: relative; z-index: 2; height: clamp(9rem, 12vw, 12rem); margin: -6rem 0 1rem; /* bands centred on the hero edge; body stays put */ overflow: hidden; pointer-events: none; }
+    .word-band { position: absolute; left: -10%; right: -10%; top: 50%; overflow: hidden; background: var(--band-bg); }
+    .wb-front { --band-bg: #EC6A62; --band-ink: #06110C; transform: translateY(-50%) rotate(-1.5deg); box-shadow: 0 12px 30px rgba(var(--shade-rgb), 0.35); }
+    .wb-back { --band-bg: #F1EEE8; --band-ink: #06110C; transform: translateY(-50%) rotate(1.5deg); }
+    html[data-theme="v1"] .wb-front { --band-bg: #A668FF; --band-ink: #151515; }
+    html[data-theme="v1"] .wb-back { --band-bg: #F5F3EA; --band-ink: #151515; }
+    .word-band-track { display: flex; width: max-content; animation: bandScroll 60s linear infinite; }
+    .wb-back .word-band-track { animation-direction: reverse; animation-duration: 70s; }
+    .band-set { display: flex; flex: none; }
+    .band-set span {
+      font-family: 'DM Mono', monospace; font-weight: 500; text-transform: uppercase; white-space: nowrap;
+      font-size: clamp(1.25rem, 2.2vw, 2.1rem); line-height: 1; letter-spacing: -0.04em;
+      padding: 0.42em 0.9em 0.38em 0;
+    }
+    .band-set .f { color: var(--band-ink); }
+    .band-set .o { color: transparent; -webkit-text-stroke: 1.5px var(--band-ink); }
+    @media (max-width: 600px) {
+      .wb-front { transform: translateY(-50%) rotate(-6deg); }
+      .wb-back { transform: translateY(-50%) rotate(6deg); }
+    }
+    @keyframes bandScroll { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .word-band-track { animation: none; } }
+
+
+    /* colour switch: two swatches, a ring slides to the chosen one */
+    .theme-item { display: flex; align-items: center; }
+    .theme-switch {
+      position: relative; display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px; border-radius: 100px; cursor: pointer;
+      border: 1px solid rgba(241, 238, 232, 0.3); background: rgba(6, 17, 12, 0.7);
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+    [data-theme="v1"] .theme-switch { background: rgba(21, 21, 21, 0.92); border-color: rgba(245, 243, 234, 0.25); }
+    .theme-switch:hover { border-color: rgba(241, 238, 232, 0.6); }
+    .theme-switch:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .theme-dot { position: relative; z-index: 1; width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(241, 238, 232, 0.25); }
+    .theme-dot--v2 { background: linear-gradient(135deg, #06110C 50%, #EC6A62 50%); }
+    .theme-dot--v1 { background: linear-gradient(135deg, #FFF21A 50%, #A668FF 50%); }
+    .theme-knob {
+      position: absolute; left: 3px; top: 3px; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid #F1EEE8; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .theme-switch[aria-checked="true"] .theme-knob { transform: translateX(24px); }
+    @media (max-width: 900px) {
+      .theme-item { position: fixed; right: 16px; bottom: 16px; z-index: 120; }
+      /* a backdrop-filter on the nav would make it the switch's containing block and pull it up */
+      nav.scrolled { -webkit-backdrop-filter: none; backdrop-filter: none; }
+      .theme-switch { padding: 9px; gap: 10px; box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.6); }
+      .theme-dot { width: 22px; height: 22px; }
+      .theme-knob { left: 5px; top: 5px; width: 30px; height: 30px; }
+      .theme-switch[aria-checked="true"] .theme-knob { transform: translateX(32px); }
+    }
+    @media (prefers-reduced-motion: reduce) { .theme-knob { transition: none; } }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.45s; }
+  </style>
+  <script>
+    // pick the scheme before first paint: saved choice (shared across the site), else forest + guava
+    (function () {
+      var t = 'v2';
+      try { t = localStorage.getItem('mf-theme') || 'v2'; } catch (e) {}
+      document.documentElement.dataset.theme = t === 'v1' ? 'v1' : 'v2';
+    })();
+  </script>
+
+  <style id="consistency">
+    h1, h2, h3, h4 { font-weight: 500; }
+    .section-title, .case-heading, .work-featured-title, .contact-title { letter-spacing: -0.02em; }
+    footer, footer span { font-size: 0.65rem; font-weight: 300; letter-spacing: 0.08em; }
+    footer { color: color-mix(in srgb, var(--paper, #F1EEE8) 40%, transparent); }
+    footer span { color: inherit; }
+    @media (min-width: 901px) {
+      .case-meta, .case-section, .screens-section, .walkthrough-section { padding-left: 200px; padding-right: 200px; }
+      .ws-stage, .ws.is-pinned .ws-stage { padding-left: 200px; padding-right: 200px; }
+      .ws.is-pinned .ws-title { font-size: clamp(2.6rem, 4.2vw, 5.4rem); }   /* longest name fits the 5/12 column */
+      .ws.is-pinned .ws-foot { margin-left: -152px; margin-right: -152px; }   /* the index bar runs to the nav's edges */
+      .ws.is-pinned .ws-print, .ws.is-pinned .ws-mat { width: min(100%, 36vw, calc((100svh - 380px) * 4 / 3)); }
+    }
+  </style>
+  <style id="contact-hero-figure">
+    /* contact-figure.png: the figure about to throw a paper plane toward the headline.
+       Right side of the hero, feet below the edge so the word bands cross his shins;
+       in front of the outlined word, behind the text */
+    .contact-hero-tag, .contact-hero-title, .contact-hero-sub, .contact-status { position: relative; z-index: 1; }
+    .contact-hero-figure {
+      position: absolute; z-index: 0; pointer-events: none;
+      right: 1vw; bottom: -16%;
+      height: 112%; width: auto; max-width: clamp(440px, 100vw - 820px, 56vw);
+      object-fit: contain; object-position: right bottom;
+    }
+    @media (max-width: 900px) {
+      #contact-hero { padding-bottom: 0; }
+      .contact-hero-figure {
+        position: relative; right: auto; height: auto; max-width: none;
+        width: min(100% + 1.5rem, 560px); margin: 1.5rem -1.5rem -12% auto;
+      }
+    }
+  </style>
+  <style id="a11y-fixes">
+    /* contrast: small labels and footer text on the dark grounds reach 4.5:1 in both schemes */
+    html[data-theme] #contact :is(.section-label, .contact-label) { color: color-mix(in srgb, var(--fu-paper, var(--paper)) 62%, transparent); }
+    html[data-theme] footer { color: color-mix(in srgb, var(--fu-paper, var(--paper)) 62%, transparent); }
+    html[data-theme] footer span { color: inherit; }
+    /* contact page: the small info labels, form labels and social link on the dark ground */
+    html[data-theme] .contact-info-label, html[data-theme] .contact-social-item a { color: color-mix(in srgb, var(--paper) 62%, transparent); }
+    html[data-theme] .form-label { color: color-mix(in srgb, var(--paper) 66%, transparent); }
+    html[data-theme] .form-optional { color: color-mix(in srgb, var(--paper) 55%, transparent); }
+    html[data-theme] .contact-social-item a:hover { color: var(--paper); }
+  </style>
+  <style id="mobile-nav">
+    /* Phones and tablets: the links fold into a menu button. Applies only once the
+       script has added the button (html.mnav), so without JS the links stay put. */
+    .nav-toggle { display: none; }
+    @media (max-width: 900px) {
+      html.mnav { --mnav-bg: #06110C; --mnav-text: #F1EEE8; --mnav-accent: #EC6A62; }
+      html.mnav[data-theme="v1"] { --mnav-bg: #151515; --mnav-text: #F5F3EA; --mnav-accent: #FFF21A; }
+      .mnav nav, .mnav nav.scrolled { -webkit-backdrop-filter: none; backdrop-filter: none; }   /* keeps the fixed panel full screen */
+      .mnav .nav-logo { position: relative; z-index: 2; white-space: nowrap; }
+      .mnav .nav-toggle {
+        position: relative; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px;
+        background: none; border: 0; padding: 0; cursor: pointer; color: var(--mnav-c, var(--mnav-text));
+        -webkit-tap-highlight-color: transparent;
+      }
+      .nav-toggle-bars { position: relative; width: 24px; height: 12px; }
+      .nav-toggle-bars::before, .nav-toggle-bars::after {
+        content: ''; position: absolute; left: 0; right: 0; height: 1.5px; border-radius: 2px; background: currentColor;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-toggle-bars::before { top: 0; }
+      .nav-toggle-bars::after { top: calc(100% - 1.5px); }
+      .nav-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 4px; }
+
+      .mnav .nav-links {
+        position: fixed; inset: 0; z-index: 1; margin: 0;
+        display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+        padding: 6.5rem 1.5rem 7rem; overflow-y: auto; overscroll-behavior: contain;
+        visibility: hidden; transition: visibility 0s 0.4s;
+      }
+      /* the panel itself never fades (that would hide the colour switch inside it):
+         its background and links fade on their own */
+      .mnav .nav-links::before {
+        content: ''; position: fixed; inset: 0; z-index: -1; background: var(--mnav-bg);
+        opacity: 0; transition: opacity 0.3s ease;
+      }
+      .mnav .nav-links > li:not(.theme-item) {
+        opacity: 0; transform: translate3d(0, -10px, 0);
+        transition: opacity 0.25s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .mnav .nav-links > li { width: 100%; border-bottom: 1px solid color-mix(in srgb, var(--mnav-text) 14%, transparent); }
+      .mnav .nav-links > li.theme-item { width: auto; border: 0; visibility: visible; }   /* the colour switch stays pinned bottom right */
+      .mnav .nav-links > li > a {
+        display: block; padding: 0.9rem 0;
+        font-family: 'DM Mono', monospace; font-weight: 500; font-size: clamp(1.9rem, 9vw, 2.6rem); line-height: 1;
+        letter-spacing: -0.05em; text-transform: uppercase; color: var(--mnav-text) !important;
+      }
+      .mnav .nav-links > li > a::after { display: none; }
+      .mnav .nav-links > li > a.active { color: var(--mnav-accent) !important; }
+      .mnav .has-dropdown .dropdown {
+        position: static; transform: none; min-width: 0; opacity: 1; visibility: inherit; pointer-events: auto;
+        background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+        padding: 0 0 1rem; transition: none;
+      }
+      .mnav .dropdown li + li { border: 0; }
+      .mnav .dropdown a, .mnav .dropdown li:first-child a {
+        padding: 0.45rem 0; font-size: 0.9rem; letter-spacing: 0.02em; text-transform: none; white-space: normal;
+        color: color-mix(in srgb, var(--mnav-text) 72%, transparent) !important;   /* beats the v1 dark-on-yellow nav colours */
+      }
+      .mnav .dropdown li.sub a { padding-left: 1.1rem; }
+      .mnav .dropdown a:hover { background: none; color: var(--mnav-accent) !important; }
+
+      /* open */
+      .mnav-open, .mnav-open body { overflow: hidden; }
+      .mnav-open nav .nav-links { visibility: visible; transition: none; }
+      .mnav-open nav .nav-links::before { opacity: 1; }
+      .mnav-open nav .nav-links > li:not(.theme-item) { opacity: 1; transform: none; }
+      .mnav-open nav .nav-links > li:nth-child(2) { transition-delay: 0.04s; }
+      .mnav-open nav .nav-links > li:nth-child(3) { transition-delay: 0.08s; }
+      .mnav-open nav .nav-links > li:nth-child(4) { transition-delay: 0.12s; }
+      .mnav-open nav .nav-logo, .mnav-open nav .nav-logo span { color: var(--mnav-text) !important; }
+      .mnav-open .nav-toggle { color: var(--mnav-text); }
+      .mnav-open .nav-toggle-bars::before { top: calc(50% - 0.75px); transform: rotate(45deg); }
+      .mnav-open .nav-toggle-bars::after { top: calc(50% - 0.75px); transform: rotate(-45deg); }
+    }
+    @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+      .mnav .nav-links, .mnav .nav-links::before, .mnav .nav-links > li, .nav-toggle-bars::before, .nav-toggle-bars::after { transition: none !important; }
+    }
+  </style>
+  <style id="nav-sub">
+    /* Work menu: UI/UX case studies fold under "UI/UX Design" (a chevron opens them).
+       Collapsing needs the script (html.subnav), so without JS the list stays open. */
+    .dropdown .has-sub { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+    .dropdown .sub-list { grid-column: 1 / -1; }
+    .dropdown .sub-list a { padding-left: 2.25rem; border-top: 1px solid color-mix(in srgb, var(--paper, #F1EEE8) 5%, transparent); }
+    .sub-toggle { display: none; }
+    .subnav .sub-toggle {
+      display: grid; place-items: center; width: 2.75rem; align-self: stretch; padding: 0; border: 0; background: none; cursor: pointer;
+      color: color-mix(in srgb, var(--paper, #F1EEE8) 60%, transparent); transition: color 0.15s;
+    }
+    .subnav .sub-toggle:hover { color: var(--paper, #F1EEE8); }
+    .subnav .sub-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: -4px; }
+    .sub-toggle span {
+      width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+      transform: translateY(-2px) rotate(45deg); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .has-sub.is-open .sub-toggle span { transform: translateY(2px) rotate(-135deg); }
+    .subnav .has-sub:not(.is-open) .sub-list { display: none; }
+    @media (max-width: 900px) {
+      .mnav .dropdown .sub-list a { padding-left: 1.1rem; border-top: 0; }
+      .mnav .sub-toggle { width: 2.5rem; color: color-mix(in srgb, var(--mnav-text) 72%, transparent); }
+    }
+    @media (prefers-reduced-motion: reduce) { .sub-toggle span { transition: none; } }
+  </style>
+  <style id="no-handwriting">
+    /* No handwritten type anywhere: what used Caveat is now DM Mono, resized for its wider letters */
+    .nav-logo { font-weight: 500; font-size: 1.05rem; letter-spacing: -0.03em; }
+    .nav-logo span { display: inline-block; font-size: 1.25em; line-height: 1; margin: 0 0.06em; vertical-align: -0.06em; }   /* DM Mono has no ✦, so the fallback glyph is set larger */
+    .nav-logo span { transition: rotate 0.9s cubic-bezier(0.65, 0, 0.35, 1); }   /* hover: one clockwise turn; leaving the logo rewinds it */
+    .nav-logo:hover span, .nav-logo:focus-visible span { rotate: 360deg; }
+    @media (prefers-reduced-motion: reduce) { .nav-logo span { transition: none; } .nav-logo:hover span, .nav-logo:focus-visible span { rotate: none; } }
+    :is(.work-type, .ws-type, .atv-type, .wc-type) { font-weight: 400; letter-spacing: 0.02em; line-height: 1.35; }
+    .work-type { font-size: 0.78rem; }
+    .ws-type { font-size: clamp(0.85rem, 1vw, 1rem); margin-top: 1.1rem; }
+    .atv-type { font-size: clamp(12px, 1.35cqw, 17px); margin-top: 0.7em; }
+    .wc-type { font-size: clamp(12px, 2.3cqw, 15px); margin-top: 0.7em; }
+    .work-featured-inner .wc-type { font-size: clamp(12px, 1.25cqw, 17px); }
+    @media (max-width: 900px) {
+      #work.atv:not(.atv-js) .atv-type, .wc-type, .work-featured-inner .wc-type { font-size: 13px; }
+    }
+    :is(.skill-tag, .case-tag) { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.04em; }
+    :is(.contact-email) { font-size: clamp(1.2rem, 2.6vw, 2rem); font-weight: 400; letter-spacing: -0.03em; }
+    html[data-theme] .contact-email { font-size: clamp(1.2rem, 2.6vw, 2rem); }
+    .contact-direct-email { font-size: clamp(1.1rem, 2.2vw, 1.75rem); font-weight: 400; letter-spacing: -0.03em; }
+    .bio-greeting { font-size: clamp(1.6rem, 2.6vw, 2.4rem); font-weight: 500; letter-spacing: -0.04em; }
+    .portrait-caption { font-size: 0.72rem; letter-spacing: 0.04em; }
+    .experience-company { font-size: 0.8rem; font-weight: 400; }
+    .btn-primary { font-size: 0.78rem; letter-spacing: 0.08em; }
+    .work-soon-plus { font-size: 2rem; font-weight: 300; }
+  </style>
+  <style id="hero-home-gradient">
+    /* green/guava theme: same ground as the homepage hero (.hero-bg + .hero-scrim in index.html) */
+    html:not([data-theme="v1"]) #contact-hero {
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E") repeat,
+        radial-gradient(ellipse 80% 85% at 50% 40%, transparent 50%, rgba(2, 6, 4, 0.55) 100%),
+        radial-gradient(ellipse 55% 50% at 50% 28%, rgba(38, 70, 53, 0.5) 0%, transparent 65%),
+        radial-gradient(circle at 22% 18%, rgba(30, 58, 44, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse 90% 75% at 50% 100%, rgba(0, 0, 0, 0.6) 0%, transparent 60%),
+        linear-gradient(180deg, #0f2419 0%, #06110C 50%, #020604 100%);
+    }
+  </style>
+  <style id="cursor-spark">
+    /* cursor-follow mark drawn as the logo spark (✦) instead of a dot; same white + difference blend and hover grow */
+    html .cursor {
+      width: 18px; height: 18px; border-radius: 0;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0C53 35 65 47 100 50C65 53 53 65 50 100C47 65 35 53 0 50C35 47 47 35 50 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0C53 35 65 47 100 50C65 53 53 65 50 100C47 65 35 53 0 50C35 47 47 35 50 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    html .cursor.hover { width: 44px; height: 44px; }
+  </style>
+  <style id="v1-dropdown">
+    /* Yellow theme: the dark top-bar link colour was also hitting the Work menu, which sits on a charcoal panel; give the panel its light text back (desktop only, the mobile menu has its own colours) */
+    @media (min-width: 901px) {
+      html[data-theme="v1"] nav .nav-links .dropdown a:not(.active) { color: rgba(245, 243, 234, 0.6); }
+      html[data-theme="v1"] nav .nav-links .dropdown li:first-child a:not(.active) { color: rgba(245, 243, 234, 0.72); }
+      html[data-theme="v1"] nav .nav-links .dropdown a:not(.active):hover { color: #F5F3EA; background: rgba(245, 243, 234, 0.05); }
+      html[data-theme="v1"] nav .dropdown .sub-toggle { color: rgba(245, 243, 234, 0.6); }
+      html[data-theme="v1"] nav .dropdown .sub-toggle:hover { color: #F5F3EA; }
+    }
+  </style>
+  <style id="v2-gray-footer">
+    /* Green theme: everything below the hero (form section + footer) sits on the dark gray (#151515) used across the site; the hero stays green */
+    html:not([data-theme="v1"]) body { background: #151515; }
+    html:not([data-theme="v1"]) nav.scrolled { background: rgba(21, 21, 21, 0.94); }
+    html:not([data-theme="v1"]) #contact-body { background: linear-gradient(#151515, #080808); }   /* darkens toward the page end */
+    html:not([data-theme="v1"]) footer { background: #080808; }   /* picks up where the gradient ends */
+  </style>
+  <style id="resume-folder">
+    /* Résumé folder link in Get in touch: the document peeks out on a slow loop; on hover/focus the
+       front flap tips open and the page slides up. Colors follow the theme (--accent / --paper). */
+    .resume-folder { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2.5rem; }
+    #contact-body .resume-folder { margin: 0 0 3rem; }
+    .rf-open { display: inline-flex; align-items: center; gap: 1rem; color: var(--paper); text-decoration: none; }
+    .rf-open:focus-visible, .rf-dl:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+    .rf-icon { width: 64px; height: 54px; flex: none; overflow: visible; }
+    /* macOS folder colours (fixed, not themed): gradients live in the <defs> of the first .rf-icon on the page */
+    .rf-back { fill: url(#rf-grad-back); }
+    .rf-doc rect { fill: #FFFFFF; }
+    .rf-doc line { stroke: #BCC6D1; stroke-width: 2; stroke-linecap: round; }
+    .rf-front { fill: url(#rf-grad-front); stroke: rgba(255, 255, 255, 0.55); stroke-width: 0.8; }
+    .rf-back, .rf-doc, .rf-front { transform-box: fill-box; }
+    .rf-doc { transform-origin: 50% 100%; animation: rf-peek 5s cubic-bezier(0.45, 0, 0.2, 1) 1.2s infinite; }
+    .rf-front { transform-origin: 50% 100%; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes rf-peek {
+      0%, 62%, 100% { transform: translateY(0) rotate(0deg); }
+      72% { transform: translateY(-7px) rotate(-3deg); }
+      84% { transform: translateY(-1px) rotate(0deg); }
+    }
+    .rf-open:is(:hover, :focus-visible) .rf-doc { animation: none; transform: translateY(-13px) rotate(-5deg); transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+    .rf-open:is(:hover, :focus-visible) .rf-front { transform: perspective(120px) rotateX(-28deg); }
+    .rf-text { display: flex; flex-direction: column; gap: 0.3rem; }
+    .rf-label { font-family: 'DM Mono', monospace; font-size: 0.95rem; font-weight: 500; letter-spacing: -0.01em; }
+    .rf-cta, .rf-dl { font-family: 'DM Mono', monospace; font-size: 0.68rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--paper) 62%, transparent); transition: color 0.2s; }
+    .rf-open:hover .rf-cta { color: var(--accent); }
+    .rf-dl { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--paper) 25%, transparent); padding-bottom: 2px; }
+    .rf-dl:hover { color: var(--paper); border-color: var(--accent); }
+    @media (prefers-reduced-motion: reduce) {
+      .rf-doc { animation: none; }
+      .rf-doc, .rf-front, .rf-open:is(:hover, :focus-visible) .rf-doc { transition: none; }
+    }
+    /* Résumé viewer (script id="resume-modal"): the one-sheet JPG in a dialog on the same page */
+    .rf-modal { position: fixed; inset: 0; margin: auto; width: min(860px, calc(100vw - 32px)); height: min(92vh, 1200px); max-width: none; max-height: none; padding: 0; border: 0; border-radius: 10px; background: #1d1d1d; color: #F1EEE8; overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55); }
+    .rf-modal[open] { display: flex; flex-direction: column; animation: rf-in 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    .rf-modal::backdrop { background: rgba(6, 6, 6, 0.74); backdrop-filter: blur(6px); animation: rf-fade 0.3s ease; }
+    @keyframes rf-in { from { opacity: 0; transform: translateY(24px) scale(0.97); } }
+    @keyframes rf-fade { from { opacity: 0; } }
+    .rf-modal-bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0.75rem 0.75rem 1.25rem; border-bottom: 1px solid rgba(241, 238, 232, 0.08); }
+    .rf-modal-title { flex: 1; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(241, 238, 232, 0.62); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rf-modal-dl { font-family: 'DM Mono', monospace; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: #151515; background: var(--accent); padding: 0.6rem 1rem; border-radius: 2px; transition: background 0.2s; white-space: nowrap; }
+    .rf-modal-dl:hover { background: #F1EEE8; }
+    .rf-modal-close { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(241, 238, 232, 0.18); background: transparent; color: inherit; font-size: 0.9rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .rf-modal-close:hover { background: rgba(241, 238, 232, 0.08); border-color: rgba(241, 238, 232, 0.4); }
+    .rf-modal :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .rf-modal-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 1.25rem; background: #2b2b2b; }
+    .rf-modal-body img { display: block; width: 100%; height: auto; }
+    html.rf-lock { overflow: hidden; }
+    /* the dialog sits above the custom spark cursor (#cursor), so use the system cursor while it is open */
+    .rf-modal, .rf-modal::backdrop { cursor: auto; }
+    .rf-modal :is(a, button) { cursor: pointer; }
+    html.rf-lock .cursor { opacity: 0; }
+    @media (max-width: 600px) {
+      .rf-modal { width: 100vw; height: 100dvh; border-radius: 0; }
+      .rf-modal-body { padding: 0.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .rf-modal[open], .rf-modal::backdrop { animation: none; } }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <nav aria-label="Primary">
+    <a href="index.html" class="nav-logo">MF<span aria-hidden="true">✦</span>Design</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+          <a href="work.html">Work</a>
+          <ul class="dropdown">
+            <li><a href="work.html">All projects</a></li>
+            <li class="has-sub">
+              <a href="work.html#ui-ux">UI/UX Design</a><button type="button" class="sub-toggle" aria-expanded="true" aria-controls="nav-uiux" aria-label="UI/UX Design case studies"><span aria-hidden="true"></span></button>
+              <div class="sub-list" id="nav-uiux">
+                <!-- UI/UX case studies: one link per case -->
+                <a href="work/mellome.html">MelloMe</a>
+                <a href="work/roytberg.html">Dr. Simon Roytberg</a>
+                <a href="work/valladolid-plastic-surgery.html">Valladolid Plastic Surgery</a>
+                <a href="work/silvernest.html">Silvernest</a>
+                <a href="work/stephen-morris-law.html">Stephen B. Morris</a>
+                <a href="work/carefree-smiles.html">Carefree Smiles</a>
+                <a href="work/tamar-caspi.html">Tamar Caspi</a>
+              </div>
+            </li>
+            <li><a href="work/now-media-group.html">Now Media Group</a></li>
+            <li><a href="work/food-truck-fridays.html">Food Truck Fridays</a></li>
+            <li><a href="work/kis-kitchen.html">Ki's Kitchen</a></li>
+            <li><a href="work/solid-bite.html">Solid Bite</a></li>
+          </ul>
+        </li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li class="theme-item"><button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Yellow and lavender colours">
+        <span class="theme-knob" aria-hidden="true"></span>
+        <span class="theme-dot theme-dot--v2" aria-hidden="true"></span>
+        <span class="theme-dot theme-dot--v1" aria-hidden="true"></span>
+      </button></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Page hero -->
+    <section id="contact-hero" aria-labelledby="contact-title">
+      <p class="contact-hero-tag"><span aria-hidden="true">✦</span> Get in touch</p>
+      <h1 class="contact-hero-title" id="contact-title">
+        Got a project<br>in <em>mind?</em>
+      </h1>
+      <p class="contact-hero-sub">
+        Whether it's a full product build, a design system, or just an idea you want to pressure-test — I'd love to hear about it.
+      </p>
+      <div class="contact-status" aria-label="Availability status: available for new projects">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for new projects
+      </div>
+      <img class="contact-hero-figure" src="assets/figures/contact-hero.webp" fetchpriority="high" alt="" aria-hidden="true" width="1792" height="2121" loading="eager" />
+    </section>
+
+    <div class="word-cross" aria-hidden="true">
+    <div class="word-band wb-back"><div class="word-band-track"><span class="band-set"><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span></span><span class="band-set"><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span></span></div></div>
+    <div class="word-band wb-front"><div class="word-band-track"><span class="band-set"><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span></span><span class="band-set"><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span><span class="f">UI Design</span><span class="o">Art Direction</span><span class="f">Branding</span><span class="o">Production Art</span></span></div></div>
+  </div>
+
+    <!-- Contact body -->
+    <section id="contact-body">
+      <div class="contact-body-grid">
+
+        <!-- Left: info -->
+        <div class="reveal">
+
+          <p class="contact-info-label">Direct line</p>
+          <a href="mailto:hello@maurofacciolla.com" class="contact-direct-email">
+            hello@maurofacciolla.com
+          </a>
+
+          <div class="contact-meta-block">
+            <div class="contact-meta-item">
+              <p class="contact-info-label">Based in</p>
+              <p class="contact-meta-value">San Diego, CA<br>Pacific Time (PT)</p>
+            </div>
+            <div class="contact-meta-item">
+              <p class="contact-info-label">Response time</p>
+              <p class="contact-meta-value">Usually within 24 hours</p>
+            </div>
+          </div>
+
+          <!-- Résumé folder (styles in <style id="resume-folder">); PDF is the public version, no phone -->
+          <div class="resume-folder reveal">
+            <a href="assets/Mauro-Facciolla-Resume.pdf" class="rf-open" target="_blank" rel="noopener" aria-label="View my résumé">
+              <svg class="rf-icon" viewBox="0 0 64 54" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="rf-grad-back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6CB9EE"/><stop offset="1" stop-color="#4C9FDD"/></linearGradient><linearGradient id="rf-grad-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A2D7FB"/><stop offset="1" stop-color="#71BDF3"/></linearGradient></defs>
+                <path class="rf-back" d="M4 9a4 4 0 0 1 4-4h13.5a4 4 0 0 1 2.8 1.2l3.5 3.6H56a4 4 0 0 1 4 4V47a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z"/>
+                <g class="rf-doc"><rect x="15" y="9" width="34" height="34" rx="2.5"/><line x1="21" y1="17" x2="36" y2="17"/><line x1="21" y1="23" x2="43" y2="23"/><line x1="21" y1="29" x2="40" y2="29"/></g>
+                <path class="rf-front" d="M2.2 23.4A4 4 0 0 1 6.1 19h51.8a4 4 0 0 1 3.9 4.4l-2.4 24A4 4 0 0 1 55.4 51H8.6a4 4 0 0 1-4-3.6Z"/>
+              </svg>
+              <span class="rf-text"><span class="rf-label">My résumé</span><span class="rf-cta">View résumé</span></span>
+            </a>
+            <a href="assets/Mauro-Facciolla-Resume.pdf" class="rf-dl" download="Mauro-Facciolla-Resume.pdf">Download</a>
+          </div>
+          <div class="contact-book">
+            <p class="contact-info-label">Prefer to talk?</p>
+            <!-- PLACEHOLDER: Cal.com event link -->
+            <a href="#" class="contact-book-btn" target="_blank" rel="noopener">Book a 15-min intro <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <ul class="contact-social-list" aria-label="Social links">
+            <li class="contact-social-item">
+              <a href="https://www.linkedin.com/in/mauro-facciolla/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Right: form -->
+        <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate style="transition-delay: 0.15s">
+
+          <!-- Web3Forms access key (public by design; sends to hello@) -->
+          <input type="hidden" name="access_key" value="2dda9329-9db7-4997-a26f-a61efdacd40c"/>
+          <input type="hidden" name="subject" value="New message from maurofacciolla.com"/>
+          <input type="hidden" name="from_name" value="Portfolio contact form"/>
+          <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="cf-name">Full name</label>
+              <input class="form-input" id="cf-name" name="name" type="text"
+                     placeholder="Jane Smith" required autocomplete="name"/>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="cf-email">Email</label>
+              <input class="form-input" id="cf-email" name="email" type="email"
+                     placeholder="jane@studio.com" required autocomplete="email"/>
+            </div>
+          </div>
+
+          <div class="form-select-row">
+            <div class="form-field">
+              <label class="form-label" for="cf-type">Project type</label>
+              <select class="form-select" id="cf-type" name="type">
+                <option value="" disabled selected>Select one…</option>
+                <option value="ui-ux">UI / UX Design</option>
+                <option value="design-system">Design System</option>
+                <option value="brand">Brand Identity</option>
+                <option value="ai-workflow">AI Workflow Integration</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="cf-budget">Budget range <span class="form-optional">(optional)</span></label>
+              <select class="form-select" id="cf-budget" name="budget">
+                <option value="" disabled selected>Select one…</option>
+                <option value="under-5k">Under $5k</option>
+                <option value="5k-15k">$5k – $15k</option>
+                <option value="15k-30k">$15k – $30k</option>
+                <option value="30k-plus">$30k+</option>
+                <option value="tbd">To be discussed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="cf-phone">
+              Phone <span class="form-optional">(optional)</span>
+            </label>
+            <input class="form-input" id="cf-phone" name="phone" type="tel"
+                   placeholder="+1 (555) 000-0000" autocomplete="tel"/>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="cf-message">Tell me about your project</label>
+            <textarea class="form-textarea" id="cf-message" name="message"
+                      placeholder="What are you building, what's the timeline, and what does success look like for you?"
+                      required rows="6"></textarea>
+          </div>
+
+          <button class="form-submit" type="submit">Send message →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Mauro Facciolla</span>
+    <span>Designed &amp; built by hand <span aria-hidden="true">✦</span></span>
+  </footer>
+
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    let rafId;
+    document.addEventListener('mousemove', e => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      });
+    });
+    document.querySelectorAll('a, button, select, .contact-social-item').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // Nav scroll state
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Contact form — validation, then sent to Web3Forms (honeypot filters bots)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+        const btn = contactForm.querySelector('.form-submit');
+        const status = contactForm.querySelector('.form-status');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        status.textContent = '';
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(contactForm)
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) throw new Error(data.message);
+          btn.textContent = 'Message sent ✦';
+          btn.style.background = 'var(--accent)';
+          btn.style.color = 'var(--paper)';
+          status.textContent = 'Thanks, I’ll get back to you within 24 hours.';
+          contactForm.reset();
+        } catch (err) {
+          btn.textContent = 'Send message →';
+          btn.disabled = false;
+          status.textContent = 'Something went wrong. Please try again, or email hello@maurofacciolla.com.';
+        }
+      });
+
+      contactForm.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+    }
+  </script>
+
+  <script>
+    // colour switch: forest + guava <-> yellow + lavender, remembered per visitor
+    (function () {
+      var btn = document.querySelector('.theme-switch');
+      function apply(t) {
+        document.documentElement.dataset.theme = t;
+        btn.setAttribute('aria-checked', t === 'v1' ? 'true' : 'false');
+        btn.title = t === 'v1' ? 'Switch to forest and guava' : 'Switch to yellow and lavender';
+      }
+      apply(document.documentElement.dataset.theme);
+      btn.addEventListener('click', function () {
+        var t = document.documentElement.dataset.theme === 'v1' ? 'v2' : 'v1';
+        try { localStorage.setItem('mf-theme', t); } catch (e) {}
+        var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (document.startViewTransition && !still) document.startViewTransition(function () { apply(t); });
+        else apply(t);
+      });
+    })();
+  </script>
+  <script>
+    // Mobile menu: adds the menu button to the nav; the links open as a full-screen panel
+    (function () {
+      var nav = document.querySelector('nav');
+      var list = nav && nav.querySelector('.nav-links');
+      var logo = nav && nav.querySelector('.nav-logo');
+      if (!list || !logo) return;
+      var root = document.documentElement;
+      var mq = window.matchMedia('(max-width: 900px)');
+      list.id = list.id || 'nav-menu';
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'nav-toggle';
+      btn.setAttribute('aria-controls', list.id); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span class="nav-toggle-bars" aria-hidden="true"></span>';
+      logo.after(btn);
+      root.classList.add('mnav');
+
+      function setOpen(open) {
+        root.classList.toggle('mnav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+        if (open) { var first = list.querySelector('a'); if (first) first.focus({ preventScroll: true }); }
+      }
+      btn.addEventListener('click', function () { setOpen(!root.classList.contains('mnav-open')); });
+      list.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && root.classList.contains('mnav-open')) { setOpen(false); btn.focus(); }
+      });
+      (mq.addEventListener ? mq.addEventListener('change', onMq) : mq.addListener(onMq));
+      function onMq() { if (!mq.matches) setOpen(false); }
+
+      // the button takes the logo's colour, which changes with the scheme and the nav's scrolled state
+      var raf = 0;
+      function tint() { raf = 0; if (!root.classList.contains('mnav-open')) btn.style.setProperty('--mnav-c', getComputedStyle(logo).color); }
+      function queue() { if (!raf) raf = requestAnimationFrame(tint); }
+      tint();
+      window.addEventListener('scroll', queue, { passive: true });
+      new MutationObserver(function () { setTimeout(tint, 400); }).observe(nav, { attributes: true, attributeFilter: ['class'] });
+      new MutationObserver(function () { setTimeout(tint, 50); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+  </script>
+  <script>
+    // Work menu: the chevron next to "UI/UX Design" shows and hides its case studies.
+    // The list starts open on one of those case pages.
+    (function () {
+      var page = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav .has-sub').forEach(function (li) {
+        var btn = li.querySelector('.sub-toggle'), list = li.querySelector('.sub-list');
+        if (!btn || !list) return;
+        var name = li.querySelector('a').textContent.trim();
+        function set(open) {
+          li.classList.toggle('is-open', open);
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          btn.setAttribute('aria-label', (open ? 'Hide ' : 'Show ') + name + ' case studies');
+        }
+        var here = Array.prototype.some.call(list.querySelectorAll('a'), function (a) { return a.getAttribute('href') === page; });
+        set(here);
+        btn.addEventListener('click', function (e) { e.stopPropagation(); set(!li.classList.contains('is-open')); });
+      });
+      document.documentElement.classList.add('subnav');
+    })();
+  </script>
+  <script id="resume-modal">
+    // Résumé viewer: "My résumé" opens the one-sheet JPG (same name as the PDF) in a dialog on this page.
+    // Cmd/Ctrl-click and no-JS still open the PDF itself.
+    (() => {
+      const links = document.querySelectorAll('.rf-open');
+      if (!links.length || !window.HTMLDialogElement) return;
+      const pdf = links[0].getAttribute('href');
+      const dlg = document.createElement('dialog');
+      dlg.className = 'rf-modal';
+      dlg.setAttribute('aria-label', 'Mauro Facciolla résumé');
+      dlg.innerHTML = '<div class="rf-modal-bar"><span class="rf-modal-title">Mauro Facciolla — Résumé</span>'
+        + '<a class="rf-modal-dl" href="' + pdf + '" download="Mauro-Facciolla-Resume.pdf">Download PDF</a>'
+        + '<button type="button" class="rf-modal-close" aria-label="Close résumé">✕</button></div>'
+        + '<div class="rf-modal-body"><img alt="Mauro Facciolla résumé, two pages" width="1600" height="4189" decoding="async"></div>';
+      document.body.append(dlg);
+      const img = dlg.querySelector('img');
+      const body = dlg.querySelector('.rf-modal-body');
+      links.forEach((link) => link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+        e.preventDefault();
+        if (!img.src) img.src = pdf.replace(/\.pdf$/, '.jpg');
+        dlg.showModal();
+        document.documentElement.classList.add('rf-lock');
+        body.scrollTop = 0;
+      }));
+      dlg.querySelector('.rf-modal-close').addEventListener('click', () => dlg.close());
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener('close', () => document.documentElement.classList.remove('rf-lock'));
+
+      // Download links: open the system Save dialog (Chrome/Edge) or save the file directly elsewhere,
+      // never navigate to the PDF. If the file can't be fetched (e.g. opened from disk), fall back to the plain link.
+      document.addEventListener('click', async (e) => {
+        const dl = e.target.closest('.rf-dl, .rf-modal-dl');
+        if (!dl || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+        e.preventDefault();
+        const name = dl.getAttribute('download') || 'Mauro-Facciolla-Resume.pdf';
+        try {
+          if (window.showSaveFilePicker) {
+            const handle = await window.showSaveFilePicker({ suggestedName: name, types: [{ description: 'PDF', accept: { 'application/pdf': ['.pdf'] } }] });
+            const blob = await (await fetch(dl.href)).blob();
+            const out = await handle.createWritable();
+            await out.write(blob);
+            await out.close();
+          } else {
+            const res = await fetch(dl.href);
+            if (!res.ok) throw new Error(res.status);
+            const url = URL.createObjectURL(await res.blob());
+            const a = Object.assign(document.createElement('a'), { href: url, download: name });
+            document.body.append(a); a.click(); a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 4000);
+          }
+        } catch (err) {
+          if (err && err.name === 'AbortError') return;   // closed the Save dialog
+          window.location.href = dl.href;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

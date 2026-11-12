@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Valladolid Plastic Surgery — Website Redesign Case Study by Mauro Facciolla" />
+  <title>Valladolid Plastic Surgery — Mauro Facciolla</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Mono', monospace; overflow-x: hidden; cursor: none; }
+    *:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+    .cursor { position: fixed; width: 12px; height: 12px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease; mix-blend-mode: difference; }
+    .cursor.hover { width: 36px; height: 36px; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"); }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; transition: background 0.35s ease, backdrop-filter 0.35s ease; }
+    nav.scrolled { background: rgba(var(--ink-rgb),0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(var(--paper-rgb),0.07); }
+    .nav-logo { font-family: 'DM Mono', monospace; font-size: 1.5rem; font-weight: 700; color: var(--paper); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.75rem; font-weight: 300; color: rgba(var(--paper-rgb),0.5); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
+    .nav-links a:hover { color: var(--paper); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--paper); }
+
+    .has-dropdown { position: relative; }
+    .dropdown {
+      position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      min-width: 240px; background: rgba(var(--ink-rgb),0.97);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(var(--paper-rgb),0.1);
+      list-style: none; padding: 0.75rem 0 0.5rem; z-index: 200;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    }
+    .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown a {
+      display: block; padding: 0.6rem 1.25rem;
+      font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300;
+      color: rgba(var(--paper-rgb),0.45); letter-spacing: 0.06em; text-transform: none;
+      text-decoration: none; white-space: nowrap;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown a::after { display: none; }
+    .dropdown a:hover { color: var(--paper); background: rgba(var(--paper-rgb),0.04); }
+    .dropdown li + li { border-top: 1px solid rgba(var(--paper-rgb),0.05); }
+    .dropdown li:first-child a { color: rgba(var(--paper-rgb),0.6); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .dropdown li.sub a { padding-left: 2.25rem; }
+
+    .case-hero { min-height: 75vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 5rem 200px 6rem; position: relative; overflow: hidden; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E") repeat, var(--ink); }
+    .case-hero-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .case-hero-title { font-family: 'DM Mono', monospace; font-style: italic; font-size: clamp(2.8rem, 6vw, 6rem); font-weight: 400; line-height: 1.0; color: var(--paper); max-width: 18ch; margin-bottom: 2rem; }
+    .case-hero-desc { font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 300; color: rgba(var(--paper-rgb),0.55); max-width: 48ch; line-height: 1.8; margin-bottom: 2.5rem; }
+    .case-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .case-tag { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--paper); border: 1.5px solid rgba(var(--paper-rgb),0.5); padding: 0.3rem 0.9rem; border-radius: 100px; position: relative; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+    .case-tag::before { content: ''; position: absolute; inset: -2px; border-radius: 100px; border: 1px solid rgba(var(--paper-rgb),0.25); transform: translate(2px, 2px); pointer-events: none; }
+    .case-tag:hover { background: var(--paper); color: var(--ink); transform: translateY(-2px); }
+
+    .case-meta { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(var(--paper-rgb),0.1); border-bottom: 1px solid rgba(var(--paper-rgb),0.1); padding: 2.5rem 3rem; background: var(--ink); }
+    .meta-col { padding: 0 2rem 0 0; }
+    .meta-col + .meta-col { border-left: 1px solid rgba(var(--paper-rgb),0.08); padding-left: 2rem; }
+    .meta-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .meta-value { font-family: 'DM Mono', monospace; font-size: 1rem; color: var(--paper); line-height: 1.4; }
+
+    .case-section { padding: 6rem 3rem; background: var(--ink); }
+    .case-body { max-width: 760px; }
+    .case-section-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .case-heading { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin-bottom: 2rem; color: var(--paper); }
+    .case-text { font-family: 'DM Mono', monospace; font-size: 0.88rem; font-weight: 300; color: rgba(var(--paper-rgb),0.65); line-height: 1.85; margin-bottom: 1.5rem; max-width: 65ch; }
+
+    /* ── KEY SCREENS — modern bento-style image drop zones ── */
+    .screens-section { padding: 6rem 3rem; background: var(--paper); }
+    .bento-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .bento-item--full { grid-column: span 6; aspect-ratio: 21 / 9; }
+    .bento-item--half { grid-column: span 3; aspect-ratio: 4 / 3; }
+    .bento-item--third { grid-column: span 2; aspect-ratio: 1 / 1; }
+
+    .drop-zone {
+      position: relative;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.6rem;
+      background: var(--warm);
+      border: 1.5px dashed rgba(var(--ink-rgb),0.25);
+      color: var(--muted);
+      text-align: center;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .drop-zone:hover { border-color: var(--accent); background: rgba(var(--accent-rgb),0.06); transform: translateY(-2px); }
+    .drop-zone svg { width: 28px; height: 28px; opacity: 0.5; }
+    .drop-zone-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.02em; color: var(--ink); opacity: 0.6; }
+    .drop-zone-dims { font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 300; letter-spacing: 0.04em; opacity: 0.55; }
+
+    /* ── FULL WALKTHROUGH — tall single-image drop zone ── */
+    .walkthrough-section { background: var(--paper); padding: 0 3rem 6rem; }
+    .walkthrough-section .case-section-label,
+    .walkthrough-section .case-heading { padding: 0 0 0 0; }
+    .walkthrough-intro { padding: 0 0 3rem; }
+    .walkthrough-intro .case-heading { color: var(--ink); }
+    .drop-zone--tall { aspect-ratio: 16 / 11; }
+
+    .project-cta { background: linear-gradient(135deg, var(--accent) 0%, var(--accent) 50%, var(--accent) 100%); padding: 5rem 200px; text-align: center; position: relative; overflow: hidden; }
+    .project-cta-art { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: overlay; opacity: 0.9; pointer-events: none; }
+    .project-cta-title { position: relative; z-index: 1; font-family: 'DM Mono', monospace; font-style: italic; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 400; color: var(--paper); letter-spacing: -0.02em; line-height: 1.15; }
+
+    #contact { padding: 6rem 200px; background: var(--ink); }
+    #contact .section-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300; color: rgba(var(--paper-rgb),0.4); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+    .section-title { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; color: var(--paper); }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .contact-email { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 300; color: rgba(var(--paper-rgb),0.6); text-decoration: none; letter-spacing: 0.05em; border-bottom: 1px solid rgba(var(--paper-rgb),0.2); padding-bottom: 0.25rem; margin-top: 1.5rem; transition: color 0.2s, border-color 0.2s; }
+    .contact-email:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+    .social-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+    .social-link { font-family: 'DM Mono', monospace; font-size: 0.75rem; font-weight: 300; color: rgba(var(--paper-rgb),0.4); text-decoration: none; transition: color 0.2s; }
+    .social-link:hover { color: var(--paper); }
+    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300; color: rgba(var(--paper-rgb),0.4); letter-spacing: 0.08em; text-transform: uppercase; }
+    .form-optional { color: var(--muted); }
+    .form-input, .form-textarea { background: transparent; border: 1px solid rgba(var(--paper-rgb),0.15); border-radius: 0; padding: 0.85rem 1rem; font-family: 'DM Mono', monospace; font-size: 0.82rem; font-weight: 300; color: var(--paper); outline: none; transition: border-color 0.2s; resize: vertical; }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(var(--paper-rgb),0.2); }
+    .form-input:focus, .form-textarea:focus { border-color: rgba(var(--paper-rgb),0.4); }
+    .form-submit { align-self: flex-start; background: transparent; border: 1px solid rgba(var(--paper-rgb),0.3); padding: 0.85rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; font-weight: 300; color: var(--paper); letter-spacing: 0.08em; cursor: none; transition: background 0.25s, border-color 0.25s; }
+    .form-submit:hover { background: rgba(var(--paper-rgb),0.06); border-color: rgba(var(--paper-rgb),0.5); }
+    footer { padding: 1.5rem 3rem; background: var(--ink); border-top: 1px solid rgba(var(--paper-rgb),0.08); display: flex; justify-content: space-between; align-items: center; font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 300; color: rgba(var(--paper-rgb),0.3); letter-spacing: 0.06em; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    .hero-deco { position: absolute; right: 200px; top: 50%; transform: translateY(-50%); width: 364px; height: 494px; opacity: 0.18; color: var(--paper); pointer-events: none; }
+
+    /* ── RELATED WORK (pinned scrub carousel, same as homepage) ── */
+    .related-work { background: var(--paper); padding: 0; }
+    .related-work .section-title { color: var(--ink); }
+    .related-pin-inner { padding: 6rem 3rem; }
+    .related-track-viewport { overflow: visible; }
+    .related-track { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+    .related-pin-wrap.is-pinned { height: 400vh; position: relative; }
+    .related-pin-wrap.is-pinned .related-pin-inner { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 3rem; }
+    .related-pin-wrap.is-pinned .related-track-viewport { overflow: hidden; margin-top: 3rem; }
+    .related-pin-wrap.is-pinned .related-track { display: flex; flex-wrap: nowrap; gap: 2rem; width: max-content; will-change: transform; }
+    .related-pin-wrap.is-pinned .work-card { width: 720px; flex: none; }
+
+    .work-card { position: relative; display: block; text-decoration: none; color: inherit; }
+    .work-card-inner { background: var(--warm); border: 1.5px solid rgba(var(--paper-rgb),0.12); aspect-ratio: 16 / 9; position: relative; overflow: hidden; transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+    .work-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .work-card-scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(var(--shade-rgb),0.12) 0%, rgba(var(--shade-rgb),0.58) 62%, rgba(var(--shade-rgb),0.85) 100%); }
+    .work-card-content { position: relative; z-index: 2; height: 100%; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .work-card:hover .work-card-inner, .work-card:focus-visible .work-card-inner { transform: translate(-3px, -3px); }
+    .work-card-inner::after { content: ''; position: absolute; inset: 0; z-index: 3; border: 1.5px solid var(--ink); transform: translate(5px, 5px); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; }
+    .work-card:hover .work-card-inner::after, .work-card:focus-visible .work-card-inner::after { transform: translate(8px, 8px); }
+    .work-number { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 300; color: rgba(var(--paper-rgb),0.55); letter-spacing: 0.1em; }
+    .work-title { font-size: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; margin: 1rem 0 0.5rem; color: var(--paper); }
+    .work-type { font-family: 'DM Mono', monospace; font-size: 0.95rem; color: var(--accent); }
+    .work-arrow { font-size: 1.4rem; color: var(--paper); align-self: flex-end; transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+    .work-card:hover .work-arrow, .work-card:focus-visible .work-arrow { transform: translate(4px, -4px); }
+    .work-card:focus-visible { outline: none; }
+    .work-card:focus-visible .work-card-inner { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .work-card.reveal:nth-child(1) { transition-delay: 0s; }
+    .work-card.reveal:nth-child(2) { transition-delay: 0.08s; }
+    .work-card.reveal:nth-child(3) { transition-delay: 0.16s; }
+    .work-card.reveal:nth-child(4) { transition-delay: 0.24s; }
+    .work-card.reveal:nth-child(5) { transition-delay: 0.32s; }
+
+    @media (max-width: 900px) {
+      .related-pin-inner { padding: 4rem 1.5rem; }
+      .related-track { grid-template-columns: 1fr; }
+      .related-pin-wrap.is-pinned { height: auto; }
+      .related-pin-wrap.is-pinned .related-pin-inner { position: static; height: auto; padding: 4rem 1.5rem; }
+      .related-pin-wrap.is-pinned .related-track-viewport { overflow: visible; margin-top: 0; }
+      .related-pin-wrap.is-pinned .related-track { display: grid; grid-template-columns: 1fr; width: auto; transform: none !important; }
+      .related-pin-wrap.is-pinned .work-card { width: auto; opacity: 1 !important; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      #cursor { display: none; }
+      body { cursor: auto; }
+      .case-hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
+      .hero-deco { display: none; }
+      .case-meta { grid-template-columns: 1fr 1fr; padding: 2rem 1.5rem; gap: 2rem; }
+      .meta-col + .meta-col { border-left: none; padding-left: 0; }
+      .case-section { padding: 4rem 1.5rem; }
+      .screens-section { padding: 4rem 1.5rem; }
+      .bento-item--full, .bento-item--half, .bento-item--third { grid-column: span 6; aspect-ratio: 16 / 11; }
+      .walkthrough-section { padding: 0 1.5rem 4rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      #contact { padding: 5rem 1.5rem; }
+      .project-cta { padding: 4rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 1.2rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* ═══ Motion layer (matches the homepage) ═════════════════════════════ */
+    .related-pin-wrap.is-pinned .related-track-viewport { margin-top: 0.5rem; padding: 2.5rem 0; }
+
+    /* Project info sits bottom-left, arrow bottom-right; scrim darkens from the bottom up */
+    .work-card-content { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 1.5rem; }
+    .work-card-content .work-title { margin: 0.6rem 0 0.35rem; }
+    .work-card-content .work-arrow { align-self: flex-end; line-height: 1; }
+    .work-card-scrim {
+      background: linear-gradient(180deg, rgba(var(--shade-rgb),0) 0%, rgba(var(--shade-rgb),0.1) 34%, rgba(var(--shade-rgb),0.68) 66%, rgba(var(--shade-rgb),0.92) 100%);
+    }
+    .work-card-content > div:first-child { text-shadow: 0 1px 12px rgba(var(--ink-rgb), 0.45); }
+    @media (max-width: 900px) {
+      .work-card-content { padding: 1.25rem; }
+      .work-card-scrim { background: linear-gradient(180deg, rgba(var(--shade-rgb),0.2) 0%, rgba(var(--shade-rgb),0.72) 48%, rgba(var(--shade-rgb),0.94) 100%); }
+    }
+
+    /* Cards lean toward the pointer (fine pointer only); the existing transform transition smooths it */
+    .work-card, .work-featured { perspective: 1100px; }
+    .work-card-inner, .work-featured-inner { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+    .work-card:hover .work-card-inner,
+    .work-card:focus-visible .work-card-inner {
+      transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translate(-3px, -3px);
+    }
+    .work-featured:hover .work-featured-inner { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translate(-4px, -4px); }
+
+    /* "Keep scrolling" cue while the carousel holds the page */
+    .work-cue { display: none; }
+    .related-pin-wrap.is-pinned .work-cue {
+      position: absolute; left: 50%; bottom: 2rem;
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.75rem 1.25rem 0.75rem 1.4rem;
+      color: var(--ink); border-radius: 100px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.18));
+      -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(var(--shade-rgb), 0.06), 0 16px 34px -14px rgba(var(--shade-rgb), 0.35);
+      font-family: 'DM Mono', monospace; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase;
+      pointer-events: none;
+      opacity: 0; transform: translate(-50%, 12px);
+      transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .related-pin-wrap.is-pinned .work-cue.on { opacity: 1; transform: translate(-50%, 0); }
+    .work-cue-bar { position: relative; width: 110px; height: 2px; border-radius: 2px; background: rgba(var(--ink-rgb), 0.14); overflow: hidden; }
+    .work-cue-fill { position: absolute; inset: 0; background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--wp, 0)); }
+    .work-cue-arrow { width: 12px; height: 16px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      animation: cueNudge 1.4s ease-in-out infinite; transition: rotate 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .work-cue.up .work-cue-arrow { rotate: 180deg; }
+    @keyframes cueNudge { 0%, 100% { transform: translateY(-3px); opacity: 0.6; } 50% { transform: translateY(4px); opacity: 1; } }
+
+    /* Grease-pencil loop around the contact email (same as the homepage) */
+    .loop {
+      position: absolute; pointer-events: none; overflow: visible; z-index: 6;
+      fill: none; stroke: var(--accent-soft); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+      stroke-dasharray: 1 1; stroke-dashoffset: 1; opacity: 0;
+      filter: url(#grease);
+    }
+    .contact-email-wrap { position: relative; display: inline-block; margin: 1.5rem 0 0; }
+    .contact-email-wrap .contact-email { margin: 0; }
+    .contact-email-wrap .loop { left: -11%; top: -70%; width: 122%; height: 240%; }
+  
+    /* ═══ Colour schemes (see _scripts/build_site_switch.py) ═══ */
+    /* v2: forest + guava. Dark-role ground everywhere; the old paper sections alternate two forests */
+    html[data-theme="v2"] { --ink: #06110C; --ink-rgb: 6, 17, 12; --paper: #F1EEE8; --paper-rgb: 241, 238, 232; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #F1EEE8; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #F2948D; }
+    html[data-theme="v2"] :is(.screens-section, .walkthrough-section, .related-work) { --ink: #F1EEE8; --ink-rgb: 241, 238, 232; --paper: #06110C; --paper-rgb: 6, 17, 12; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #10241A; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #F2948D; }
+    html[data-theme="v2"] :is(.screens-section, .related-work) { --paper: #06110C; --paper-rgb: 6, 17, 12; --warm: #06110C; }
+    html[data-theme="v2"] .portrait-card { background: #10241A; }
+    html[data-theme="v2"] :is(.project-cta, #work-cta) { background: #EC6A62; }
+    html[data-theme="v2"] :is(.project-cta-title, #work-cta h2, #work-cta p) { color: #06110C; }
+    html[data-theme="v2"] :is(.project-cta-art, .work-cta-art) { display: none; }
+    html[data-theme="v2"] .form-submit:hover { color: #06110C; }
+    html[data-theme="v2"] nav:not(.scrolled) { background: linear-gradient(180deg, rgba(6, 17, 12, 0.85), transparent); }
+
+    /* v1: yellow hero, light sections alternate yellow and charcoal, charcoal in between */
+    html[data-theme="v1"] { color-scheme: light; --ink: #151515; --ink-rgb: 21, 21, 21; --paper: #F5F3EA; --paper-rgb: 245, 243, 234; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #F5F3EA; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #C9A4FF; }
+    html[data-theme="v1"] .case-hero { --ink: #FFF21A; --ink-rgb: 255, 242, 26; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #6E35CF; --accent-rgb: 110, 53, 207; --warm: #151515; --muted: rgba(21, 21, 21, 0.7); --accent-soft: #6E35CF; }
+    html[data-theme="v1"] :is(.screens-section, .related-work) { --ink: #151515; --ink-rgb: 21, 21, 21; --paper: #FFF21A; --paper-rgb: 255, 242, 26; --accent: #6E35CF; --accent-rgb: 110, 53, 207; --warm: #FFF21A; --muted: rgba(21, 21, 21, 0.7); --light-ink: #262626; --accent-soft: #6E35CF; }
+    html[data-theme="v1"] :is(.walkthrough-section) { --ink: #F5F3EA; --ink-rgb: 245, 243, 234; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #1f1f1f; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #A668FF; }
+    html[data-theme="v1"] :is(.project-cta, #work-cta) { background: linear-gradient(135deg, #b884ff 0%, #A668FF 50%, #8c4ef2 100%); }
+    html[data-theme="v1"] :is(.project-cta-art, .work-cta-art) { opacity: 0.55; }
+    html[data-theme="v1"] :is(.project-cta-title, #work-cta h2, #work-cta p) { color: #151515; }
+    html[data-theme="v1"] #contact .section-title { color: #FFF21A; }
+    html[data-theme="v1"] .form-submit { background: #FFF21A; color: #151515; }
+    html[data-theme="v1"] .form-submit:hover { background: #A668FF; color: #151515; }
+    html[data-theme="v1"] nav:not(.scrolled) .nav-logo, html[data-theme="v1"] nav:not(.scrolled) .nav-links a { color: #151515; }
+    html[data-theme="v1"] nav:not(.scrolled) .nav-links a:not(.active) { color: rgba(21, 21, 21, 0.62); }
+    html[data-theme="v1"] nav:not(.scrolled) .nav-links a::after { background: #151515; }
+    html[data-theme="v1"] nav.scrolled .nav-links a.active::after { background: #FFF21A; }
+
+    body { background: var(--ink); }
+    html[data-theme="v2"] { --shade-rgb: 6, 17, 12; }
+    html[data-theme="v1"] { --shade-rgb: 21, 21, 21; }
+    /* one dark nav bar on every page once scrolled (work.html's own turned light) */
+    nav.scrolled { background: rgba(var(--shade-rgb), 0.94); }
+    nav.scrolled .nav-logo { color: var(--paper); }
+    nav.scrolled .nav-links a { color: rgba(var(--paper-rgb), 0.55); }
+    nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: var(--paper); }
+    html[data-theme="v2"] .related-work .work-card-content { --paper: #F1EEE8; --paper-rgb: 241, 238, 232; }
+    html[data-theme="v1"] .related-work .work-card-content { --paper: #F5F3EA; --paper-rgb: 245, 243, 234; --accent: #A668FF; }
+    :is(.screens-section, .walkthrough-section, .related-work) { color: var(--ink); }   /* headings without their own colour inherit the section's text */
+
+    /* hero, in the homepage's type: a big upright DM Mono title, and a word outlined huge
+       behind it, the full height of the hero */
+    .case-hero { position: relative; isolation: isolate; }   /* the word sits above the hero ground, below its text */
+    .case-hero::before {
+      position: absolute; right: auto; left: 0; top: 0; bottom: 0; transform: none; margin: 0;
+      display: flex; align-items: center; z-index: -1; pointer-events: none;
+      font-family: 'DM Mono', monospace; font-style: normal; font-weight: 500; text-transform: uppercase; white-space: nowrap;
+      font-size: 62vh; line-height: 1; letter-spacing: -0.06em; opacity: 1;
+      color: transparent; -webkit-text-stroke: clamp(1.5px, 0.18vw, 2.5px) rgba(var(--accent-rgb), 0.42);
+      translate: 38vw 0;
+    }
+    .case-hero-title {
+      font-style: normal; font-weight: 500; letter-spacing: -0.045em; line-height: 0.96;
+      font-size: clamp(3rem, 8vw, 7.5rem); text-wrap: balance;
+    }
+    .case-hero-title em { font-style: italic; }
+    @media (max-width: 900px) {
+      .case-hero::before { font-size: 46vh; translate: 30vw 0; }
+    }
+    .case-hero::before { content: none; }   /* no project number behind the hero */
+
+    /* artwork sections: dark gray in both schemes */
+    html[data-theme="v2"] .case-section { --ink: #151515; --ink-rgb: 21, 21, 21; --paper: #F1EEE8; --paper-rgb: 241, 238, 232; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #1f1f1f; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #EC6A62; background-color: #151515; }
+    html[data-theme="v2"] .screens-section { --ink: #F1EEE8; --ink-rgb: 241, 238, 232; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #1f1f1f; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #EC6A62; background-color: #151515; }
+    html[data-theme="v2"] .walkthrough-section { --ink: #F1EEE8; --ink-rgb: 241, 238, 232; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #1f1f1f; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #EC6A62; background-color: #151515; }
+    html[data-theme="v2"] .related-work { --ink: #F1EEE8; --ink-rgb: 241, 238, 232; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #EC6A62; --accent-rgb: 236, 106, 98; --warm: #1f1f1f; --muted: #9A968F; --light-ink: #D2CEC6; --accent-soft: #EC6A62; background-color: #151515; }
+    html[data-theme="v1"] .case-section { --ink: #151515; --ink-rgb: 21, 21, 21; --paper: #F5F3EA; --paper-rgb: 245, 243, 234; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #1f1f1f; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #A668FF; background-color: #151515; }
+    html[data-theme="v1"] .screens-section { --ink: #F5F3EA; --ink-rgb: 245, 243, 234; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #1f1f1f; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #A668FF; background-color: #151515; }
+    html[data-theme="v1"] .walkthrough-section { --ink: #F5F3EA; --ink-rgb: 245, 243, 234; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #1f1f1f; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #A668FF; background-color: #151515; }
+    html[data-theme="v1"] .related-work { --ink: #F5F3EA; --ink-rgb: 245, 243, 234; --paper: #151515; --paper-rgb: 21, 21, 21; --accent: #A668FF; --accent-rgb: 166, 104, 255; --warm: #1f1f1f; --muted: #A19E94; --light-ink: #D9D6CB; --accent-soft: #A668FF; background-color: #151515; }
+    /* ═══ Work: a stack of prints (dark test) ═════════════════════════════
+       Pinned (desktop, motion allowed): scrolling flicks the top print away and
+       the next one straightens up; the project name rises on the left, and a flat
+       board behind the stack takes each project's colour. Otherwise: a plain list. */
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .ws-section { background: var(--dk-ground); padding: 0; overflow-x: clip; }
+    .ws-stage { position: relative; padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 4vw, 4rem); }
+
+    /* the watermark: one huge word on the ground, behind everything, drifting slowly with the scroll */
+    .ws-mark {
+      position: absolute; left: 50%; top: clamp(1.5rem, 4vw, 3rem); z-index: 0; pointer-events: none; user-select: none;
+      transform: translateX(calc(-50% + var(--mark-x, 0px)));
+      font-family: 'DM Mono', monospace; font-weight: 500; text-transform: uppercase; white-space: nowrap;
+      font-size: clamp(7rem, 31vw, 36rem); line-height: 0.8; letter-spacing: -0.07em;
+      color: color-mix(in oklch, var(--dk-text) 4%, transparent);
+    }
+    .ws-list, .ws-foot { position: relative; z-index: 1; }
+
+    /* list mode (phones, reduced motion, keyboard escape) */
+    .ws-list { display: flex; flex-direction: column; gap: clamp(3.5rem, 8vw, 6rem); margin-top: clamp(6rem, 22vw, 16rem); }
+    .ws-mat, .ws-foot { display: none; }
+    .ws-item { display: grid; gap: 1.75rem; }
+    .ws-print {
+      display: block; position: relative; background: #F1EEE8; padding: clamp(8px, 1vw, 12px);
+      box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.75), 0 2px 6px rgba(0, 0, 0, 0.35);
+      rotate: calc((var(--i) - 2) * 0.8deg);
+    }
+    .ws-item:nth-child(even) .ws-print { rotate: calc((2 - var(--i)) * 0.8deg); }
+    .ws-print::before { content: ''; position: absolute; inset: 0; translate: 18px 18px; background: var(--mat); z-index: -1; }
+    .ws-print img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .ws-meta {
+      display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 0.9rem;
+      font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dk-muted);
+    }
+    .ws-num { color: var(--dk-accent); font-weight: 500; }
+    .ws-title {
+      font-family: 'DM Mono', monospace; font-weight: 500; color: var(--dk-text);
+      font-size: clamp(2.6rem, 6.2vw, 6.4rem); line-height: 0.96; letter-spacing: -0.045em;
+    }
+    .ws-title .ln { display: block; overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em; }
+    .ws-title .ln > span { display: inline-block; }
+    .ws-type { font-family: 'DM Mono', monospace; font-weight: 600; font-size: clamp(1.4rem, 2vw, 1.75rem); color: var(--dk-accent); margin-top: 0.9rem; }
+    .ws-link {
+      display: inline-flex; gap: 0.6rem; align-items: center; margin-top: 1.6rem; padding: 0.35rem 0;
+      font-family: 'DM Mono', monospace; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--dk-text); text-decoration: none; position: relative;
+    }
+    .ws-link::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px;
+      background: var(--dk-line); transition: background-color 0.3s ease;
+    }
+    .ws-link:hover::after, .ws-link:focus-visible::after { background: var(--dk-accent); }
+    .ws-link span[aria-hidden] { transition: translate 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .ws-link:hover span[aria-hidden] { translate: 3px -3px; }
+    .ws-link:focus-visible { outline: 2px solid var(--dk-accent); outline-offset: 6px; }
+
+    /* pinned mode */
+    .ws.is-pinned { height: 560vh; position: relative; }
+    .ws.is-pinned .ws-stage {
+      position: sticky; top: 0; height: 100vh; height: 100svh;
+      display: grid; grid-template-rows: minmax(0, 1fr) auto;
+      padding: calc(78px + clamp(1.5rem, 3vh, 2.5rem)) clamp(2rem, 4vw, 4rem) clamp(1.25rem, 3vh, 2rem);
+    }
+    /* pinned: the letters stand the full height under the nav and pan across as you scroll */
+    .ws.is-pinned .ws-mark {
+      left: 0; top: 78px; height: calc(100svh - 78px); display: flex; align-items: center;
+      transform: translateX(var(--mark-x, 0px));
+      font-size: calc((100svh - 78px) / 0.72); line-height: 1; letter-spacing: -0.06em;
+      color: color-mix(in oklch, var(--dk-text) 3.5%, transparent);
+    }
+    .ws.is-pinned .ws-list {
+      display: grid; margin: 0; gap: 0 clamp(2rem, 5vw, 6rem); min-height: 0;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "info stack";
+      align-items: center;
+    }
+    .ws.is-pinned .ws-item { display: contents; }
+    .ws.is-pinned .ws-info { grid-area: info; align-self: center; }
+    .ws.is-pinned .ws-print, .ws.is-pinned .ws-mat {
+      grid-area: stack; justify-self: center; align-self: center;
+      width: min(100%, 42vw, calc((100svh - 380px) * 4 / 3)); rotate: none;
+    }
+    .ws.is-pinned .ws-print { z-index: calc(10 - var(--i)); will-change: transform; transform-origin: 50% 60%; }
+    .ws.is-pinned .ws-print::before { display: none; }
+    .ws.is-pinned .ws-mat {
+      display: block; aspect-ratio: 4 / 3; background: var(--mat, #333); z-index: 0;
+      translate: clamp(22px, 2.8vw, 44px) clamp(22px, 2.8vw, 44px);
+      transition: background-color 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+
+    .ws.is-pinned .ws-list { align-items: center; padding-top: clamp(0.5rem, 2vh, 1.5rem); }
+
+    /* the active project's words */
+    .ws.is-pinned .ws-info { visibility: hidden; }
+    .ws.is-pinned .ws-info.is-active { visibility: visible; }
+    .ws.is-pinned .ws-title .ln > span { transform: translateY(105%); transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1); }
+    .ws.is-pinned .ws-info.is-past .ws-title .ln > span { transform: translateY(-105%); transition-duration: 0.4s; }
+    .ws.is-pinned .ws-info.is-active .ws-title .ln > span { transform: none; }
+    .ws.is-pinned .ws-info.is-active .ws-title .ln:nth-child(2) > span { transition-delay: 0.07s; }
+    .ws.is-pinned .ws-meta, .ws.is-pinned .ws-type, .ws.is-pinned .ws-link { opacity: 0; transition: opacity 0.3s ease; }
+    .ws.is-pinned .ws-info.is-active .ws-meta { opacity: 1; transition: opacity 0.5s ease 0.1s; }
+    .ws.is-pinned .ws-info.is-active .ws-type { opacity: 1; transition: opacity 0.5s ease 0.25s; }
+    .ws.is-pinned .ws-info.is-active .ws-link { opacity: 1; transition: opacity 0.5s ease 0.35s; }
+
+    /* index + cue */
+    .ws.is-pinned .ws-foot { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .ws-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem 1.75rem; list-style: none; }
+    .ws-tab {
+      background: none; border: 0; padding: 0.5rem 0; cursor: pointer; position: relative;
+      font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--dk-muted); transition: color 0.3s ease;
+    }
+    .ws-tab-num { color: inherit; margin-right: 0.6rem; }
+    .ws-tab::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: 0.15rem; height: 1.5px; background: var(--dk-accent);
+      transform: scaleX(0); transform-origin: 0 50%; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ws-tab:hover { color: var(--dk-text); }
+    .ws-tab.is-active { color: var(--dk-text); }
+    .ws-tab.is-active .ws-tab-num { color: var(--dk-accent); }
+    .ws-tab.is-active::after { transform: scaleX(1); }
+    .ws-tab:focus-visible { outline: 2px solid var(--dk-accent); outline-offset: 4px; }
+
+    .ws .work-cue { display: none; }
+    .ws.is-pinned .work-cue {
+      display: flex; align-items: center; gap: 1rem; flex: none;
+      padding: 0.75rem 1.25rem 0.75rem 1.4rem; border-radius: 100px; color: var(--dk-text);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+      -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 16px 34px -14px rgba(0, 0, 0, 0.7);
+      font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+      pointer-events: none; opacity: 0; transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ws.is-pinned .work-cue.on { opacity: 1; transform: none; }
+
+    .ws-tab:active, .ws-link:active { opacity: 0.7; }
+    /* list mode on wide screens (reduced motion, or after a keyboard user drops the pin) */
+    @media (min-width: 901px) {
+      .ws:not(.is-pinned) .ws-item { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+      .ws:not(.is-pinned) .ws-item:nth-child(odd) .ws-print { order: 2; }
+      .ws:not(.is-pinned) .ws-list { gap: clamp(5rem, 9vw, 8rem); margin-top: clamp(10rem, 20vw, 18rem); }
+    }
+    @media (max-width: 900px) {
+      .ws-print::before { translate: 12px 12px; }
+      .ws-link { min-height: 44px; }
+    }
+  
+
+    .ws-section { --dk-ground: #151515; --dk-line: rgba(241, 238, 232, 0.16); position: relative; z-index: 1; }
+    html[data-theme="v2"] .ws-section { --dk-text: #F1EEE8; --dk-muted: #9A968F; --dk-accent: #EC6A62; }
+    html[data-theme="v1"] .ws-section { --dk-text: #F5F3EA; --dk-muted: #A19E94; --dk-accent: #A668FF; }
+    html[data-theme="v2"] .ws-item:nth-of-type(odd) { --mat: #EC6A62; }
+    html[data-theme="v2"] .ws-item:nth-of-type(even) { --mat: #234433; }
+    html[data-theme="v1"] .ws-item:nth-of-type(odd) { --mat: #A668FF; }
+    html[data-theme="v1"] .ws-item:nth-of-type(even) { --mat: #FFF21A; }
+
+    /* colour switch: two swatches, a ring slides to the chosen one */
+    .theme-item { display: flex; align-items: center; }
+    .theme-switch {
+      position: relative; display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px; border-radius: 100px; cursor: pointer;
+      border: 1px solid rgba(241, 238, 232, 0.3); background: rgba(6, 17, 12, 0.7);
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+    [data-theme="v1"] .theme-switch { background: rgba(21, 21, 21, 0.92); border-color: rgba(245, 243, 234, 0.25); }
+    .theme-switch:hover { border-color: rgba(241, 238, 232, 0.6); }
+    .theme-switch:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .theme-dot { position: relative; z-index: 1; width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(241, 238, 232, 0.25); }
+    .theme-dot--v2 { background: linear-gradient(135deg, #06110C 50%, #EC6A62 50%); }
+    .theme-dot--v1 { background: linear-gradient(135deg, #FFF21A 50%, #A668FF 50%); }
+    .theme-knob {
+      position: absolute; left: 3px; top: 3px; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid #F1EEE8; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .theme-switch[aria-checked="true"] .theme-knob { transform: translateX(24px); }
+    @media (max-width: 900px) {
+      .theme-item { position: fixed; right: 16px; bottom: 16px; z-index: 120; }
+      /* a backdrop-filter on the nav would make it the switch's containing block and pull it up */
+      nav.scrolled { -webkit-backdrop-filter: none; backdrop-filter: none; }
+      .theme-switch { padding: 9px; gap: 10px; box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.6); }
+      .theme-dot { width: 22px; height: 22px; }
+      .theme-knob { left: 5px; top: 5px; width: 30px; height: 30px; }
+      .theme-switch[aria-checked="true"] .theme-knob { transform: translateX(32px); }
+    }
+    @media (prefers-reduced-motion: reduce) { .theme-knob { transition: none; } }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.45s; }
+  </style>
+  <script>
+    // pick the scheme before first paint: saved choice (shared across the site), else forest + guava
+    (function () {
+      var t = 'v2';
+      try { t = localStorage.getItem('mf-theme') || 'v2'; } catch (e) {}
+      document.documentElement.dataset.theme = t === 'v1' ? 'v1' : 'v2';
+    })();
+  </script>
+
+  <style id="consistency">
+    h1, h2, h3, h4 { font-weight: 500; }
+    .section-title, .case-heading, .work-featured-title, .contact-title { letter-spacing: -0.02em; }
+    footer, footer span { font-size: 0.65rem; font-weight: 300; letter-spacing: 0.08em; }
+    footer { color: color-mix(in srgb, var(--paper, #F1EEE8) 40%, transparent); }
+    footer span { color: inherit; }
+    @media (min-width: 901px) {
+      .case-meta, .case-section, .screens-section, .walkthrough-section { padding-left: 200px; padding-right: 200px; }
+      .ws-stage, .ws.is-pinned .ws-stage { padding-left: 200px; padding-right: 200px; }
+      .ws.is-pinned .ws-title { font-size: clamp(2.6rem, 4.2vw, 5.4rem); }   /* longest name fits the 5/12 column */
+      .ws.is-pinned .ws-foot { margin-left: -152px; margin-right: -152px; }   /* the index bar runs to the nav's edges */
+      .ws.is-pinned .ws-print, .ws.is-pinned .ws-mat { width: min(100%, 36vw, calc((100svh - 380px) * 4 / 3)); }
+    }
+  </style>
+  <style id="footer-unify">
+    /* "Ready to start" band, Get in touch and footer, matched to index-switch-editorial in both schemes */
+    html[data-theme="v2"] {
+      --fu-ink: #06110C; --fu-paper: #F1EEE8; --fu-paper-rgb: 241, 238, 232; --fu-accent: #EC6A62; --fu-accent-rgb: 236, 106, 98;
+      --fu-hover: #EC6A62; --fu-title: #F1EEE8; --fu-em: #EC6A62; --fu-cta-ink: #06110C;
+      --fu-btn: #F1EEE8; --fu-btn-ink: #06110C; --fu-btn-hover: #EC6A62; --fu-btn-hover-ink: #06110C;
+    }
+    html[data-theme="v1"] {
+      --fu-ink: #151515; --fu-paper: #F5F3EA; --fu-paper-rgb: 245, 243, 234; --fu-accent: #A668FF; --fu-accent-rgb: 166, 104, 255;
+      --fu-hover: #C9A4FF; --fu-title: #FFF21A; --fu-em: #A668FF; --fu-cta-ink: #151515;
+      --fu-btn: #FFF21A; --fu-btn-ink: #151515; --fu-btn-hover: #A668FF; --fu-btn-hover-ink: #151515;
+    }
+    html[data-theme] .project-cta { padding: 5rem 200px; text-align: center; position: relative; overflow: hidden; }
+    html[data-theme="v2"] .project-cta { background: #EC6A62; }
+    html[data-theme="v1"] .project-cta { background: linear-gradient(135deg, #b884ff 0%, #A668FF 50%, #8c4ef2 100%); }
+    html[data-theme] .project-cta-title {
+      position: relative; z-index: 1; margin: 0; font-family: 'DM Mono', monospace; font-style: italic;
+      font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 400; color: var(--fu-cta-ink); letter-spacing: -0.02em; line-height: 1.15;
+    }
+
+    html[data-theme] #contact {
+      background: var(--fu-ink); color: var(--fu-paper); min-height: 60vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start; position: relative; overflow: hidden; padding: 6rem 200px;
+    }
+    html[data-theme] #contact .section-label {
+      font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 300; color: rgba(var(--fu-paper-rgb), 0.4);
+      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    html[data-theme] #contact .section-title { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 3rem; color: var(--fu-title); }
+    html[data-theme] #contact .section-title em { font-style: italic; color: var(--fu-em); }
+    html[data-theme] .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; width: 100%; align-items: start; }
+
+    html[data-theme] .contact-email {
+      font-family: 'DM Mono', monospace; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; letter-spacing: normal; text-transform: none;
+      color: var(--fu-paper); text-decoration: none; border-bottom: 2px solid rgba(var(--fu-paper-rgb), 0.3);
+      padding-bottom: 0.25rem; transition: border-color 0.3s, color 0.3s; display: inline-block; margin-bottom: 0;
+    }
+    html[data-theme] .contact-email:hover { color: var(--fu-hover); border-color: var(--fu-hover); }
+    html[data-theme] .contact-email-wrap { position: relative; display: inline-block; margin: 0 0 3rem; }
+    html[data-theme] .contact-email-wrap .loop { left: -7%; top: -32%; width: 114%; height: 172%; stroke: var(--fu-accent); }
+
+    html[data-theme] .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    html[data-theme] .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    html[data-theme] .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+    html[data-theme] .form-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(var(--fu-paper-rgb), 0.45); }
+    html[data-theme] .form-optional { color: rgba(var(--fu-paper-rgb), 0.25); font-size: 0.62rem; }
+    html[data-theme] :is(.form-input, .form-textarea) {
+      background: rgba(var(--fu-paper-rgb), 0.04); border: 1px solid rgba(var(--fu-paper-rgb), 0.14); border-radius: 2px;
+      color: var(--fu-paper); font-family: 'DM Mono', monospace; font-size: 0.82rem; font-weight: 300; padding: 0.8rem 1rem;
+      width: 100%; outline: none; transition: border-color 0.2s ease, background 0.2s ease; -webkit-appearance: none;
+    }
+    html[data-theme] :is(.form-input, .form-textarea)::placeholder { color: rgba(var(--fu-paper-rgb), 0.2); }
+    html[data-theme] :is(.form-input, .form-textarea):focus { border-color: var(--fu-accent); background: rgba(var(--fu-accent-rgb), 0.06); }
+    html[data-theme] .form-textarea { resize: vertical; min-height: 130px; line-height: 1.65; }
+    html[data-theme] .form-submit {
+      align-self: flex-start; margin-top: 0.5rem; padding: 0.85rem 2.25rem; background: var(--fu-btn); color: var(--fu-btn-ink);
+      border: none; border-radius: 0; font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; cursor: pointer; position: relative; transition: background 0.25s ease, color 0.25s ease;
+    }
+    html[data-theme] .form-submit::after {
+      content: ''; position: absolute; inset: 0; border: 1.5px solid rgba(var(--fu-paper-rgb), 0.4); transform: translate(4px, 4px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s; pointer-events: none;
+    }
+    html[data-theme] .form-submit:hover { background: var(--fu-btn-hover); color: var(--fu-btn-hover-ink); }
+    html[data-theme] .form-submit:hover::after { transform: translate(6px, 6px); border-color: rgba(var(--fu-accent-rgb), 0.45); }
+    html[data-theme] .form-submit:focus-visible { outline: 2px solid var(--fu-accent); outline-offset: 4px; }
+    html[data-theme] .form-submit:disabled { opacity: 0.6; cursor: default; }
+    html[data-theme] .form-submit:disabled::after { display: none; }
+
+    html[data-theme] .social-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    html[data-theme] .social-link {
+      font-family: 'DM Mono', monospace; font-size: 0.75rem; font-weight: 300; color: rgba(var(--fu-paper-rgb), 0.5);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s;
+    }
+    html[data-theme] .social-link:hover { color: var(--fu-paper); }
+
+    html[data-theme] footer {
+      background: var(--fu-ink); border-top: 1px solid rgba(var(--fu-paper-rgb), 0.08); padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center; color: rgba(var(--fu-paper-rgb), 0.4);
+    }
+    html[data-theme] footer span { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.08em; color: inherit; }
+
+    @media (max-width: 900px) {
+      html[data-theme] #contact { padding: 5rem 1.5rem; }
+      html[data-theme] .project-cta { padding: 4rem 1.5rem; }
+      html[data-theme] .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      html[data-theme] .form-row { grid-template-columns: 1fr; }
+      html[data-theme] footer { padding: 1.2rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+  <style id="a11y-fixes">
+    /* contrast: small labels and footer text on the dark grounds reach 4.5:1 in both schemes */
+    html[data-theme] #contact :is(.section-label, .contact-label) { color: color-mix(in srgb, var(--fu-paper, var(--paper)) 62%, transparent); }
+    html[data-theme] footer { color: color-mix(in srgb, var(--fu-paper, var(--paper)) 62%, transparent); }
+    html[data-theme] footer span { color: inherit; }
+    /* phones: the hero keeps its height while the web fonts load, so the facts row below doesn't jump */
+    @media (max-width: 900px) { .case-hero { min-height: 70svh; } }
+  </style>
+  <style id="mobile-nav">
+    /* Phones and tablets: the links fold into a menu button. Applies only once the
+       script has added the button (html.mnav), so without JS the links stay put. */
+    .nav-toggle { display: none; }
+    @media (max-width: 900px) {
+      html.mnav { --mnav-bg: #06110C; --mnav-text: #F1EEE8; --mnav-accent: #EC6A62; }
+      html.mnav[data-theme="v1"] { --mnav-bg: #151515; --mnav-text: #F5F3EA; --mnav-accent: #FFF21A; }
+      .mnav nav, .mnav nav.scrolled { -webkit-backdrop-filter: none; backdrop-filter: none; }   /* keeps the fixed panel full screen */
+      .mnav .nav-logo { position: relative; z-index: 2; white-space: nowrap; }
+      .mnav .nav-toggle {
+        position: relative; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px;
+        background: none; border: 0; padding: 0; cursor: pointer; color: var(--mnav-c, var(--mnav-text));
+        -webkit-tap-highlight-color: transparent;
+      }
+      .nav-toggle-bars { position: relative; width: 24px; height: 12px; }
+      .nav-toggle-bars::before, .nav-toggle-bars::after {
+        content: ''; position: absolute; left: 0; right: 0; height: 1.5px; border-radius: 2px; background: currentColor;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-toggle-bars::before { top: 0; }
+      .nav-toggle-bars::after { top: calc(100% - 1.5px); }
+      .nav-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 4px; }
+
+      .mnav .nav-links {
+        position: fixed; inset: 0; z-index: 1; margin: 0;
+        display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+        padding: 6.5rem 1.5rem 7rem; overflow-y: auto; overscroll-behavior: contain;
+        visibility: hidden; transition: visibility 0s 0.4s;
+      }
+      /* the panel itself never fades (that would hide the colour switch inside it):
+         its background and links fade on their own */
+      .mnav .nav-links::before {
+        content: ''; position: fixed; inset: 0; z-index: -1; background: var(--mnav-bg);
+        opacity: 0; transition: opacity 0.3s ease;
+      }
+      .mnav .nav-links > li:not(.theme-item) {
+        opacity: 0; transform: translate3d(0, -10px, 0);
+        transition: opacity 0.25s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .mnav .nav-links > li { width: 100%; border-bottom: 1px solid color-mix(in srgb, var(--mnav-text) 14%, transparent); }
+      .mnav .nav-links > li.theme-item { width: auto; border: 0; visibility: visible; }   /* the colour switch stays pinned bottom right */
+      .mnav .nav-links > li > a {
+        display: block; padding: 0.9rem 0;
+        font-family: 'DM Mono', monospace; font-weight: 500; font-size: clamp(1.9rem, 9vw, 2.6rem); line-height: 1;
+        letter-spacing: -0.05em; text-transform: uppercase; color: var(--mnav-text) !important;
+      }
+      .mnav .nav-links > li > a::after { display: none; }
+      .mnav .nav-links > li > a.active { color: var(--mnav-accent) !important; }
+      .mnav .has-dropdown .dropdown {
+        position: static; transform: none; min-width: 0; opacity: 1; visibility: inherit; pointer-events: auto;
+        background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+        padding: 0 0 1rem; transition: none;
+      }
+      .mnav .dropdown li + li { border: 0; }
+      .mnav .dropdown a, .mnav .dropdown li:first-child a {
+        padding: 0.45rem 0; font-size: 0.9rem; letter-spacing: 0.02em; text-transform: none; white-space: normal;
+        color: color-mix(in srgb, var(--mnav-text) 72%, transparent) !important;   /* beats the v1 dark-on-yellow nav colours */
+      }
+      .mnav .dropdown li.sub a { padding-left: 1.1rem; }
+      .mnav .dropdown a:hover { background: none; color: var(--mnav-accent) !important; }
+
+      /* open */
+      .mnav-open, .mnav-open body { overflow: hidden; }
+      .mnav-open nav .nav-links { visibility: visible; transition: none; }
+      .mnav-open nav .nav-links::before { opacity: 1; }
+      .mnav-open nav .nav-links > li:not(.theme-item) { opacity: 1; transform: none; }
+      .mnav-open nav .nav-links > li:nth-child(2) { transition-delay: 0.04s; }
+      .mnav-open nav .nav-links > li:nth-child(3) { transition-delay: 0.08s; }
+      .mnav-open nav .nav-links > li:nth-child(4) { transition-delay: 0.12s; }
+      .mnav-open nav .nav-logo, .mnav-open nav .nav-logo span { color: var(--mnav-text) !important; }
+      .mnav-open .nav-toggle { color: var(--mnav-text); }
+      .mnav-open .nav-toggle-bars::before { top: calc(50% - 0.75px); transform: rotate(45deg); }
+      .mnav-open .nav-toggle-bars::after { top: calc(50% - 0.75px); transform: rotate(-45deg); }
+    }
+    @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+      .mnav .nav-links, .mnav .nav-links::before, .mnav .nav-links > li, .nav-toggle-bars::before, .nav-toggle-bars::after { transition: none !important; }
+    }
+  </style>
+  <style id="nav-sub">
+    /* Work menu: UI/UX case studies fold under "UI/UX Design" (a chevron opens them).
+       Collapsing needs the script (html.subnav), so without JS the list stays open. */
+    .dropdown .has-sub { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+    .dropdown .sub-list { grid-column: 1 / -1; }
+    .dropdown .sub-list a { padding-left: 2.25rem; border-top: 1px solid color-mix(in srgb, var(--paper, #F1EEE8) 5%, transparent); }
+    .sub-toggle { display: none; }
+    .subnav .sub-toggle {
+      display: grid; place-items: center; width: 2.75rem; align-self: stretch; padding: 0; border: 0; background: none; cursor: pointer;
+      color: color-mix(in srgb, var(--paper, #F1EEE8) 60%, transparent); transition: color 0.15s;
+    }
+    .subnav .sub-toggle:hover { color: var(--paper, #F1EEE8); }
+    .subnav .sub-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: -4px; }
+    .sub-toggle span {
+      width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+      transform: translateY(-2px) rotate(45deg); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .has-sub.is-open .sub-toggle span { transform: translateY(2px) rotate(-135deg); }
+    .subnav .has-sub:not(.is-open) .sub-list { display: none; }
+    @media (max-width: 900px) {
+      .mnav .dropdown .sub-list a { padding-left: 1.1rem; border-top: 0; }
+      .mnav .sub-toggle { width: 2.5rem; color: color-mix(in srgb, var(--mnav-text) 72%, transparent); }
+    }
+    @media (prefers-reduced-motion: reduce) { .sub-toggle span { transition: none; } }
+  </style>
+  <style id="screens-nohead">
+    /* the grid opens the section now that its heading is gone; the About section's bottom padding is the gap */
+    .screens-section > .bento-grid:first-child { margin-top: 0; }
+    .screens-section:has(> .bento-grid:first-child) { padding-top: 0; }
+  </style>
+  <style id="about-split">
+    /* About the project: label + heading on the left, the copy on the right (desktop) */
+    @media (min-width: 901px) {
+      .case-about .case-body {
+        max-width: none; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        column-gap: clamp(3rem, 7vw, 8rem); align-items: start;
+      }
+      .case-about .case-section-label { grid-column: 1; grid-row: 1; }
+      .case-about .case-heading { grid-column: 1; grid-row: 2; align-self: end; margin-bottom: 0; text-wrap: balance; }
+      /* bottoms line up with the heading; the copy runs to the right edge of the image grid below */
+      .case-about .case-about-text { grid-column: 2; grid-row: 2; align-self: end; }
+      .case-about .case-about-text .case-text { max-width: none; }
+      .case-about .case-about-text .case-text:last-child { margin-bottom: 0; }
+    }
+  </style>
+  <style id="no-handwriting">
+    /* No handwritten type anywhere: what used Caveat is now DM Mono, resized for its wider letters */
+    .nav-logo { font-weight: 500; font-size: 1.05rem; letter-spacing: -0.03em; }
+    .nav-logo span { display: inline-block; font-size: 1.25em; line-height: 1; margin: 0 0.06em; vertical-align: -0.06em; }   /* DM Mono has no ✦, so the fallback glyph is set larger */
+    .nav-logo span { transition: rotate 0.9s cubic-bezier(0.65, 0, 0.35, 1); }   /* hover: one clockwise turn; leaving the logo rewinds it */
+    .nav-logo:hover span, .nav-logo:focus-visible span { rotate: 360deg; }
+    @media (prefers-reduced-motion: reduce) { .nav-logo span { transition: none; } .nav-logo:hover span, .nav-logo:focus-visible span { rotate: none; } }
+    :is(.work-type, .ws-type, .atv-type, .wc-type) { font-weight: 400; letter-spacing: 0.02em; line-height: 1.35; }
+    .work-type { font-size: 0.78rem; }
+    .ws-type { font-size: clamp(0.85rem, 1vw, 1rem); margin-top: 1.1rem; }
+    .atv-type { font-size: clamp(12px, 1.35cqw, 17px); margin-top: 0.7em; }
+    .wc-type { font-size: clamp(12px, 2.3cqw, 15px); margin-top: 0.7em; }
+    .work-featured-inner .wc-type { font-size: clamp(12px, 1.25cqw, 17px); }
+    @media (max-width: 900px) {
+      #work.atv:not(.atv-js) .atv-type, .wc-type, .work-featured-inner .wc-type { font-size: 13px; }
+    }
+    :is(.skill-tag, .case-tag) { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.04em; }
+    :is(.contact-email) { font-size: clamp(1.2rem, 2.6vw, 2rem); font-weight: 400; letter-spacing: -0.03em; }
+    html[data-theme] .contact-email { font-size: clamp(1.2rem, 2.6vw, 2rem); }
+    .contact-direct-email { font-size: clamp(1.1rem, 2.2vw, 1.75rem); font-weight: 400; letter-spacing: -0.03em; }
+    .bio-greeting { font-size: clamp(1.6rem, 2.6vw, 2.4rem); font-weight: 500; letter-spacing: -0.04em; }
+    .portrait-caption { font-size: 0.72rem; letter-spacing: 0.04em; }
+    .experience-company { font-size: 0.8rem; font-weight: 400; }
+    .btn-primary { font-size: 0.78rem; letter-spacing: 0.08em; }
+    .work-soon-plus { font-size: 2rem; font-weight: 300; }
+  </style>
+  <style id="ws-cards">
+    /* Keep exploring: each print is now a homepage-style card. The image fills a rounded
+       16:9 card, and the words sit on it: category, title and type bottom left, the link bottom right. */
+    .ws { --wsc-w: min(100%, 64vw, calc((100svh - 300px) * 16 / 9)); }
+    .ws-mat { display: none !important; }
+    .ws-print {
+      padding: 0; background: #0b0b0b; border-radius: 18px; overflow: hidden; rotate: none !important;
+      box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.75);
+    }
+    .ws-print::before { display: none; }
+    .ws-print::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.55) 26%, rgba(0, 0, 0, 0) 58%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 50%);
+    }
+    .ws-print img { aspect-ratio: 16 / 9; }
+    .ws-item { position: relative; }
+    .ws-info {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 12; pointer-events: none;
+      padding: 0 4.5% 4%; container-type: inline-size;
+    }
+    .ws-info .ws-link { pointer-events: auto; position: absolute; right: 4.5%; bottom: 4%; margin: 0; }
+    .ws-info .ws-link::after { background: rgba(255, 255, 255, 0.35); }
+    .ws-info .ws-meta { color: rgba(255, 255, 255, 0.72); font-size: clamp(10px, 1.15cqw, 15px); margin-bottom: 0.9em; }
+    .ws-info .ws-title { color: #fff; font-size: clamp(1.9rem, 6.2cqw, 5rem); max-width: 64%; text-shadow: 0 2px 28px rgba(0, 0, 0, 0.3); }
+    .ws-info .ws-type { font-size: clamp(12px, 1.35cqw, 17px); margin-top: 0.7em; }
+    .ws-info .ws-link { color: #fff; font-size: clamp(11px, 1.05cqw, 14px); }
+
+    /* pinned: one centred card with the tabs underneath */
+    .ws.is-pinned .ws-list { grid-template-columns: minmax(0, 1fr); grid-template-areas: "stack"; }
+    .ws.is-pinned .ws-print { width: var(--wsc-w); }
+    .ws.is-pinned .ws-info {
+      grid-area: stack; position: relative; left: auto; right: auto; bottom: auto;
+      width: var(--wsc-w); aspect-ratio: 16 / 9; justify-self: center; align-self: center;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    @media (min-width: 901px) {
+      .ws.is-pinned .ws-print, .ws.is-pinned .ws-mat, .ws.is-pinned .ws-info { width: var(--wsc-w); }
+      .ws:not(.is-pinned) .ws-item { display: block; }
+    }
+    @media (max-width: 900px) {
+      .ws-print img { aspect-ratio: 4 / 5; }
+      .ws-info { padding: 0 6% calc(6% + 3.4em); }
+      .ws-info .ws-title { font-size: 11cqw; max-width: 88%; }
+      .ws-info .ws-meta, .ws-info .ws-link { font-size: 11px; }
+      .ws-info .ws-type { font-size: 13px; }
+      .ws-info .ws-link { left: 6%; right: auto; bottom: 6%; min-height: 0; }
+    }
+  </style>
+  <style id="case-own">
+    /* this case's own pieces on the shared MelloMe template */
+    .hero-deco { width: 494px; }
+  </style>
+  <style id="case-hero-figure">
+    /* clay figure for the case's category (assets/figures/<category>.webp): right side of the
+       hero, behind the text; a CSS shadow grounds it now that the photo's shadow is cut out */
+    .case-hero > :not(.case-hero-figure) { position: relative; z-index: 1; }
+    .case-hero-figure {
+      position: absolute; z-index: 0; pointer-events: none;
+      right: 4vw; bottom: 0; translate: 0 7%;   /* big, base cropped by the hero's bottom edge (as on the About hero) */
+      width: clamp(340px, 100vw - 960px, 42vw); height: auto; max-height: 84%;   /* width cap keeps it clear of the title; height cap keeps it under the nav */
+      object-fit: contain; object-position: right bottom;
+      filter: drop-shadow(0 28px 30px rgba(0, 0, 0, 0.45));
+    }
+    html[data-theme="v1"] .case-hero-figure { filter: drop-shadow(0 28px 30px rgba(21, 21, 21, 0.28)); }
+    @media (max-width: 900px) {
+      .case-hero { padding-bottom: 0; }
+      .case-hero-figure {
+        position: relative; right: auto; bottom: auto; translate: none; height: auto; max-height: none;
+        width: min(100%, 520px); margin: 2.5rem -0.5rem -14% auto; order: 9;
+      }
+    }
+  </style>
+  <style id="hero-home-gradient">
+    /* green/guava theme: same ground as the homepage hero (.hero-bg + .hero-scrim in index.html) */
+    html:not([data-theme="v1"]) .case-hero {
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E") repeat,
+        radial-gradient(ellipse 80% 85% at 50% 40%, transparent 50%, rgba(2, 6, 4, 0.55) 100%),
+        radial-gradient(ellipse 55% 50% at 50% 28%, rgba(38, 70, 53, 0.5) 0%, transparent 65%),
+        radial-gradient(circle at 22% 18%, rgba(30, 58, 44, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse 90% 75% at 50% 100%, rgba(0, 0, 0, 0.6) 0%, transparent 60%),
+        linear-gradient(180deg, #0f2419 0%, #06110C 50%, #020604 100%);
+    }
+  </style>
+  <style id="case-hero-motion">
+    /* same as the Work hero: the outlined word behind the hero and the staggered fade-up of its text */
+    .case-hero::before { content: 'Work'; }
+    @keyframes caseFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .case-hero-label { opacity: 0; animation: caseFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.2s; }
+    .case-hero-title { opacity: 0; animation: caseFadeUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.3s; }
+    .case-hero-desc  { opacity: 0; animation: caseFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.5s; }
+    .case-tags       { opacity: 0; animation: caseFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.6s; }
+    @media (prefers-reduced-motion: reduce) {
+      .case-hero-label, .case-hero-title, .case-hero-desc, .case-tags { opacity: 1; animation: none; }
+    }
+  </style>
+  <style id="v2-gray-ground">
+    /* Green theme: content sections sit on the same dark gray (#151515) as the case sections; hero, Get in touch and footer stay green */
+    html:not([data-theme="v1"]) body { background: #151515; }
+    html:not([data-theme="v1"]) nav.scrolled { background: rgba(21, 21, 21, 0.94); }
+    html:not([data-theme="v1"]) .case-meta { background: #151515; }
+  </style>
+  <style id="cursor-spark">
+    /* cursor-follow mark drawn as the logo spark (✦) instead of a dot; same white + difference blend and hover grow */
+    html .cursor {
+      width: 18px; height: 18px; border-radius: 0;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0C53 35 65 47 100 50C65 53 53 65 50 100C47 65 35 53 0 50C35 47 47 35 50 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0C53 35 65 47 100 50C65 53 53 65 50 100C47 65 35 53 0 50C35 47 47 35 50 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    html .cursor.hover { width: 44px; height: 44px; }
+  </style>
+  <style id="v1-dropdown">
+    /* Yellow theme: the dark top-bar link colour was also hitting the Work menu, which sits on a charcoal panel; give the panel its light text back (desktop only, the mobile menu has its own colours) */
+    @media (min-width: 901px) {
+      html[data-theme="v1"] nav .nav-links .dropdown a:not(.active) { color: rgba(245, 243, 234, 0.6); }
+      html[data-theme="v1"] nav .nav-links .dropdown li:first-child a:not(.active) { color: rgba(245, 243, 234, 0.72); }
+      html[data-theme="v1"] nav .nav-links .dropdown a:not(.active):hover { color: #F5F3EA; background: rgba(245, 243, 234, 0.05); }
+      html[data-theme="v1"] nav .dropdown .sub-toggle { color: rgba(245, 243, 234, 0.6); }
+      html[data-theme="v1"] nav .dropdown .sub-toggle:hover { color: #F5F3EA; }
+    }
+  </style>
+  <style id="v2-gray-footer">
+    /* Green theme: the Get in touch block and the footer sit on the same dark gray (#151515) as the content sections; the hero stays green */
+    html:not([data-theme="v1"]) #contact { background: linear-gradient(#151515, #080808); }   /* darkens toward the page end */
+    html:not([data-theme="v1"]) footer { background: #080808; }   /* picks up where the gradient ends */
+  </style>
+  <style id="form-send">
+    .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .form-status { font-family: 'DM Mono', monospace; font-size: 0.75rem; font-weight: 300; opacity: 0.7; min-height: 1.2em; }
+  </style>
+  <style id="resume-folder">
+    /* Résumé folder link in Get in touch: the document peeks out on a slow loop; on hover/focus the
+       front flap tips open and the page slides up. Colors follow the theme (--accent / --paper). */
+    .resume-folder { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2.5rem; }
+    .rf-open { display: inline-flex; align-items: center; gap: 1rem; color: var(--paper); text-decoration: none; }
+    .rf-open:focus-visible, .rf-dl:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+    .rf-icon { width: 64px; height: 54px; flex: none; overflow: visible; }
+    /* macOS folder colours (fixed, not themed): gradients live in the <defs> of the first .rf-icon on the page */
+    .rf-back { fill: url(#rf-grad-back); }
+    .rf-doc rect { fill: #FFFFFF; }
+    .rf-doc line { stroke: #BCC6D1; stroke-width: 2; stroke-linecap: round; }
+    .rf-front { fill: url(#rf-grad-front); stroke: rgba(255, 255, 255, 0.55); stroke-width: 0.8; }
+    .rf-back, .rf-doc, .rf-front { transform-box: fill-box; }
+    .rf-doc { transform-origin: 50% 100%; animation: rf-peek 5s cubic-bezier(0.45, 0, 0.2, 1) 1.2s infinite; }
+    .rf-front { transform-origin: 50% 100%; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes rf-peek {
+      0%, 62%, 100% { transform: translateY(0) rotate(0deg); }
+      72% { transform: translateY(-7px) rotate(-3deg); }
+      84% { transform: translateY(-1px) rotate(0deg); }
+    }
+    .rf-open:is(:hover, :focus-visible) .rf-doc { animation: none; transform: translateY(-13px) rotate(-5deg); transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+    .rf-open:is(:hover, :focus-visible) .rf-front { transform: perspective(120px) rotateX(-28deg); }
+    .rf-text { display: flex; flex-direction: column; gap: 0.3rem; }
+    .rf-label { font-family: 'DM Mono', monospace; font-size: 0.95rem; font-weight: 500; letter-spacing: -0.01em; }
+    .rf-cta, .rf-dl { font-family: 'DM Mono', monospace; font-size: 0.68rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--paper) 62%, transparent); transition: color 0.2s; }
+    .rf-open:hover .rf-cta { color: var(--accent); }
+    .rf-dl { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--paper) 25%, transparent); padding-bottom: 2px; }
+    .rf-dl:hover { color: var(--paper); border-color: var(--accent); }
+    @media (prefers-reduced-motion: reduce) {
+      .rf-doc { animation: none; }
+      .rf-doc, .rf-front, .rf-open:is(:hover, :focus-visible) .rf-doc { transition: none; }
+    }
+    /* Résumé viewer (script id="resume-modal"): the one-sheet JPG in a dialog on the same page */
+    .rf-modal { position: fixed; inset: 0; margin: auto; width: min(860px, calc(100vw - 32px)); height: min(92vh, 1200px); max-width: none; max-height: none; padding: 0; border: 0; border-radius: 10px; background: #1d1d1d; color: #F1EEE8; overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55); }
+    .rf-modal[open] { display: flex; flex-direction: column; animation: rf-in 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    .rf-modal::backdrop { background: rgba(6, 6, 6, 0.74); backdrop-filter: blur(6px); animation: rf-fade 0.3s ease; }
+    @keyframes rf-in { from { opacity: 0; transform: translateY(24px) scale(0.97); } }
+    @keyframes rf-fade { from { opacity: 0; } }
+    .rf-modal-bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0.75rem 0.75rem 1.25rem; border-bottom: 1px solid rgba(241, 238, 232, 0.08); }
+    .rf-modal-title { flex: 1; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(241, 238, 232, 0.62); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rf-modal-dl { font-family: 'DM Mono', monospace; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: #151515; background: var(--accent); padding: 0.6rem 1rem; border-radius: 2px; transition: background 0.2s; white-space: nowrap; }
+    .rf-modal-dl:hover { background: #F1EEE8; }
+    .rf-modal-close { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(241, 238, 232, 0.18); background: transparent; color: inherit; font-size: 0.9rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .rf-modal-close:hover { background: rgba(241, 238, 232, 0.08); border-color: rgba(241, 238, 232, 0.4); }
+    .rf-modal :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .rf-modal-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 1.25rem; background: #2b2b2b; }
+    .rf-modal-body img { display: block; width: 100%; height: auto; }
+    html.rf-lock { overflow: hidden; }
+    /* the dialog sits above the custom spark cursor (#cursor), so use the system cursor while it is open */
+    .rf-modal, .rf-modal::backdrop { cursor: auto; }
+    .rf-modal :is(a, button) { cursor: pointer; }
+    html.rf-lock .cursor { opacity: 0; }
+    @media (max-width: 600px) {
+      .rf-modal { width: 100vw; height: 100dvh; border-radius: 0; }
+      .rf-modal-body { padding: 0.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .rf-modal[open], .rf-modal::backdrop { animation: none; } }
+  </style>
+  <style id="case-images">
+    /* real case images: fill the bento cell; detail crops are 4:3, so thirds go 4:3; on phones show each image whole */
+    .bento-item--third.case-img { aspect-ratio: 4 / 3; }
+    .case-img { overflow: hidden; border-radius: 4px; }
+    .case-img picture { display: block; width: 100%; height: 100%; }
+    .case-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .case-img--full { border-radius: 14px 14px 4px 4px; max-width: 960px; }
+    .case-img--full img { height: auto; }
+    @media (max-width: 900px) {
+      .bento-grid .case-img { aspect-ratio: auto; }
+      .case-img img { height: auto; }
+    }
+  </style>
+  <style id="split-frame">
+    /* End-to-end image split in two: halves side by side in one full-width frame, the 2nd half dropped and overlapping the 1st */
+    .split-frame { display: grid; padding: clamp(1.5rem, 4vw, 4rem); background: var(--warm); border-radius: 4px; overflow: hidden; }
+    .split-frame img { grid-area: 1 / 1; width: 56%; height: auto; display: block; border-radius: 6px; }
+    .split-frame .split-a { justify-self: start; }
+    .split-frame .split-b { justify-self: end; margin-top: 16%; position: relative; z-index: 1;
+      box-shadow: -24px 0 60px -12px rgba(0,0,0,.55), 0 40px 80px -30px rgba(0,0,0,.6); }
+    @media (max-width: 900px) {
+      .split-frame img { width: 100%; }
+      .split-frame .split-b { grid-area: 2 / 1; margin-top: 1rem; box-shadow: none; }
+    }
+  </style>
+  <style id="ws-more">
+    /* Keep exploring: 4 main cards in the pinned stack, every other case as a thumbnail row below */
+    .ws-more { position: relative; z-index: 1; padding: 0 clamp(1.5rem, 4vw, 4rem) clamp(4rem, 8vw, 6rem); }
+    .ws-more-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dk-muted); margin-bottom: 1.5rem; }
+    .ws-more-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr)); gap: 2rem 1.25rem; }
+    .ws-more-grid a { display: grid; gap: 0.6rem; text-decoration: none; color: var(--dk-text); }
+    .ws-more-img { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; background: #1f1f1f; }
+    .ws-more-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: scale 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .ws-more-grid a:hover .ws-more-img img { scale: 1.05; }
+    .ws-more-name { font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 500; letter-spacing: -0.01em; }
+    .ws-more-type { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--dk-muted); margin-top: -0.35rem; }
+    .ws-more-grid a:focus-visible { outline: 2px solid var(--dk-accent); outline-offset: 4px; border-radius: 10px; }
+    @media (min-width: 901px) { .ws-more { padding-left: 200px; padding-right: 200px; } }
+    @media (prefers-reduced-motion: reduce) { .ws-more-img img { transition: none; } }
+  </style>
+  <style id="ws-no-tabs">
+    /* the case-name tab bar under the Keep exploring stack was removed (Nov 12); keep the scroll cue on the right */
+    .ws-foot .work-cue { margin-left: auto; }
+  </style>
+</head>
+
+<body>
+
+  <!-- shared grease-pencil texture for the hand-drawn marks -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="grease" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n" />
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" />
+    </filter>
+  </svg>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <a href="../index.html" class="nav-logo">MF<span aria-hidden="true">✦</span>Design</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="has-dropdown">
+          <a href="../work.html" class="active">Work</a>
+          <ul class="dropdown">
+            <li><a href="../work.html">All projects</a></li>
+            <li class="has-sub">
+              <a href="../work.html#ui-ux">UI/UX Design</a><button type="button" class="sub-toggle" aria-expanded="true" aria-controls="nav-uiux" aria-label="UI/UX Design case studies"><span aria-hidden="true"></span></button>
+              <div class="sub-list" id="nav-uiux">
+                <!-- UI/UX case studies: one link per case -->
+                <a href="mellome.html">MelloMe</a>
+                <a href="roytberg.html">Dr. Simon Roytberg</a>
+                <a href="valladolid-plastic-surgery.html">Valladolid Plastic Surgery</a>
+                <a href="silvernest.html">Silvernest</a>
+                <a href="stephen-morris-law.html">Stephen B. Morris</a>
+                <a href="carefree-smiles.html">Carefree Smiles</a>
+                <a href="tamar-caspi.html">Tamar Caspi</a>
+              </div>
+            </li>
+            <li><a href="now-media-group.html">Now Media Group</a></li>
+            <li><a href="food-truck-fridays.html">Food Truck Fridays</a></li>
+            <li><a href="kis-kitchen.html">Ki's Kitchen</a></li>
+            <li><a href="solid-bite.html">Solid Bite</a></li>
+          </ul>
+        </li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li class="theme-item"><button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Yellow and lavender colours">
+        <span class="theme-knob" aria-hidden="true"></span>
+        <span class="theme-dot theme-dot--v2" aria-hidden="true"></span>
+        <span class="theme-dot theme-dot--v1" aria-hidden="true"></span>
+      </button></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="case-hero">
+      <img class="case-hero-figure" src="../assets/figures/uiux.webp" alt="" aria-hidden="true" width="951" height="1278" fetchpriority="high" />
+      <p class="case-hero-label">UI/UX Design</p>
+      <h1 class="case-hero-title">Valladolid<br><em>Plastic Surgery</em></h1>
+      <p class="case-hero-desc">A website redesign for a board-certified plastic surgeon with three offices across Arizona.</p>
+      <div class="case-tags">
+        <span class="case-tag">Web Design</span>
+        <span class="case-tag">UI/UX</span>
+        <span class="case-tag">Plastic Surgery</span>
+      </div>
+    </section>
+
+    <!-- Meta -->
+    <div class="case-meta reveal">
+      <div class="meta-col">
+        <p class="meta-label">Client</p>
+        <p class="meta-value">Valladolid Plastic Surgery</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label">Category</p>
+        <p class="meta-value">UI/UX Design</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label">Location</p>
+        <p class="meta-value">Scottsdale, AZ</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label">Deliverable</p>
+        <p class="meta-value">Website Redesign</p>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="case-section case-about">
+      <div class="case-body reveal">
+        <p class="case-section-label">↳ About the project</p>
+        <h2 class="case-heading">Beauty, redefined<br>in a <em>quiet</em> palette</h2>
+        <div class="case-about-text">
+          <p class="case-text">Valladolid Plastic Surgery is led by board-certified plastic surgeon Dr. Genaro Valladolid, with offices in Scottsdale, Phoenix and Mesa. The redesign uses warm taupes, light type and generous space so the site feels as calm and considered as a consultation.</p>
+          <p class="case-text">Procedures are organized by area (breast, body, face and gender affirmation), each with its own numbered menu, followed by results, the surgeon’s credentials, social proof, an FAQ and a booking form.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key screens — modern bento grid of image drop zones -->
+    <section class="screens-section">
+      <div class="bento-grid">
+
+        <div class="bento-item--full reveal case-img">
+          <img src="../assets/work/valladolid-plastic-surgery/overview.webp" alt="The Valladolid Plastic Surgery homepage hero: Beauty Redefined" width="1920" height="823" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="bento-item--half reveal case-img">
+          <picture>
+            <source media="(max-width: 900px)" srcset="../assets/work/valladolid-plastic-surgery/section-1-tight.webp" />
+            <img src="../assets/work/valladolid-plastic-surgery/section-1.webp" alt="Cosmetic Surgery and Non-Surgical Procedures introduction" width="1600" height="1200" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+
+        <div class="bento-item--half reveal case-img">
+          <picture>
+            <source media="(max-width: 900px)" srcset="../assets/work/valladolid-plastic-surgery/section-2-tight.webp" />
+            <img src="../assets/work/valladolid-plastic-surgery/section-2.webp" alt="Meet Dr. Genaro Valladolid: credentials section" width="1600" height="1200" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+
+        <div class="bento-item--third reveal case-img">
+          <img src="../assets/work/valladolid-plastic-surgery/detail-1.webp" alt="Hero typography: Beauty Redefined. Natural-Looking Results." width="880" height="660" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="bento-item--third reveal case-img">
+          <img src="../assets/work/valladolid-plastic-surgery/detail-2.webp" alt="Gender Affirmation: transfeminine and transmasculine care" width="948" height="711" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="bento-item--third reveal case-img">
+          <img src="../assets/work/valladolid-plastic-surgery/detail-3.webp" alt="Why patients choose Valladolid Plastic Surgery: reason cards" width="1152" height="864" loading="lazy" decoding="async" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Full walkthrough — tall stitched image drop zone -->
+    <section class="walkthrough-section">
+      <div class="case-body reveal walkthrough-intro">
+        <p class="case-section-label">↳ The website</p>
+        <h2 class="case-heading">The homepage,<br>end to <em>end</em></h2>
+      </div>
+
+      <div class="reveal split-frame">
+        <img class="split-a" src="../assets/work/valladolid-plastic-surgery/website-part1.webp" alt="The Valladolid Plastic Surgery homepage, first half: hero, procedures by area and patient testimonials" width="1600" height="5677" loading="lazy" decoding="async" />
+        <img class="split-b" src="../assets/work/valladolid-plastic-surgery/website-part2.webp" alt="The Valladolid Plastic Surgery homepage, second half: results, the surgeon, social, why patients choose, FAQ and contact" width="1600" height="5246" loading="lazy" decoding="async" />
+      </div>
+    </section>
+
+    <!-- Other cases -->
+    <section class="ws-section" id="more-work" aria-labelledby="work-heading">
+      <div class="ws" id="workStack">
+        <div class="ws-stage">
+          <h2 class="sr-only" id="work-heading">Other cases you might like</h2>
+          <p class="ws-mark" aria-hidden="true">Work</p>
+
+          <div class="ws-list">
+            <div class="ws-mat" aria-hidden="true"></div>
+            <article class="ws-item" style="--i:0">
+              <a class="ws-print" href="now-media-group.html" tabindex="-1" aria-hidden="true">
+                <img src="../assets/work/now-media-group/04-typography.webp" alt="" loading="lazy" style="transform:scale(2.5);transform-origin:0% 78%" />
+              </a>
+              <div class="ws-info">
+                <p class="ws-meta">Design System</p>
+                <h3 class="ws-title"><span class="ln"><span>Now Media</span></span><span class="ln"><span>Group</span></span></h3>
+                <p class="ws-type">↳ Brand &amp; UI System · Figma</p>
+                <a class="ws-link" href="now-media-group.html">View the case study<span class="sr-only">: Now Media Group</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="ws-item" style="--i:1">
+              <a class="ws-print" href="mellome.html" tabindex="-1" aria-hidden="true">
+                <img src="../assets/work/mellome/product-showcase.webp" alt="" loading="lazy" style="object-position:50% 60%" />
+              </a>
+              <div class="ws-info">
+                <p class="ws-meta">UI/UX Design</p>
+                <h3 class="ws-title"><span class="ln"><span>MelloMe</span></span></h3>
+                <p class="ws-type">↳ Website · UI/UX Design</p>
+                <a class="ws-link" href="mellome.html">View the case study<span class="sr-only">: MelloMe</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="ws-item" style="--i:2">
+              <a class="ws-print" href="roytberg.html" tabindex="-1" aria-hidden="true">
+                <img src="../assets/work/roytberg/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" />
+              </a>
+              <div class="ws-info">
+                <p class="ws-meta">UI/UX Design</p>
+                <h3 class="ws-title"><span class="ln"><span>Dr. Simon</span></span><span class="ln"><span>Roytberg</span></span></h3>
+                <p class="ws-type">↳ Website Redesign · Dental</p>
+                <a class="ws-link" href="roytberg.html">View the case study<span class="sr-only">: Dr. Simon Roytberg</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="ws-item" style="--i:3">
+              <a class="ws-print" href="food-truck-fridays.html" tabindex="-1" aria-hidden="true">
+                <img src="../assets/work/food-truck-fridays/gallery-7.webp" alt="" loading="lazy" style="object-position:55% 55%" />
+              </a>
+              <div class="ws-info">
+                <p class="ws-meta">Production Art</p>
+                <h3 class="ws-title"><span class="ln"><span>Food Truck</span></span><span class="ln"><span>Fridays</span></span></h3>
+                <p class="ws-type">↳ Balboa Park Conservancy · Print</p>
+                <a class="ws-link" href="food-truck-fridays.html">View the case study<span class="sr-only">: Food Truck Fridays</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="ws-foot">
+            <p class="work-cue" aria-hidden="true">
+              <span class="work-cue-label">Keep scrolling</span>
+              <span class="work-cue-bar"><span class="work-cue-fill"></span></span>
+              <svg class="work-cue-arrow" viewBox="0 0 12 16" focusable="false"><path d="M6 1v13M1.5 9.5 6 14l4.5-4.5" /></svg>
+            </p>
+          </div>
+        </div>
+      </div>
+          <div class="ws-more">
+        <p class="ws-more-label">↳ More cases</p>
+        <ul class="ws-more-grid">
+          <li><a href="silvernest.html"><span class="ws-more-img"><img src="../assets/work/silvernest/cover.webp" alt="" loading="lazy" style="object-position:55% 50%" /></span><span class="ws-more-name">Silvernest</span><span class="ws-more-type">UI/UX Design</span></a></li>
+          <li><a href="kis-kitchen.html"><span class="ws-more-img"><img src="../assets/work/kis-kitchen/thumb.webp" alt="" loading="lazy" style="object-position:50% 50%" /></span><span class="ws-more-name">Ki's Kitchen</span><span class="ws-more-type">Branding</span></a></li>
+          <li><a href="solid-bite.html"><span class="ws-more-img"><img src="../assets/work/solid-bite/cover.webp" alt="" loading="lazy" style="object-position:50% 45%" /></span><span class="ws-more-name">Solid Bite</span><span class="ws-more-type">Branding</span></a></li>
+          <li><a href="stephen-morris-law.html"><span class="ws-more-img"><img src="../assets/work/stephen-morris-law/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Stephen B. Morris</span><span class="ws-more-type">UI/UX Design</span></a></li>
+          <li><a href="carefree-smiles.html"><span class="ws-more-img"><img src="../assets/work/carefree-smiles/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Carefree Smiles</span><span class="ws-more-type">UI/UX Design</span></a></li>
+          <li><a href="tamar-caspi.html"><span class="ws-more-img"><img src="../assets/work/tamar-caspi/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Tamar Caspi</span><span class="ws-more-type">UI/UX Design</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project CTA -->
+    <section class="project-cta">
+      <svg class="project-cta-art" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <filter id="ctaBlurLg" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="70" /></filter>
+          <filter id="ctaBlurMd" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="45" /></filter>
+        </defs>
+        <ellipse cx="980" cy="60" rx="280" ry="220" fill="#ffffff" opacity="0.5" filter="url(#ctaBlurLg)" />
+        <ellipse cx="1140" cy="280" rx="220" ry="180" fill="#ffffff" opacity="0.55" filter="url(#ctaBlurMd)" />
+        <ellipse cx="760" cy="300" rx="180" ry="130" fill="#06110C" opacity="0.4" filter="url(#ctaBlurMd)" />
+        <ellipse cx="120" cy="30" rx="220" ry="170" fill="#ffffff" opacity="0.3" filter="url(#ctaBlurLg)" />
+        <ellipse cx="260" cy="300" rx="200" ry="140" fill="#06110C" opacity="0.3" filter="url(#ctaBlurMd)" />
+        <circle cx="600" cy="160" r="260" fill="#ffffff" opacity="0.12" filter="url(#ctaBlurLg)" />
+      </svg>
+      <h2 class="project-cta-title reveal">Ready to start a new project?</h2>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <p class="section-label">↳ Get in touch</p>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="section-title reveal">Let's build something<br><em>together</em></h2>
+          <span class="contact-email-wrap reveal"><a href="mailto:hello@maurofacciolla.com" class="contact-email">hello@maurofacciolla.com</a><svg class="loop" aria-hidden="true" focusable="false"></svg></span>
+          <div class="social-links reveal">
+            <a href="https://www.linkedin.com/in/mauro-facciolla/" class="social-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+          <!-- Résumé folder (styles in <style id="resume-folder">); PDF is the public version, no phone -->
+          <div class="resume-folder reveal">
+            <a href="../assets/Mauro-Facciolla-Resume.pdf" class="rf-open" target="_blank" rel="noopener" aria-label="View my résumé">
+              <svg class="rf-icon" viewBox="0 0 64 54" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="rf-grad-back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6CB9EE"/><stop offset="1" stop-color="#4C9FDD"/></linearGradient><linearGradient id="rf-grad-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A2D7FB"/><stop offset="1" stop-color="#71BDF3"/></linearGradient></defs>
+                <path class="rf-back" d="M4 9a4 4 0 0 1 4-4h13.5a4 4 0 0 1 2.8 1.2l3.5 3.6H56a4 4 0 0 1 4 4V47a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z"/>
+                <g class="rf-doc"><rect x="15" y="9" width="34" height="34" rx="2.5"/><line x1="21" y1="17" x2="36" y2="17"/><line x1="21" y1="23" x2="43" y2="23"/><line x1="21" y1="29" x2="40" y2="29"/></g>
+                <path class="rf-front" d="M2.2 23.4A4 4 0 0 1 6.1 19h51.8a4 4 0 0 1 3.9 4.4l-2.4 24A4 4 0 0 1 55.4 51H8.6a4 4 0 0 1-4-3.6Z"/>
+              </svg>
+              <span class="rf-text"><span class="rf-label">My résumé</span><span class="rf-cta">View résumé</span></span>
+            </a>
+            <a href="../assets/Mauro-Facciolla-Resume.pdf" class="rf-dl" download="Mauro-Facciolla-Resume.pdf">Download</a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Web3Forms access key (public by design; sends to hello@) -->
+          <input type="hidden" name="access_key" value="2dda9329-9db7-4997-a26f-a61efdacd40c"/>
+          <input type="hidden" name="subject" value="New message from maurofacciolla.com"/>
+          <input type="hidden" name="from_name" value="Portfolio contact form"/>
+          <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="cf-name">Full name</label>
+              <input class="form-input" id="cf-name" name="name" type="text" placeholder="Jane Smith" required autocomplete="name"/>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="cf-email">Email</label>
+              <input class="form-input" id="cf-email" name="email" type="email" placeholder="jane@studio.com" required autocomplete="email"/>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cf-phone">Phone <span class="form-optional">(optional)</span></label>
+            <input class="form-input" id="cf-phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cf-message">Message</label>
+            <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell me about your project…" required rows="5"></textarea>
+          </div>
+          <button class="form-submit" type="submit">Send message →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Mauro Facciolla</span>
+    <span>Designed &amp; built by hand <span aria-hidden="true">✦</span></span>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    let rafId;
+    document.addEventListener('mousemove', e => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      });
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Other cases — pinned horizontal scrub carousel (same mechanic as the homepage Work section)
+    (function initRelatedPin() {
+      const wrap = document.getElementById('relatedPinWrap');
+      const track = document.getElementById('relatedTrack');
+      const viewport = wrap ? wrap.querySelector('.related-track-viewport') : null;
+      if (!wrap || !track || !viewport) return;
+
+      const cards = track.querySelectorAll('.work-card');
+      const cue = wrap.querySelector('.work-cue');
+      let lastY = window.scrollY;
+      let pinned = false;
+      let rafId = null;
+      let keyboardActive = false;
+      let pinDropped = false;
+
+      window.addEventListener('keydown', e => { if (e.key === 'Tab') keyboardActive = true; });
+      window.addEventListener('mousedown', () => { keyboardActive = false; });
+
+      function canPin() {
+        return !pinDropped
+          && window.matchMedia('(min-width: 901px)').matches
+          && window.matchMedia('(min-height: 560px)').matches
+          && !prefersReducedMotion;
+      }
+
+      function update() {
+        if (!pinned) return;
+        const rect = wrap.getBoundingClientRect();
+        const total = wrap.offsetHeight - window.innerHeight;
+        if (total <= 0) return;
+        const raw = Math.min(1, Math.max(0, -rect.top / total));
+
+        const deadIn = 0.1, deadOut = 0.1;
+        let progress;
+        if (raw <= deadIn) progress = 0;
+        else if (raw >= 1 - deadOut) progress = 1;
+        else progress = (raw - deadIn) / (1 - deadIn - deadOut);
+
+        const cardWidth = cards[0] ? cards[0].offsetWidth : 0;
+        const startOffset = Math.max(0, (viewport.clientWidth - cardWidth) / 2);
+        const maxTranslate = Math.max(0, track.scrollWidth - viewport.clientWidth);
+        const totalTravel = maxTranslate + startOffset;
+        track.style.transform = `translateX(${startOffset - progress * totalTravel}px)`;
+
+        // Keep-scrolling cue: on while the pin holds the page; the arrow follows the scroll direction
+        if (cue) {
+          const y = window.scrollY;
+          if (y !== lastY) cue.classList.toggle('up', y < lastY);
+          lastY = y;
+          cue.classList.toggle('on', raw > 0.01 && raw < 0.86);
+          cue.style.setProperty('--wp', progress.toFixed(3));
+        }
+
+        // Each card wipes in from its leading edge as it enters the frame
+        const vr = viewport.getBoundingClientRect();
+        cards.forEach(card => {
+          const r = card.getBoundingClientRect();
+          const t = Math.min(1, Math.max(0, (vr.right - r.left) / (vr.width * 0.42)));
+          card.style.clipPath = t >= 1 ? '' : `inset(-3rem ${((1 - t) * 100).toFixed(2)}% -3rem -3rem)`;
+        });
+      }
+
+      function enablePin() {
+        if (pinned) return;
+        pinned = true;
+        wrap.classList.add('is-pinned');
+        cards.forEach(card => {
+          card.classList.remove('reveal');
+          observer.unobserve(card);
+        });
+        update();
+      }
+
+      function disablePin() {
+        if (!pinned) return;
+        pinned = false;
+        wrap.classList.remove('is-pinned');
+        track.style.transform = '';
+        cards.forEach(card => { card.style.opacity = ''; card.style.clipPath = ''; });
+      }
+
+      function refresh() { canPin() ? enablePin() : disablePin(); }
+
+      track.addEventListener('focusin', e => {
+        if (!pinned || !keyboardActive || pinDropped) return;
+        pinDropped = true;
+        disablePin();
+        const card = e.target.closest('.work-card');
+        if (card) {
+          requestAnimationFrame(() => card.scrollIntoView({ block: 'center', behavior: 'auto' }));
+        }
+      });
+
+      window.addEventListener('scroll', () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(update);
+      }, { passive: true });
+      window.addEventListener('resize', refresh);
+      refresh();
+    })();
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+        const btn = contactForm.querySelector('.form-submit');
+        const status = contactForm.querySelector('.form-status');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        status.textContent = '';
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(contactForm)
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) throw new Error(data.message);
+          btn.textContent = 'Message sent ✦';
+          btn.style.background = 'var(--accent)';
+          btn.style.color = 'var(--paper)';
+          status.textContent = 'Thanks, I’ll get back to you within 24 hours.';
+          contactForm.reset();
+        } catch (err) {
+          btn.textContent = 'Send message →';
+          btn.disabled = false;
+          status.textContent = 'Something went wrong. Please try again, or email hello@maurofacciolla.com.';
+        }
+      });
+    }
+    // Cards lean toward the pointer, up to 5 degrees (same as the homepage)
+    (function initCardTilt() {
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('#relatedTrack a.work-card').forEach(card => {
+        const inner = card.querySelector('.work-card-inner, .work-featured-inner');
+        if (!inner) return;
+        const k = card.classList.contains('work-featured') ? 5 : 10;
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          inner.style.setProperty('--ry', (x * k).toFixed(2) + 'deg');
+          inner.style.setProperty('--rx', (y * -k).toFixed(2) + 'deg');
+        });
+        card.addEventListener('pointerleave', () => {
+          inner.style.setProperty('--ry', '0deg');
+          inner.style.setProperty('--rx', '0deg');
+        });
+      });
+    })();
+    // Pencil loop around the contact email, drawn as it scrolls into view (same as the homepage)
+    (function initEmailLoop() {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const loops = Array.from(document.querySelectorAll('svg.loop')).map(svg => ({ svg, host: svg.parentNode, draw: 0 }));
+      if (!loops.length) return;
+      const LOOP = [[58,9],[96,1,160,3,186,22],[204,36,198,66,168,82],[132,99,64,99,30,86],[4,75,2,46,20,29],[40,11,88,5,128,7],[150,8,168,12,182,18]];
+      function sizeLoops() {
+        loops.forEach(({ svg }) => {
+          const w = svg.clientWidth, h = svg.clientHeight;
+          if (!w || !h) return;
+          const sx = w / 200, sy = h / 100;
+          const d = LOOP.map((seg, i) => (i ? ' C' : 'M') + seg.map((v, j) => (j % 2 ? v * sy : v * sx).toFixed(1)).join(' ')).join('');
+          svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+          let path = svg.querySelector('path');
+          if (!path) {
+            path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('pathLength', '1');
+            svg.appendChild(path);
+          }
+          path.setAttribute('d', d);
+        });
+      }
+      const clamp01 = v => Math.min(1, Math.max(0, v));
+      function setDraw(L, d) {
+        if (d <= L.draw) return;
+        L.draw = d;
+        L.svg.style.strokeDashoffset = (1 - d).toFixed(4);
+        L.svg.style.opacity = d > 0.005 ? '1' : '0';
+      }
+      function update() {
+        const vh = window.innerHeight;
+        loops.forEach(L => {
+          const r = L.host.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > vh) return;
+          if (reduce) { setDraw(L, 1); return; }
+          const atEnd = window.scrollY + vh >= document.documentElement.scrollHeight - 4;
+          setDraw(L, atEnd ? 1 : clamp01((vh * 0.95 - r.top) / (vh * 0.3)));
+        });
+      }
+      let queued = false;
+      const queue = () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; update(); }); } };
+      window.addEventListener('scroll', queue, { passive: true });
+      window.addEventListener('resize', () => { sizeLoops(); queue(); });
+      sizeLoops();
+      update();
+      if (document.fonts) document.fonts.ready.then(() => { sizeLoops(); queue(); });
+    })();
+  </script>
+  <script>
+    (function () {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Work: a stack of prints. Each project holds, then its print is flicked up and
+    // away while the next one straightens; scroll position drives every frame.
+    (function initWorkStack() {
+      const wrap = document.getElementById('workStack');
+      if (!wrap) return;
+      const items = Array.from(wrap.querySelectorAll('.ws-item'));
+      const prints = items.map(it => it.querySelector('.ws-print'));
+      const infos = items.map(it => it.querySelector('.ws-info'));
+      const tabs = Array.from(wrap.querySelectorAll('.ws-tab'));
+      const mat = wrap.querySelector('.ws-mat');
+      const mark = wrap.querySelector('.ws-mark');
+      const cue = wrap.querySelector('.work-cue');
+      const n = items.length;
+      // resting pose of each print under the top one: rotation, x, y (px)
+      const REST = [[0, 0, 0], [5.5, 34, -14], [-4.5, -30, 10], [6.5, 26, 22], [-5, -22, 30]];
+      const HOLD = 0.32, IN = 0.05, OUT = 0.08;      // share of each step spent still; dead zones at the ends
+      const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+      const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      const canPin = () => !dropped && window.matchMedia('(min-width: 901px) and (min-height: 600px)').matches && !prefersReducedMotion;
+      let pinned = false, dropped = false, active = -1, raf = 0, lastY = window.scrollY, tiltX = 0, tiltY = 0;
+
+      function setActive(i) {
+        if (i === active) return;
+        active = i;
+        infos.forEach((el, k) => {
+          el.classList.toggle('is-active', k === i);
+          el.classList.toggle('is-past', k < i);
+          el.inert = k !== i;
+        });
+        tabs.forEach((t, k) => { t.classList.toggle('is-active', k === i); t.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+        mat.style.setProperty('--mat', getComputedStyle(items[i]).getPropertyValue('--mat'));
+      }
+
+      function progress() {
+        const total = wrap.offsetHeight - window.innerHeight;
+        const raw = clamp(-wrap.getBoundingClientRect().top / Math.max(total, 1));
+        return { raw, p: clamp((raw - IN) / (1 - IN - OUT)), total };
+      }
+
+      function update() {
+        raf = 0;
+        if (!pinned) return;
+        const { raw, p } = progress();
+        const seg = p * (n - 1);
+        const cur = Math.min(n - 1, Math.floor(seg));
+        const out = cur < n - 1 ? ease(clamp((seg - cur - HOLD) / (1 - HOLD))) : 0;
+        const level = cur + out;                      // how far through the stack we are
+        const topIdx = Math.min(n - 1, Math.round(level));
+        prints.forEach((el, i) => {
+          let x, y, r, sc, op = 1;
+          if (i < cur || (i === cur && out > 0)) {   // leaving: up and away to the right
+            const t = i < cur ? 1 : out;
+            x = t * window.innerWidth * 0.62; y = -t * window.innerHeight * 0.24; r = t * 24; sc = 1;
+            op = 1 - clamp((t - 0.75) / 0.25);
+          } else {
+            const e = Math.max(0, i - level);         // depth below the top print
+            const k = Math.min(e, 1);
+            const [rr, rx, ry] = REST[i % REST.length];
+            r = rr * k; x = rx * k; y = ry * k + e * 10; sc = 1 - e * 0.035;
+            op = 1 - clamp(e - 2.6);
+          }
+          const top = i === topIdx;
+          const tx = top ? tiltX : 0, ty = top ? tiltY : 0;
+          el.style.transform = `perspective(1400px) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${r.toFixed(2)}deg) rotateX(${ty.toFixed(2)}deg) rotateY(${tx.toFixed(2)}deg) scale(${sc.toFixed(3)})`;
+          el.style.opacity = op.toFixed(3);
+          el.style.pointerEvents = top ? 'auto' : 'none';
+        });
+        setActive(topIdx);
+        mark.style.setProperty('--mark-x', (-p * Math.max(0, mark.scrollWidth - window.innerWidth)).toFixed(1) + 'px');
+        if (cue) {
+          const y = window.scrollY;
+          if (y !== lastY) cue.classList.toggle('up', y < lastY);
+          lastY = y;
+          cue.classList.toggle('on', raw > 0.01 && raw < 0.9);
+          cue.style.setProperty('--wp', p.toFixed(3));
+        }
+      }
+      const queue = () => { if (!raf) raf = requestAnimationFrame(update); };
+
+      function enable() {
+        if (pinned) return;
+        pinned = true;
+        wrap.classList.add('is-pinned');
+        active = -1;
+        update();
+      }
+      function disable() {
+        if (!pinned) return;
+        pinned = false;
+        wrap.classList.remove('is-pinned');
+        prints.forEach(el => { el.style.transform = ''; el.style.opacity = ''; el.style.pointerEvents = ''; });
+        mark.style.removeProperty('--mark-x');
+        infos.forEach(el => { el.classList.remove('is-active', 'is-past'); el.inert = false; });
+        active = -1;
+      }
+      const refresh = () => canPin() ? enable() : disable();
+
+      // the index jumps to a project
+      tabs.forEach((t, i) => t.addEventListener('click', () => {
+        const { total } = progress();
+        const top = wrap.getBoundingClientRect().top + window.scrollY;
+        const p = i / (n - 1);
+        window.scrollTo({ top: top + total * (IN + p * (1 - IN - OUT)), behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      }));
+
+      // the top print leans toward the pointer
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        prints.forEach(el => {
+          el.addEventListener('pointermove', e => {
+            const r = el.getBoundingClientRect();
+            tiltX = ((e.clientX - r.left) / r.width - 0.5) * 8;
+            tiltY = ((e.clientY - r.top) / r.height - 0.5) * -8;
+            queue();
+          });
+          el.addEventListener('pointerleave', () => { tiltX = 0; tiltY = 0; queue(); });
+        });
+      }
+
+      // a keyboard user tabbing past the index drops the pin for good, so focus never lands on a hidden spot
+      let keyboard = false;
+      window.addEventListener('keydown', e => { if (e.key === 'Tab') keyboard = true; });
+      window.addEventListener('mousedown', () => { keyboard = false; });
+      wrap.addEventListener('focusin', e => {
+        if (!pinned || !keyboard || !e.target.closest('.ws-link')) return;
+        dropped = true; disable();
+        requestAnimationFrame(() => e.target.scrollIntoView({ block: 'center' }));
+      });
+
+      window.addEventListener('scroll', queue, { passive: true });
+      window.addEventListener('resize', () => { refresh(); queue(); });
+      refresh();
+    })();
+      // the board holds the active project's colour: re-read it when the scheme changes
+      new MutationObserver(function () {
+        var board = document.querySelector('.ws-mat'), on = document.querySelector('.ws-info.is-active');
+        if (board && on) board.style.setProperty('--mat', getComputedStyle(on.closest('.ws-item')).getPropertyValue('--mat'));
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+  </script>
+  <script>
+    // colour switch: forest + guava <-> yellow + lavender, remembered per visitor
+    (function () {
+      var btn = document.querySelector('.theme-switch');
+      function apply(t) {
+        document.documentElement.dataset.theme = t;
+        btn.setAttribute('aria-checked', t === 'v1' ? 'true' : 'false');
+        btn.title = t === 'v1' ? 'Switch to forest and guava' : 'Switch to yellow and lavender';
+      }
+      apply(document.documentElement.dataset.theme);
+      btn.addEventListener('click', function () {
+        var t = document.documentElement.dataset.theme === 'v1' ? 'v2' : 'v1';
+        try { localStorage.setItem('mf-theme', t); } catch (e) {}
+        var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (document.startViewTransition && !still) document.startViewTransition(function () { apply(t); });
+        else apply(t);
+      });
+    })();
+  </script>
+  <script>
+    // Mobile menu: adds the menu button to the nav; the links open as a full-screen panel
+    (function () {
+      var nav = document.querySelector('nav');
+      var list = nav && nav.querySelector('.nav-links');
+      var logo = nav && nav.querySelector('.nav-logo');
+      if (!list || !logo) return;
+      var root = document.documentElement;
+      var mq = window.matchMedia('(max-width: 900px)');
+      list.id = list.id || 'nav-menu';
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'nav-toggle';
+      btn.setAttribute('aria-controls', list.id); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span class="nav-toggle-bars" aria-hidden="true"></span>';
+      logo.after(btn);
+      root.classList.add('mnav');
+
+      function setOpen(open) {
+        root.classList.toggle('mnav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+        if (open) { var first = list.querySelector('a'); if (first) first.focus({ preventScroll: true }); }
+      }
+      btn.addEventListener('click', function () { setOpen(!root.classList.contains('mnav-open')); });
+      list.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && root.classList.contains('mnav-open')) { setOpen(false); btn.focus(); }
+      });
+      (mq.addEventListener ? mq.addEventListener('change', onMq) : mq.addListener(onMq));
+      function onMq() { if (!mq.matches) setOpen(false); }
+
+      // the button takes the logo's colour, which changes with the scheme and the nav's scrolled state
+      var raf = 0;
+      function tint() { raf = 0; if (!root.classList.contains('mnav-open')) btn.style.setProperty('--mnav-c', getComputedStyle(logo).color); }
+      function queue() { if (!raf) raf = requestAnimationFrame(tint); }
+      tint();
+      window.addEventListener('scroll', queue, { passive: true });
+      new MutationObserver(function () { setTimeout(tint, 400); }).observe(nav, { attributes: true, attributeFilter: ['class'] });
+      new MutationObserver(function () { setTimeout(tint, 50); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+  </script>
+  <script>
+    // Work menu: the chevron next to "UI/UX Design" shows and hides its case studies.
+    // The list starts open on one of those case pages.
+    (function () {
+      var page = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav .has-sub').forEach(function (li) {
+        var btn = li.querySelector('.sub-toggle'), list = li.querySelector('.sub-list');
+        if (!btn || !list) return;
+        var name = li.querySelector('a').textContent.trim();
+        function set(open) {
+          li.classList.toggle('is-open', open);
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          btn.setAttribute('aria-label', (open ? 'Hide ' : 'Show ') + name + ' case studies');
+        }
+        var here = Array.prototype.some.call(list.querySelectorAll('a'), function (a) { return a.getAttribute('href') === page; });
+        set(here);
+        btn.addEventListener('click', function (e) { e.stopPropagation(); set(!li.classList.contains('is-open')); });
+      });
+      document.documentElement.classList.add('subnav');
+    })();
+  </script>
+  <script id="resume-modal">
+    // Résumé viewer: "My résumé" opens the one-sheet JPG (same name as the PDF) in a dialog on this page.
+    // Cmd/Ctrl-click and no-JS still open the PDF itself.
+    (() => {
+      const links = document.querySelectorAll('.rf-open');
+      if (!links.length || !window.HTMLDialogElement) return;
+      const pdf = links[0].getAttribute('href');
+      const dlg = document.createElement('dialog');
+      dlg.className = 'rf-modal';
+      dlg.setAttribute('aria-label', 'Mauro Facciolla résumé');
+      dlg.innerHTML = '<div class="rf-modal-bar"><span class="rf-modal-title">Mauro Facciolla — Résumé</span>'
+        + '<a class="rf-modal-dl" href="' + pdf + '" download="Mauro-Facciolla-Resume.pdf">Download PDF</a>'
+        + '<button type="button" class="rf-modal-close" aria-label="Close résumé">✕</button></div>'
+        + '<div class="rf-modal-body"><img alt="Mauro Facciolla résumé, two pages" width="1600" height="4189" decoding="async"></div>';
+      document.body.append(dlg);
+      const img = dlg.querySelector('img');
+      const body = dlg.querySelector('.rf-modal-body');
+      links.forEach((link) => link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+        e.preventDefault();
+        if (!img.src) img.src = pdf.replace(/\.pdf$/, '.jpg');
+        dlg.showModal();
+        document.documentElement.classList.add('rf-lock');
+        body.scrollTop = 0;
+      }));
+      dlg.querySelector('.rf-modal-close').addEventListener('click', () => dlg.close());
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener('close', () => document.documentElement.classList.remove('rf-lock'));
+
+      // Download links: open the system Save dialog (Chrome/Edge) or save the file directly elsewhere,
+      // never navigate to the PDF. If the file can't be fetched (e.g. opened from disk), fall back to the plain link.
+      document.addEventListener('click', async (e) => {
+        const dl = e.target.closest('.rf-dl, .rf-modal-dl');
+        if (!dl || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+        e.preventDefault();
+        const name = dl.getAttribute('download') || 'Mauro-Facciolla-Resume.pdf';
+        try {
+          if (window.showSaveFilePicker) {
+            const handle = await window.showSaveFilePicker({ suggestedName: name, types: [{ description: 'PDF', accept: { 'application/pdf': ['.pdf'] } }] });
+            const blob = await (await fetch(dl.href)).blob();
+            const out = await handle.createWritable();
+            await out.write(blob);
+            await out.close();
+          } else {
+            const res = await fetch(dl.href);
+            if (!res.ok) throw new Error(res.status);
+            const url = URL.createObjectURL(await res.blob());
+            const a = Object.assign(document.createElement('a'), { href: url, download: name });
+            document.body.append(a); a.click(); a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 4000);
+          }
+        } catch (err) {
+          if (err && err.name === 'AbortError') return;   // closed the Save dialog
+          window.location.href = dl.href;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
