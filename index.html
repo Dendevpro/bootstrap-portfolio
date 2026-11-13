@@ -3,8 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mauro Facciolla — Designer based in San Diego. UI/UX systems, Figma component libraries, and brand identities that feel alive." />
-  <title>Mauro Facciolla — Designer</title>
+  <meta name="description" content="Mauro Facciolla is a San Diego designer creating websites, UI/UX, Figma design systems and brand identities, with AI-accelerated workflows." />
+  <!-- seo -->
+  <link rel="canonical" href="https://maurofacciolla.com/" />
+  <meta name="author" content="Mauro Facciolla" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mauro Facciolla" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://maurofacciolla.com/" />
+  <meta property="og:title" content="Mauro Facciolla — UI/UX &amp; Brand Designer in San Diego" />
+  <meta property="og:description" content="Mauro Facciolla is a San Diego designer creating websites, UI/UX, Figma design systems and brand identities, with AI-accelerated workflows." />
+  <meta property="og:image" content="https://maurofacciolla.com/assets/og/home.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mauro Facciolla — UI/UX &amp; Brand Designer in San Diego" />
+  <meta name="twitter:description" content="Mauro Facciolla is a San Diego designer creating websites, UI/UX, Figma design systems and brand identities, with AI-accelerated workflows." />
+  <meta name="twitter:image" content="https://maurofacciolla.com/assets/og/home.jpg" />
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://maurofacciolla.com/#website",
+   "url": "https://maurofacciolla.com/",
+   "name": "Mauro Facciolla",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://maurofacciolla.com/#person"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://maurofacciolla.com/#person",
+   "name": "Mauro Facciolla",
+   "url": "https://maurofacciolla.com/",
+   "image": "https://maurofacciolla.com/assets/about/portrait.webp",
+   "jobTitle": "Head Designer, UI/UX & Design Systems",
+   "description": "San Diego designer working across UI/UX, Figma design systems, brand identity, web design and print production, with AI-accelerated workflows.",
+   "email": "mailto:hello@maurofacciolla.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+   },
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "UNIFACS (Universidade Salvador)"
+   },
+   "knowsAbout": [
+    "UI/UX design",
+    "Web design",
+    "Figma design systems",
+    "Design tokens",
+    "Brand identity",
+    "Logo design",
+    "Packaging design",
+    "Print production",
+    "Adobe Creative Cloud",
+    "AI-accelerated design workflows"
+   ],
+   "sameAs": [
+    "https://www.linkedin.com/in/mauro-facciolla/"
+   ]
+  },
+  {
+   "@id": "https://maurofacciolla.com/#webpage",
+   "url": "https://maurofacciolla.com/",
+   "name": "Mauro Facciolla — UI/UX & Brand Designer in San Diego",
+   "description": "Mauro Facciolla is a San Diego designer creating websites, UI/UX, Figma design systems and brand identities, with AI-accelerated workflows.",
+   "isPartOf": {
+    "@id": "https://maurofacciolla.com/#website"
+   },
+   "inLanguage": "en",
+   "@type": "ProfilePage",
+   "mainEntity": {
+    "@id": "https://maurofacciolla.com/#person"
+   }
+  }
+ ]
+}
+  </script>
+  <!-- /seo -->
+  <title>Mauro Facciolla — UI/UX &amp; Brand Designer in San Diego</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon.ico" sizes="32x32" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -3589,6 +3673,14 @@
     }
     @media (prefers-reduced-motion: reduce) { .rf-modal[open], .rf-modal::backdrop { animation: none; } }
   </style>
+  <style id="book-call">
+    /* "Book a 15-min intro" in Get in touch: opens the Cal.com booking page in a new tab (same look as contact.html .contact-book-btn) */
+    .book-call { margin-top: 2.5rem; }
+    .book-call-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 300; color: color-mix(in srgb, var(--paper) 45%, transparent); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 0.6rem; }
+    .book-call-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.4rem; border: 1.5px solid color-mix(in srgb, var(--paper) 40%, transparent); font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--paper); text-decoration: none; transition: background 0.25s ease, border-color 0.25s ease; }
+    .book-call-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+    .book-call-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  </style>
 </head>
 <body>
 
@@ -4005,6 +4097,10 @@
               <span class="rf-text"><span class="rf-label">My résumé</span><span class="rf-cta">View résumé</span></span>
             </a>
             <a href="assets/Mauro-Facciolla-Resume.pdf" class="rf-dl" download="Mauro-Facciolla-Resume.pdf">Download</a>
+          </div>
+          <div class="book-call reveal">
+            <p class="book-call-label">Prefer to talk?</p>
+            <a href="https://cal.com/maurofacciolla/15min" class="book-call-btn" target="_blank" rel="noopener">Book a 15-min intro <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 

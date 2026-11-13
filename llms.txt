@@ -1,0 +1,30 @@
+# Mauro Facciolla
+
+> Mauro Facciolla is a designer in San Diego, CA (Head Designer, UI/UX & Design Systems). He designs websites and UI/UX, builds Figma design systems, creates brand identities and packaging, and handles print production, using AI-accelerated workflows. Contact: hello@maurofacciolla.com · book a 15-minute intro: https://cal.com/maurofacciolla/15min
+
+## Pages
+
+- [Home](https://maurofacciolla.com/): overview, selected work, testimonials, contact
+- [About](https://maurofacciolla.com/about.html): background (Salvador, Brazil to San Diego), skills, tools, résumé
+- [Work](https://maurofacciolla.com/work.html): all case studies
+- [Contact](https://maurofacciolla.com/contact.html): contact form, email, booking link
+- [Résumé (PDF)](https://maurofacciolla.com/assets/Mauro-Facciolla-Resume.pdf)
+
+## Case studies
+
+- [Now Media Group Design System](https://maurofacciolla.com/work/now-media-group.html): One brand and UI system in Figma for Now Media Group, a San Diego agency: color tokens, type styles and a component library.
+- [MelloMe Website UI/UX](https://maurofacciolla.com/work/mellome.html): UI/UX for MelloMe, a calm-and-focus wellness shot: a desktop and mobile storefront that introduces an unfamiliar product.
+- [Dr. Simon Roytberg, DDS Website Redesign](https://maurofacciolla.com/work/roytberg.html): Website redesign for Dr. Simon Roytberg, a New Jersey cosmetic and implant dentist: gallery-like monochrome with a warm gold accent.
+- [Food Truck Fridays Production Art](https://maurofacciolla.com/work/food-truck-fridays.html): Production art for Food Truck Fridays at Balboa Park, San Diego: artwork adapted to print and digital formats, built to spec.
+- [Valladolid Plastic Surgery Website Redesign](https://maurofacciolla.com/work/valladolid-plastic-surgery.html): Website redesign for Valladolid Plastic Surgery in Scottsdale, AZ: warm taupes, light type and procedures organized by area.
+- [Silvernest Lease Agreement Form UI/UX](https://maurofacciolla.com/work/silvernest.html): UI/UX for the Silvernest rental and lease agreement form, a homesharing site for older adults: a simpler, more intuitive flow.
+- [Ki's Kitchen Cold Brew Label Design](https://maurofacciolla.com/work/kis-kitchen.html): Packaging design for Ki's Kitchen, a San Diego organic food maker: a modern label to launch Ki's Organic Cold Brew Coffee drinks.
+- [Solid Bite Logo, Brand Book & Website](https://maurofacciolla.com/work/solid-bite.html): Logo redesign, brand book and website for Solid Bite, an implant and periodontics practice in Melbourne, FL: elegant navy and gold.
+- [Stephen B. Morris Law Website Redesign](https://maurofacciolla.com/work/stephen-morris-law.html): Website redesign for Stephen B. Morris Law Offices, San Diego: deep teal, warm gold, editorial serif and plain-language reassurance.
+- [Carefree Smiles Dentistry Website Redesign](https://maurofacciolla.com/work/carefree-smiles.html): Website redesign for Carefree Smiles Dentistry in Phoenix, AZ: a magazine-like voice, numbered sections and real office photos.
+- [Tamar Caspi Website Redesign](https://maurofacciolla.com/work/tamar-caspi.html): Website redesign for writer Tamar Caspi: copywriting, online presence and dating advice under one warm brand in purple, plum and pink.
+- [Techaround Website UI Design](https://maurofacciolla.com/work/techaround.html): Website UI design for Techaround, a San Diego tech agency: teal-to-navy gradients and isometric line illustrations for every service.
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/mauro-facciolla/)
