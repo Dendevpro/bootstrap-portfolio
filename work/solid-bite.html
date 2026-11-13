@@ -764,9 +764,10 @@
         column-gap: clamp(3rem, 7vw, 8rem); align-items: start;
       }
       .case-about .case-section-label { grid-column: 1; grid-row: 1; }
-      .case-about .case-heading { grid-column: 1; grid-row: 2; align-self: end; margin-bottom: 0; text-wrap: balance; }
-      /* bottoms line up with the heading; the copy runs to the right edge of the image grid below */
-      .case-about .case-about-text { grid-column: 2; grid-row: 2; align-self: end; }
+      .case-about .case-heading { grid-column: 1; grid-row: 2; align-self: start; margin-bottom: 0; text-wrap: balance; }
+      /* tops line up: the copy starts level with the eyebrow (Mauro, Nov 12); it runs to the right edge of the image grid below */
+      .case-about .case-about-text { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
+      .case-about .case-about-text .case-text:first-child { margin-top: -0.4em; }  /* trim the first line's leading so its cap height meets the eyebrow's */
       .case-about .case-about-text .case-text { max-width: none; }
       .case-about .case-about-text .case-text:last-child { margin-bottom: 0; }
     }
@@ -1065,6 +1066,7 @@
                 <a href="stephen-morris-law.html">Stephen B. Morris</a>
                 <a href="carefree-smiles.html">Carefree Smiles</a>
                 <a href="tamar-caspi.html">Tamar Caspi</a>
+                <a href="techaround.html">Techaround</a>
               </div>
             </li>
             <li><a href="now-media-group.html">Now Media Group</a></li>
@@ -1246,6 +1248,7 @@
           <li><a href="stephen-morris-law.html"><span class="ws-more-img"><img src="../assets/work/stephen-morris-law/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Stephen B. Morris</span><span class="ws-more-type">UI/UX Design</span></a></li>
           <li><a href="carefree-smiles.html"><span class="ws-more-img"><img src="../assets/work/carefree-smiles/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Carefree Smiles</span><span class="ws-more-type">UI/UX Design</span></a></li>
           <li><a href="tamar-caspi.html"><span class="ws-more-img"><img src="../assets/work/tamar-caspi/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Tamar Caspi</span><span class="ws-more-type">UI/UX Design</span></a></li>
+          <li><a href="techaround.html"><span class="ws-more-img"><img src="../assets/work/techaround/cover.webp" alt="" loading="lazy" style="object-position:50% 30%" /></span><span class="ws-more-name">Techaround</span><span class="ws-more-type">UI/UX Design</span></a></li>
         </ul>
       </div>
     </section>
