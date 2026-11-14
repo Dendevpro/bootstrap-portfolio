@@ -1993,5 +1993,29 @@
       });
     })();
   </script>
+<script id="cal-modal">
+    /* "Book a 15-min intro" opens Cal.com in a modal on the same page. Cal's embed script loads on the
+       first hover/focus/touch of a booking link. Cmd/ctrl/shift-click or no JS = the plain link (new tab). */
+    (function () {
+      var SEL = 'a[href^="https://cal.com/maurofacciolla/15min"]', LINK = 'maurofacciolla/15min', NS = 'intro', ready = false;
+      function boot() {
+        if (ready) return; ready = true;
+        (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+        Cal('init', NS, { origin: 'https://cal.com' });
+      }
+      function brand() { return document.documentElement.getAttribute('data-theme') === 'v1' ? '#A668FF' : '#EC6A62'; }
+      ['pointerover', 'focusin', 'touchstart'].forEach(function (ev) {
+        document.addEventListener(ev, function (e) { if (e.target.closest && e.target.closest(SEL)) boot(); }, { passive: true });
+      });
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest(SEL);
+        if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+        e.preventDefault(); boot();
+        if (document.documentElement.classList.contains('mnav-open')) { var t = document.querySelector('.nav-toggle'); if (t) t.click(); }
+        Cal.ns[NS]('ui', { theme: 'dark', cssVarsPerTheme: { dark: { 'cal-brand': brand() }, light: { 'cal-brand': brand() } }, hideEventTypeDetails: false, layout: 'month_view' });
+        Cal.ns[NS]('modal', { calLink: LINK, config: { layout: 'month_view', theme: 'dark' } });
+      });
+    })();
+  </script>
 </body>
 </html>
