@@ -1116,6 +1116,69 @@
     .book-call-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
     .book-call-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   </style>
+  <style id="nav-book">
+    /* "Book a 15-min intro" in the top nav: outlined button in the current nav link colour, accent fill on hover */
+    nav .nav-links { align-items: center; }
+    @media (min-width: 901px) { nav .nav-links > li > a:not(.nav-book-btn) { font-size: 13px; } }   /* nav tabs (Home, About, Work, Contact) */
+    nav .nav-links a.nav-book-btn {
+      display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.55rem 0.95rem;
+      border: 1px solid currentColor; border-radius: 999px; font-weight: 500; white-space: nowrap;
+      transition: color 0.2s, background 0.25s ease, border-color 0.25s ease;
+    }
+    nav .nav-links a.nav-book-btn::after { display: none; }
+    nav .nav-links a.nav-book-btn:hover { background: var(--accent); border-color: var(--accent); color: #F1EEE8; }
+    html[data-theme="v1"] nav .nav-links a.nav-book-btn:hover { background: #A668FF; border-color: #A668FF; color: #151515; }
+    @media (min-width: 901px) and (max-width: 1150px) { nav .nav-links { gap: 1.6rem; } }
+    @media (max-width: 900px) {
+      /* phones: the booking link becomes a full-width bar pinned above the nav, always visible */
+      html.mnav { --book-h: 40px; --book-bg: #EC6A62; --book-text: #06110C; }
+      html.mnav[data-theme="v1"] { --book-bg: #A668FF; --book-text: #151515; }
+      html.mnav nav { top: var(--book-h); }
+      html.mnav body { padding-top: var(--book-h); }
+      html.mnav nav .nav-links > li.nav-book {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 3; width: auto; height: var(--book-h);
+        border: 0; padding: 0; opacity: 1; transform: none; visibility: visible; transition: none;
+      }
+      html.mnav nav .nav-links > li > a.nav-book-btn {
+        display: flex; justify-content: center; align-items: center; gap: 0.5rem; width: 100%; height: 100%; padding: 0 1rem;
+        border: 0; border-radius: 0; background: var(--book-bg); color: var(--book-text) !important;
+        font-size: 14px; font-weight: 500; letter-spacing: 0.12em; line-height: 1;
+      }
+      html.mnav nav .nav-links > li > a.nav-book-btn:hover { background: var(--book-bg); color: var(--book-text) !important; }
+      html.mnav nav .nav-links > li > a.nav-book-btn:focus-visible { outline: 2px solid var(--book-text); outline-offset: -4px; }
+      html.mnav .nav-links { padding-top: calc(6.5rem + var(--book-h)); }
+    }
+  </style>
+  <style id="pill-buttons">
+    /* One button style site-wide: solid accent pill, 14px DM Mono caps, no arrows, offsets or shadows.
+       Accent per scheme: v2 coral, v1 lavender (fixed values: --accent changes per section). Hover = cream. */
+    :root { --btn-bg: #EC6A62; --btn-text: #06110C; --btn-hover: #F1EEE8; }
+    html[data-theme="v1"] { --btn-bg: #A668FF; --btn-text: #151515; --btn-hover: #F5F3EA; }
+    .form-submit, .book-call-btn, .contact-book-btn, .rf-modal-dl, nav .nav-links a.nav-book-btn, .filter-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0;
+      padding: 0.85rem 1.6rem; border: 0; border-radius: 999px; box-shadow: none;
+      background: var(--btn-bg) !important; color: var(--btn-text) !important;
+      font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500; line-height: 1;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; white-space: nowrap; cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .form-submit::before, .form-submit::after, .book-call-btn::after, .contact-book-btn::after, .rf-modal-dl::after { display: none !important; }
+    .form-submit:hover, .book-call-btn:hover, .contact-book-btn:hover, .rf-modal-dl:hover,
+    nav .nav-links a.nav-book-btn:hover, .filter-btn:hover, .filter-btn.active { background: var(--btn-hover) !important; color: var(--btn-text) !important; }
+    nav .nav-links a.nav-book-btn, .filter-btn { padding: 0.6rem 1.1rem; }
+  </style>
+  <style id="v1-hero-gradient">
+    /* yellow/lavender theme: same build as the green hero ground (grain, top glow, soft vignette), in warm yellow */
+    html[data-theme="v1"] .case-hero {
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E") repeat,
+        radial-gradient(ellipse 80% 85% at 50% 40%, transparent 50%, rgba(140, 118, 0, 0.22) 100%),
+        radial-gradient(ellipse 55% 50% at 50% 28%, rgba(255, 255, 235, 0.45) 0%, transparent 65%),
+        radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.22) 0%, transparent 40%),
+        radial-gradient(ellipse 90% 75% at 50% 100%, rgba(150, 125, 0, 0.22) 0%, transparent 60%),
+        linear-gradient(180deg, #fff75a 0%, #FFF21A 50%, #f0dc00 100%) !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -1159,6 +1222,7 @@
           </ul>
         </li>
       <li><a href="../contact.html">Contact</a></li>
+      <li class="nav-book"><a href="https://cal.com/maurofacciolla/15min" class="nav-book-btn" target="_blank" rel="noopener">Book a 15-min intro</a></li>
       <li class="theme-item"><button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Yellow and lavender colours">
         <span class="theme-knob" aria-hidden="true"></span>
         <span class="theme-dot theme-dot--v2" aria-hidden="true"></span>
@@ -1376,7 +1440,7 @@
           </div>
           <div class="book-call reveal">
             <p class="book-call-label">Prefer to talk?</p>
-            <a href="https://cal.com/maurofacciolla/15min" class="book-call-btn" target="_blank" rel="noopener">Book a 15-min intro <span aria-hidden="true">↗</span></a>
+            <a href="https://cal.com/maurofacciolla/15min" class="book-call-btn" target="_blank" rel="noopener">Book a 15-min intro</a>
           </div>
         </div>
         <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
@@ -1403,7 +1467,7 @@
             <label class="form-label" for="cf-message">Message</label>
             <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell me about your project…" required rows="5"></textarea>
           </div>
-          <button class="form-submit" type="submit">Send message →</button>
+          <button class="form-submit" type="submit">Send message</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -1559,13 +1623,13 @@
           });
           const data = await res.json();
           if (!res.ok || !data.success) throw new Error(data.message);
-          btn.textContent = 'Message sent ✦';
+          btn.textContent = 'Message sent';
           btn.style.background = 'var(--accent)';
           btn.style.color = 'var(--paper)';
           status.textContent = 'Thanks, I’ll get back to you within 24 hours.';
           contactForm.reset();
         } catch (err) {
-          btn.textContent = 'Send message →';
+          btn.textContent = 'Send message';
           btn.disabled = false;
           status.textContent = 'Something went wrong. Please try again, or email hello@maurofacciolla.com.';
         }
